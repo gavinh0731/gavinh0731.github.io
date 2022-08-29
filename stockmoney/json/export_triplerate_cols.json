@@ -1,0 +1,56 @@
+[
+    {
+      "label": "代號",
+      "name": "b_info.code",
+      "filter": {
+        "type": "select",
+        "mode": "multi",
+        "closeDropdownOnSelection": false,
+        "placeholder": "輸入",
+        "options": [],
+        "init": {
+          "value": []
+        }
+      },
+      "sort": true
+    },
+    {
+      "label": "名稱",
+      "name": "b_info.name",
+      "sort": true
+    },
+    {"label":"產業別","name":"b_info.verticals","sort": true},
+    {"label": "財報評分", "name": "b_4season.score", "sort": true},
+    {"label": "近期成長", "name": "b_4season.good", "sort": true},
+    {"label": "連漲評分", "name": "e_tpr.totalCount", "sort": true},
+    {"label": "營益連漲", "name": "e_tpr.oppCount", "sort": true},
+    {"label": "毛利連漲", "name": "e_tpr.grossCount", "sort": true},
+    {"label": "淨利連漲", "name": "e_tpr.netCount", "sort": true},
+    {"label":"便宜度","name":"e_fish.cheap","sort":true},
+    {
+      "label": "成交",
+      "name": "b_info.price",
+      "sort": true
+    },
+    {
+      "label": "漲跌價",
+      "name": "b_info.change",
+      "sort": true
+    },
+    {
+      "label": "漲跌幅",
+      "name": "b_info.pct",
+      "sort": true
+    },
+    {"label":"成交張數","name":"p_dpct.volume","sort":true},
+    {"label":"成交金額(萬)","name":"m_basic.amount","sort":true},
+    {"label": "6年前毛利斜率", "name": "e_tpr.grosss7", "sort": true},
+    {"label": "3年前毛利斜率", "name": "e_tpr.grosss4", "sort": true},
+    {"label": "1年毛利斜率", "name": "e_tpr.grosss1", "sort": true},
+    {"label": "6年前營益斜率", "name": "e_tpr.opps7", "sort": true},
+    {"label": "3年前營益斜率", "name": "e_tpr.opps4", "sort": true},
+    {"label": "1年營益斜率", "name": "e_tpr.opps1", "sort": true},
+    {"label": "6年前淨利斜率", "name": "e_tpr.nets7", "sort": true},
+    {"label": "3年前淨利斜率", "name": "e_tpr.nets4", "sort": true},
+    {"label": "1年淨利斜率", "name": "e_tpr.nets1", "sort": true}
+  ]

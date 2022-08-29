@@ -1,0 +1,111 @@
+[
+    {
+      "label": "代號",
+      "name": "b_info.code",
+      "filter": {
+        "type": "select",
+        "mode": "multi",
+        "closeDropdownOnSelection": false,
+        "placeholder": "輸入",
+        "options": [],
+        "init": {
+          "value": []
+        }
+      },
+      "sort": true
+    },
+    {"label": "名稱","name": "b_info.name","sort": true},
+    {"label":"產業別","name":"b_info.verticals","sort": true},
+    {
+      "label": "成交",
+      "name": "b_info.price",
+      "sort": true
+    },
+    {"label": "財報評分", "name": "b_4season.score", "sort": true},
+    {"label": "成長欄位數", "name": "b_4season.good", "sort": true},
+    {
+      "label": "財報季度",
+      "name": "b_4season.season",
+      "sort": true
+    },
+    {
+      "label": "營收(億)",
+      "name": "b_4season.rvn",
+      "sort": true
+    },
+    {
+      "label": "營收成長(%)",
+      "name": "b_4season.rvng",
+      "sort": true
+    },
+    {
+      "label": "毛利(億)",
+      "name": "b_4season.gross",
+      "sort": true
+    },
+    {
+      "label": "毛利成長(%)",
+      "name": "b_4season.grossg",
+      "sort": true
+    },
+    {
+      "label": "淨利(億)",
+      "name": "b_4season.net",
+      "sort": true
+    },
+    {
+      "label": "淨利成長(%)",
+      "name": "b_4season.netg",
+      "sort": true
+    },
+    {
+      "label": "毛利率(%)",
+      "name": "b_4season.grossp",
+      "sort": true
+    },
+    {
+      "label": "毛率增減",
+      "name": "b_4season.grossi",
+      "sort": true
+    },
+    {
+      "label": "淨利率(%)",
+      "name": "b_4season.netp",
+      "sort": true
+    },
+    {
+      "label": "淨率增減",
+      "name": "b_4season.neti",
+      "sort": true
+    },
+    {
+      "label": "EPS(元)",
+      "name": "b_4season.eps",
+      "sort": true
+    },
+    {
+      "label": "EPS增減(元)",
+      "name": "b_4season.epsi",
+      "sort": true
+    },
+    {
+      "label": "ROE(%)",
+      "name": "b_4season.roe",
+      "sort": true
+    },
+    {
+      "label": "ROE增減",
+      "name": "b_4season.roei",
+      "sort": true
+    },
+    {
+      "label": "ROA(%)",
+      "name": "b_4season.roa",
+      "sort": true
+    },
+    {
+      "label": "ROA增減",
+      "name": "b_4season.roai",
+      "sort": true
+    }
+  ]

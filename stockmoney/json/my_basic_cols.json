@@ -1,0 +1,147 @@
+[
+    {
+      "label": "代號",
+      "name": "b_info.code",
+      "filter": {
+        "type": "select",
+        "mode": "multi",
+        "closeDropdownOnSelection": false,
+        "placeholder": "輸入",
+        "options": [],
+        "init": {
+          "value": []
+        }
+      },
+      "sort": true
+    },
+    {"label": "名稱","name": "b_info.name","sort": true},
+    {"label":"產業別","name":"b_info.verticals","sort": true},
+    {"label":"EPS估價","name":"m_basic.epsp","sort":true},
+    {"label":"殖利率估價","name":"m_basic.yiep","sort":true},
+    {"label":"ROE估價","name":"m_basic.kp","sort":true},
+    {"label":"股價淨值比","name":"m_basic.pbr","sort":true},
+    {"label": "總報酬本益比", "name": "m_basic.tper", "sort": true },
+    {"label":"便宜度","name":"m_basic.cheap","sort":true},
+    
+    {"label": "本益比", "name": "m_basic.per", "sort": true },
+    {"label": "毛利成長(%)", "name": "m_basic.gross_f", "sort": true },
+    {"label": "年複合成長率", "name": "m_basic.netrate5", "sort": true },
+    {"label": "PEG", "name": "m_basic.peg", "sort": true },
+    {"label": "現金殖利率", "name": "m_basic.cash_y", "sort": true},
+    {"label": "股利連漲(5年)", "name": "m_basic.yCnt", "sort": true},
+    {"label": "平均ROE(>8%)", "name": "m_basic.roe", "sort": true},
+    {"label": "平均EPS(元)", "name": "m_basic.eps", "sort": true },
+    {"label": "EPS成長", "name": "e_icr.yepsCount", "sort": true },
+    {"label": "風險係數", "name": "m_basic.beta", "sort": true },
+    {"label": "成交", "name": "b_info.price", "sort": true},
+    {"label": "漲跌價", "name": "b_info.change", "sort": true},
+    {"label": "漲跌幅", "name": "b_info.pct", "sort": true},
+    {"label": "週漲跌幅", "name": "m_basic.wpct", "sort": true},
+    {"label": "月漲跌幅", "name": "m_basic.mpct", "sort": true},
+    
+    {"label":"成交張數","name":"p_dpct.volume","sort":true},
+    {"label":"成交金額(萬)","name":"m_basic.amount","sort":true},
+    {"label": "週轉率(%)", "name": "m_basic.turnover", "sort": true },
+
+    {
+      "label": "便宜度",
+      "name": "m_basic.cheapCnt",
+      "filter": {
+        "type": "select",
+        "mode": "multi",
+        "closeDropdownOnSelection": false,
+        "placeholder": "輸入",
+        "options": [
+          {"name": "0","value": "0"},
+          {"name": "1","value": "1"},
+          {"name": "2","value": "2"},
+          {"name": "3","value": "3"},
+          {"name": "4","value": "4"}
+        ],
+        "init": {
+          "value": []
+        }
+      },
+      "sort": true
+    },
+    {
+      "label": "年複合成長率",
+      "name": "m_basic.growRateCnt",
+      "filter": {
+        "type": "select",
+        "mode": "multi",
+        "closeDropdownOnSelection": false,
+        "placeholder": "輸入",
+        "options": [
+          {"name": "0","value": "0"},
+          {"name": "1","value": "1"}
+        ],
+        "init": {
+          "value": []
+        }
+      },
+      "sort": true
+    },
+    {
+      "label": "週轉率>=1",
+      "name": "m_basic.turnoverCnt",
+      "filter": {
+        "type": "select",
+        "mode": "multi",
+        "closeDropdownOnSelection": false,
+        "placeholder": "輸入",
+        "options": [
+          {"name": "0","value": "0"},
+          {"name": "1","value": "1"}
+        ],
+        "init": {
+          "value": []
+        }
+      },
+      "sort": true
+    },
+    {
+      "label": "期貨",
+      "name": "b_info.futures",
+      "filter": {
+        "type": "select",
+        "mode": "multi",
+        "closeDropdownOnSelection": false,
+        "placeholder": "輸入",
+        "options": [
+          {"name": "","value": ""},
+          {"name": "有","value": "有"}
+        ],
+        "init": {
+          "value": []
+        }
+      },
+      "sort": true
+    },
+    {
+      "label": "股價區間",
+      "name": "m_basic.prange",
+      "filter": {
+        "type": "select",
+        "mode": "multi",
+        "closeDropdownOnSelection": false,
+        "placeholder": "輸入",
+        "options": [
+          {"name": "0","value": "0"},
+          {"name": "50","value": "50"},
+          {"name": "100","value": "100"},
+          {"name": "150","value": "150"},
+          {"name": "200","value": "200"},
+          {"name": "300","value": "300"},
+          {"name": "500","value": "500"},
+          {"name": "1000","value": "1000"},
+          {"name": "9000","value": "9000"}
+        ],
+        "init": {
+          "value": []
+        }
+      },
+      "sort": true
+    }
+]
+  

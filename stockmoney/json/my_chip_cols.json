@@ -1,0 +1,186 @@
+[
+    {
+      "label": "代號",
+      "name": "b_info.code",
+      "filter": {
+        "type": "select",
+        "mode": "multi",
+        "closeDropdownOnSelection": false,
+        "placeholder": "輸入",
+        "options": [],
+        "init": {
+          "value": []
+        }
+      },
+      "sort": true
+    },
+    {
+      "label": "名稱",
+      "name": "b_info.name",
+      "sort": true
+    },
+    {"label": "股本(億)", "name": "b_info.capital", "sort": true},
+    {"label": "成交", "name": "b_info.price", "sort": true},
+    {"label": "漲跌幅", "name": "b_info.pct", "sort": true},
+    {"label":"成交張數","name":"p_dpct.volume","sort":true},
+    {"label":"成交金額(萬)","name":"m_basic.amount","sort":true},
+    {"label": "週轉率(%)", "name": "m_basic.turnover", "sort": true },
+    {
+      "label": "法人買賣日期",
+      "name": "c_trust.date",
+      "sort": true
+    },
+    {"label": "半年最高價","name": "m_chip.phigh6","sort": true},
+    {"label": "當日投本比","name": "m_chip.ttoday","sort": true},
+    {"label": "100張以下散戶增減","name": "m_chip.inc100","sort": true},
+    {"label": "400張以上大戶增減","name": "m_chip.inc400","sort": true},
+    {"label": "10日融資增減佔發行量％","name": "m_chip.lday10","sort": true},
+    {
+      "label": "股價創半年新高",
+      "name": "m_chip.phigh240",
+      "filter": {
+        "type": "select",
+        "mode": "multi",
+        "closeDropdownOnSelection": false,
+        "placeholder": "輸入",
+        "options": [
+          {"name": "0","value": "0"},
+          {"name": "1","value": "1"}
+        ],
+        "init": {
+          "value": []
+        }
+      },
+      "sort": true
+    },
+    {
+      "label": "投信_半年內買",
+      "name": "m_chip.tbuy180",
+      "filter": {
+        "type": "select",
+        "mode": "multi",
+        "closeDropdownOnSelection": false,
+        "placeholder": "輸入",
+        "options": [
+          {"name": "0","value": "0"},
+          {"name": "1","value": "1"},
+          {"name": "2","value": "2"},
+          {"name": "3","value": "3"},
+          {"name": "4","value": "4"},
+          {"name": "5","value": "5"},
+          {"name": "6","value": "6"},
+          {"name": "7","value": "7"},
+          {"name": "8","value": "8"}
+        ],
+        "init": {
+          "value": []
+        }
+      },
+      "sort": true
+    },
+    {
+      "label": "投本比_當天等於0.X%",
+      "name": "m_chip.tod1",
+      "filter": {
+        "type": "select",
+        "mode": "multi",
+        "closeDropdownOnSelection": false,
+        "placeholder": "輸入",
+        "options": [
+          {"name": "1","value": "1"},
+          {"name": "2","value": "2"},
+          {"name": "3","value": "3"},
+          {"name": "4","value": "4"},
+          {"name": "5","value": "5"},
+          {"name": "6","value": "6"},
+          {"name": "7","value": "7"},
+          {"name": "8","value": "8"},
+          {"name": "9","value": "9"},
+          {"name": "10","value": "10"}
+        ],
+        "init": {
+          "value": []
+        }
+      },
+      "sort": true
+    },
+    {
+      "label": "外資_半年內買",
+      "name": "m_chip.fbuy180",
+      "filter": {
+        "type": "select",
+        "mode": "multi",
+        "closeDropdownOnSelection": false,
+        "placeholder": "輸入",
+        "options": [
+          {"name": "0","value": "0"},
+          {"name": "1","value": "1"},
+          {"name": "2","value": "2"},
+          {"name": "3","value": "3"},
+          {"name": "4","value": "4"},
+          {"name": "5","value": "5"},
+          {"name": "6","value": "6"},
+          {"name": "7","value": "7"},
+          {"name": "8","value": "8"}
+        ],
+        "init": {
+          "value": []
+        }
+      },
+      "sort": true
+    },
+    {
+      "label": "散戶減少",
+      "name": "m_chip.retail",
+      "filter": {
+        "type": "select",
+        "mode": "multi",
+        "closeDropdownOnSelection": false,
+        "placeholder": "輸入",
+        "options": [
+          {"name": "0","value": "0"},
+          {"name": "1","value": "1"}
+        ],
+        "init": {
+          "value": []
+        }
+      },
+      "sort": true
+    },
+    {
+      "label": "大戶增加",
+      "name": "m_chip.big",
+      "filter": {
+        "type": "select",
+        "mode": "multi",
+        "closeDropdownOnSelection": false,
+        "placeholder": "輸入",
+        "options": [
+          {"name": "0","value": "0"},
+          {"name": "1","value": "1"}
+        ],
+        "init": {
+          "value": []
+        }
+      },
+      "sort": true
+    },
+    {
+      "label": "10日融資減",
+      "name": "m_chip.loan10",
+      "filter": {
+        "type": "select",
+        "mode": "multi",
+        "closeDropdownOnSelection": false,
+        "placeholder": "輸入",
+        "options": [
+          {"name": "0","value": "0"},
+          {"name": "1","value": "1"}
+        ],
+        "init": {
+          "value": []
+        }
+      },
+      "sort": true
+    }
+  ]

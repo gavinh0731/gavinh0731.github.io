@@ -1,0 +1,81 @@
+[
+    {
+      "label": "代號",
+      "name": "b_info.code",
+      "filter": {
+        "type": "select",
+        "mode": "multi",
+        "closeDropdownOnSelection": false,
+        "placeholder": "輸入",
+        "options": [],
+        "init": {
+          "value": []
+        }
+      },
+      "sort": true
+    },
+    {
+      "label": "名稱",
+      "name": "b_info.name",
+      "sort": true
+    },
+    {"label": "成交", "name": "b_info.price", "sort": true},
+    {"label": "漲跌幅", "name": "b_info.pct", "sort": true},
+    {"label":"成交張數","name":"p_dpct.volume","sort":true},
+    {"label":"成交金額(萬)","name":"m_basic.amount","sort":true},
+    {"label":"季均線","name":"m_tech.ma60","sort":true},
+    {
+        "label": "均線糾結",
+        "name": "m_tech.makink",
+        "filter": {
+          "type": "select",
+          "mode": "multi",
+          "closeDropdownOnSelection": false,
+          "placeholder": "輸入",
+          "options": [
+            {"name": "0","value": "0"},
+            {"name": "1","value": "1"}
+          ],
+          "init": {
+            "value": []
+          }
+        },
+        "sort": true
+    },
+    {
+      "label": "長黑跌破所有均線",
+      "name": "m_tech.dies",
+      "filter": {
+        "type": "select",
+        "mode": "multi",
+        "closeDropdownOnSelection": false,
+        "placeholder": "輸入",
+        "options": [
+          {"name": "0","value": "0"},
+          {"name": "1","value": "1"}
+        ],
+        "init": {
+          "value": []
+        }
+      },
+      "sort": true
+    },
+    {
+      "label": "均線多頭排列5日/10日/月",
+      "name": "m_tech.mamany",
+      "filter": {
+        "type": "select",
+        "mode": "multi",
+        "closeDropdownOnSelection": false,
+        "placeholder": "輸入",
+        "options": [
+          {"name": "0","value": "0"},
+          {"name": "1","value": "1"}
+        ],
+        "init": {
+          "value": []
+        }
+      },
+      "sort": true
+    }
+  ]

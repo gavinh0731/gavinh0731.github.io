@@ -1,0 +1,112 @@
+[
+    {
+      "label": "代號",
+      "name": "b_info.code",
+      "filter": {
+        "type": "select",
+        "mode": "multi",
+        "closeDropdownOnSelection": false,
+        "placeholder": "輸入",
+        "options": [],
+        "init": {
+          "value": []
+        }
+      },
+      "sort": true
+    },
+    {
+      "label": "名稱",
+      "name": "b_info.name",
+      "sort": true
+    },
+    {
+      "label": "股價日期",
+      "name": "b_info.date",
+      "sort": true
+    },
+    {
+      "label": "成交",
+      "name": "b_info.price",
+      "sort": true
+    },
+    {
+      "label": "漲跌價",
+      "name": "b_info.change",
+      "sort": true
+    },
+    {
+      "label": "漲跌幅",
+      "name": "b_info.pct",
+      "sort": true
+    },
+    {
+      "label": "成交張數",
+      "name": "p_dpct.volume",
+      "sort": true
+    },
+    {
+      "label": "股利發放年度",
+      "name": "d_cont.year",
+      "sort": true
+    },
+    {
+      "label": "現金股利連配次數",
+      "name": "d_cont.cont1",
+      "sort": true
+    },
+    {
+      "label": "現金股利連配總額(元)",
+      "name": "d_cont.cont2",
+      "sort": true
+    },
+    {
+      "label": "現金股利連配均額(元)",
+      "name": "d_cont.cont3",
+      "sort": true
+    },
+    {
+      "label": "配息均額除以股價(%)",
+      "name": "d_cont.cont4",
+      "sort": true
+    },
+    {
+      "label": "股票股利連配次數",
+      "name": "d_cont.cont5",
+      "sort": true
+    },
+    {
+      "label": "股票股利連配總額(元)",
+      "name": "d_cont.cont6",
+      "sort": true
+    },
+    {
+      "label": "股票股利連配均額(元)",
+      "name": "d_cont.cont7",
+      "sort": true
+    },
+    {
+      "label": "配股均額除以股價(%)",
+      "name": "d_cont.cont8",
+      "sort": true
+    },
+    {
+      "label": "合計股利連配次數",
+      "name": "d_cont.cont9",
+      "sort": true
+    },
+    {
+      "label": "合計股利連配總額(元)",
+      "name": "d_cont.cont10",
+      "sort": true
+    },
+    {
+      "label": "合計股利連配均額(元)",
+      "name": "d_cont.cont11",
+      "sort": true
+    },
+    {
+      "label": "股利均額除以股價(%)",
+      "name": "d_cont.cont12",
+      "sort": true
+    }
+  ]

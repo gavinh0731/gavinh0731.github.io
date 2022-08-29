@@ -1,0 +1,102 @@
+[
+  {
+    "label": "代號",
+    "name": "b_info.code",
+    "filter": {
+      "type": "select",
+      "mode": "multi",
+      "closeDropdownOnSelection": false,
+      "placeholder": "輸入",
+      "options": [],
+      "init": {
+        "value": []
+      }
+    },
+    "sort": true
+  },
+  {
+    "label": "名稱",
+    "name": "b_info.name",
+    "sort": true
+  },
+  {
+    "label": "股價日期",
+    "name": "b_info.date",
+    "sort": true
+  },
+  {
+    "label": "成交",
+    "name": "b_info.price",
+    "sort": true
+  },
+  {
+    "label": "漲跌價",
+    "name": "b_info.change",
+    "sort": true
+  },
+  {
+    "label": "漲跌幅",
+    "name": "b_info.pct",
+    "sort": true
+  },
+  {
+    "label": "RSV(日)",
+    "name": "t_kd.rsvd",
+    "sort": true
+  },
+  {
+    "label": "K值(日)",
+    "name": "t_kd.kd",
+    "sort": true
+  },
+  {
+    "label": "D值(日)",
+    "name": "t_kd.dd",
+    "sort": true
+  },
+  {
+    "label": "J值(日)",
+    "name": "t_kd.jd",
+    "sort": true
+  },
+  {
+    "label": "RSV(週)",
+    "name": "t_kd.rsvw",
+    "sort": true
+  },
+  {
+    "label": "K值(週)",
+    "name": "t_kd.kw",
+    "sort": true
+  },
+  {
+    "label": "D值(週)",
+    "name": "t_kd.dw",
+    "sort": true
+  },
+  {
+    "label": "J值(週)",
+    "name": "t_kd.jw",
+    "sort": true
+  },
+  {
+    "label": "RSV(月)",
+    "name": "t_kd.rsvm",
+    "sort": true
+  },
+  {
+    "label": "K值(月)",
+    "name": "t_kd.km",
+    "sort": true
+  },
+  {
+    "label": "D值(月)",
+    "name": "t_kd.dm",
+    "sort": true
+  },
+  {
+    "label": "J值(月)",
+    "name": "t_kd.jm",
+    "sort": true
+  }
+]

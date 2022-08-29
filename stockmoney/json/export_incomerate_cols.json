@@ -1,0 +1,52 @@
+[
+    {
+      "label": "代號",
+      "name": "b_info.code",
+      "filter": {
+        "type": "select",
+        "mode": "multi",
+        "closeDropdownOnSelection": false,
+        "placeholder": "輸入",
+        "options": [],
+        "init": {
+          "value": []
+        }
+      },
+      "sort": true
+    },
+    {
+      "label": "名稱",
+      "name": "b_info.name",
+      "sort": true
+    },
+    {"label":"產業別","name":"b_info.verticals","sort": true},
+    {"label": "12年總評分", "name": "e_icr.ytotalCount", "sort": true},
+    {"label": "12年EPS連漲", "name": "e_icr.yepsCount", "sort": true},
+    {"label": "12年ROE連漲", "name": "e_icr.yroeCount", "sort": true},
+    {"label": "近期總評分", "name": "e_icr.totalCount", "sort": true},
+    {"label": "近期EPS", "name": "e_icr.epsCount", "sort": true},
+    {"label": "近期ROE", "name": "e_icr.roeCount", "sort": true},
+    {
+      "label": "成交",
+      "name": "b_info.price",
+      "sort": true
+    },
+    {
+      "label": "漲跌價",
+      "name": "b_info.change",
+      "sort": true
+    },
+    {
+      "label": "漲跌幅",
+      "name": "b_info.pct",
+      "sort": true
+    },
+    {"label":"成交張數","name":"p_dpct.volume","sort":true},
+    {"label":"成交金額(萬)","name":"m_basic.amount","sort":true},
+    {"label": "12年EPS斜率", "name": "e_icr.epss12", "sort": true},
+    {"label": "3年EPS斜率", "name": "e_icr.epss3", "sort": true},
+    {"label": "1年EPS斜率", "name": "e_icr.epss1", "sort": true},
+    {"label": "12年ROE斜率", "name": "e_icr.roes12", "sort": true},
+    {"label": "3年ROE斜率", "name": "e_icr.roes3", "sort": true},
+    {"label": "1年ROE斜率", "name": "e_icr.roes1", "sort": true}
+  ]

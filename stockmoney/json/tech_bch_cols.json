@@ -1,0 +1,206 @@
+[
+    {
+      "label": "代號",
+      "name": "b_info.code",
+      "filter": {
+        "type": "select",
+        "mode": "multi",
+        "closeDropdownOnSelection": false,
+        "placeholder": "輸入",
+        "options": [],
+        "init": {
+          "value": []
+        }
+      },
+      "sort": true
+    },
+    {
+      "label": "名稱",
+      "name": "b_info.name",
+      "sort": true
+    },
+    {
+      "label": "股價日期",
+      "name": "b_info.date",
+      "sort": true
+    },
+    {
+      "label": "成交",
+      "name": "b_info.price",
+      "sort": true
+    },
+    {
+      "label": "漲跌價",
+      "name": "b_info.change",
+      "sort": true
+    },
+    {
+      "label": "漲跌幅",
+      "name": "b_info.pct",
+      "sort": true
+    },
+    {
+      "label": "成交張數",
+      "name": "p_dpct.volume",
+      "sort": true
+    },
+    {
+      "label": "布林上軌",
+      "name": "t_bch.up",
+      "sort": true
+    },
+    {
+      "label": "上",
+      "name": "t_bch.up2",
+      "filter": {
+        "type": "select",
+        "mode": "multi",
+        "closeDropdownOnSelection": false,
+        "placeholder": "輸入",
+        "options": [
+          {"name": "↗","value": "↗"},
+          {"name": "→","value": "→"},
+          {"name": "↘","value": "↘"}
+        ],
+        "init": {
+          "value": []
+        }
+      },
+      "sort": true
+    },
+    {
+      "label": "布林上軌乖離率",
+      "name": "t_bch.up_b",
+      "sort": true
+    },
+    {
+      "label": "布林中軌",
+      "name": "t_bch.center",
+      "sort": true
+    },
+    {
+      "label": "中",
+      "name": "t_bch.center2",
+      "filter": {
+        "type": "select",
+        "mode": "multi",
+        "closeDropdownOnSelection": false,
+        "placeholder": "輸入",
+        "options": [
+          {"name": "↗","value": "↗"},
+          {"name": "→","value": "→"},
+          {"name": "↘","value": "↘"}
+        ],
+        "init": {
+          "value": []
+        }
+      },
+      "sort": true
+    },
+    {
+      "label": "布林中軌乖離率",
+      "name": "t_bch.center_b",
+      "sort": true
+    },
+    {
+      "label": "布林下軌",
+      "name": "t_bch.down",
+      "sort": true
+    },
+    {
+      "label": "下",
+      "name": "t_bch.down2",
+      "filter": {
+        "type": "select",
+        "mode": "multi",
+        "closeDropdownOnSelection": false,
+        "placeholder": "輸入",
+        "options": [
+          {"name": "↗","value": "↗"},
+          {"name": "→","value": "→"},
+          {"name": "↘","value": "↘"}
+        ],
+        "init": {
+          "value": []
+        }
+      },
+      "sort": true
+    },
+    {
+      "label": "布林下軌乖離率",
+      "name": "t_bch.down_b",
+      "sort": true
+    },
+    {
+      "label": "布林通道開口",
+      "name": "t_bch.mouth",
+      "sort": true
+    },
+    {
+      "label": "開口",
+      "name": "t_bch.mouth2",
+      "filter": {
+        "type": "select",
+        "mode": "multi",
+        "closeDropdownOnSelection": false,
+        "placeholder": "輸入",
+        "options": [
+          {"name": "↗","value": "↗"},
+          {"name": "→","value": "→"},
+          {"name": "↘","value": "↘"}
+        ],
+        "init": {
+          "value": []
+        }
+      },
+      "sort": true
+    },
+    {
+      "label": "布林%b",
+      "name": "t_bch.bchb",
+      "sort": true
+    },
+    {
+      "label": "%b",
+      "name": "t_bch.bchb2",
+      "filter": {
+        "type": "select",
+        "mode": "multi",
+        "closeDropdownOnSelection": false,
+        "placeholder": "輸入",
+        "options": [
+          {"name": "↗","value": "↗"},
+          {"name": "→","value": "→"},
+          {"name": "↘","value": "↘"}
+        ],
+        "init": {
+          "value": []
+        }
+      },
+      "sort": true
+    },
+    {
+      "label": "布林帶寬",
+      "name": "t_bch.band",
+      "sort": true
+    },
+    {
+      "label": "帶寬",
+      "name": "t_bch.band2",
+      "filter": {
+        "type": "select",
+        "mode": "multi",
+        "closeDropdownOnSelection": false,
+        "placeholder": "輸入",
+        "options": [
+          {"name": "↗","value": "↗"},
+          {"name": "→","value": "→"},
+          {"name": "↘","value": "↘"}
+        ],
+        "init": {
+          "value": []
+        }
+      },
+      "sort": true
+    }
+  ]

@@ -1,0 +1,72 @@
+[
+    {
+      "sort": true,
+      "filter": {
+        "init": {
+          "value": []
+        },
+        "options": [],
+        "type": "select",
+        "placeholder": "輸入",
+        "mode": "multi",
+        "closeDropdownOnSelection": false
+      },
+      "label": "代號",
+      "name": "b_info.code"
+    },
+    {"sort": true, "label": "名稱", "name": "b_info.name"},
+    {"label":"產業別","name":"b_info.verticals","sort": true},
+    {
+      "sort": true,
+      "label": "-5年EPS(元)",
+      "name": "m_eps.yeps8"
+    },
+    {
+      "sort": true,
+      "label": "-4年EPS(元)",
+      "name": "m_eps.yeps9"
+    },
+    {
+      "sort": true,
+      "label": "-3年EPS(元)",
+      "name": "m_eps.yeps10"
+    },
+    {
+      "sort": true,
+      "label": "-2年EPS(元)",
+      "name": "m_eps.yeps11"
+    },
+    {
+      "sort": true,
+      "label": "去年EPS(元)",
+      "name": "m_eps.yeps12"
+    },
+    {"label": "今年EPS(元)", "name": "m_eps.yeps13", "sort": true},
+    {
+      "sort": true,
+      "label": "-5年ROE(%)",
+      "name": "m_eps.yroe8"
+    },
+    {
+      "sort": true,
+      "label": "-4年ROE(%)",
+      "name": "m_eps.yroe9"
+    },
+    {
+      "sort": true,
+      "label": "-3年ROE(%)",
+      "name": "m_eps.yroe10"
+    },
+    {
+      "sort": true,
+      "label": "-2年ROE(%)",
+      "name": "m_eps.yroe11"
+    },
+    {
+      "sort": true,
+      "label": "去年ROE(%)",
+      "name": "m_eps.yroe12"
+    },
+    {"sort": true, "name": "m_eps.yroe13", "label": "今年ROE(%)"},
+    {"label":"成交","name":"b_info.price","sort":true}
+  ]

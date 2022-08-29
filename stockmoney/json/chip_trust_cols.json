@@ -1,0 +1,102 @@
+[
+    {
+      "label": "代號",
+      "name": "b_info.code",
+      "filter": {
+        "type": "select",
+        "mode": "multi",
+        "closeDropdownOnSelection": false,
+        "placeholder": "輸入",
+        "options": [],
+        "init": {
+          "value": []
+        }
+      },
+      "sort": true
+    },
+    {
+      "label": "名稱",
+      "name": "b_info.name",
+      "sort": true
+    },
+    {
+      "label": "成交",
+      "name": "b_info.price",
+      "sort": true
+    },
+    {
+      "label": "漲跌價",
+      "name": "b_info.change",
+      "sort": true
+    },
+    {
+      "label": "漲跌幅",
+      "name": "b_info.pct",
+      "sort": true
+    },
+    {
+      "label": "法人買賣日期",
+      "name": "c_trust.date",
+      "sort": true
+    },
+    {
+      "label": "當日投本比",
+      "name": "c_trust.today",
+      "sort": true
+    },
+    {
+      "label": "2日投本比",
+      "name": "c_trust.day2",
+      "sort": true
+    },
+    {
+      "label": "3日投本比",
+      "name": "c_trust.day3",
+      "sort": true
+    },
+    {
+      "label": "5日投本比",
+      "name": "c_trust.day5",
+      "sort": true
+    },
+    {
+      "label": "10日投本比",
+      "name": "c_trust.day10",
+      "sort": true
+    },
+    {
+      "label": "一個月投本比",
+      "name": "c_trust.day30",
+      "sort": true
+    },
+    {
+      "label": "三個月投本比",
+      "name": "c_trust.day90",
+      "sort": true
+    },
+    {
+      "label": "半年投本比",
+      "name": "c_trust.day180",
+      "sort": true
+    },
+    {
+      "label": "今年投本比",
+      "name": "c_trust.year",
+      "sort": true
+    },
+    {
+      "label": "一年投本比",
+      "name": "c_trust.year1",
+      "sort": true
+    },
+    {
+      "label": "三年投本比",
+      "name": "c_trust.year3",
+      "sort": true
+    },
+    {
+      "label": "十年投本比",
+      "name": "c_trust.year10",
+      "sort": true
+    }
+  ]

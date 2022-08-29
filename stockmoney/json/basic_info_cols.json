@@ -1,0 +1,313 @@
+[
+  {
+    "label": "代號",
+    "name": "b_info.code",
+    "filter": {
+      "type": "select",
+      "mode": "multi",
+      "closeDropdownOnSelection": false,
+      "placeholder": "輸入",
+      "options": [],
+      "init": {
+        "value": []
+      }
+    },
+    "sort": true
+  },
+  {
+    "label": "名稱",
+    "name": "b_info.name",
+    "sort": true
+  },
+  
+  {
+      "label": "產業別",
+      "name": "b_info.verticals",
+      "filter": {
+        "type": "select",
+        "mode": "multi",
+        "closeDropdownOnSelection": false,
+        "placeholder": "輸入",
+        "options": [
+          {
+            "name": "半導體業",
+            "value": "半導體業"
+          },
+          {
+            "name": "電子零組件業",
+            "value": "電子零組件業"
+          },
+          {
+            "name": "光電業",
+            "value": "光電業"
+          },
+          {
+            "name": "電子通路業",
+            "value": "電子通路業"
+          },
+          {
+            "name": "通信網路業",
+            "value": "通信網路業"
+          },
+          {
+            "name": "資訊服務業",
+            "value": "資訊服務業"
+          },
+          {
+            "name": "電腦及週邊設備業",
+            "value": "電腦及週邊設備業"
+          },
+          {
+            "name": "電子商務",
+            "value": "電子商務"
+          },
+          {
+            "name": "其他電子業",
+            "value": "其他電子業"
+          },
+          {
+            "name": "銀行業",
+            "value": "銀行業"
+          },
+          {
+            "name": "保險業",
+            "value": "保險業"
+          },
+          {
+            "name": "金控業",
+            "value": "金控業"
+          },
+          {
+            "name": "證券業",
+            "value": "證券業"
+          },
+          {
+            "name": "貿易百貨業",
+            "value": "貿易百貨業"
+          },
+          {
+            "name": "農業科技業",
+            "value": "農業科技業"
+          },
+          {
+            "name": "食品工業",
+            "value": "食品工業"
+          },
+          {
+            "name": "紡織纖維",
+            "value": "紡織纖維"
+          },
+          {
+            "name": "油電燃氣業",
+            "value": "油電燃氣業"
+          },
+          {
+            "name": "建材營造業",
+            "value": "建材營造業"
+          },
+          {
+            "name": "汽車工業",
+            "value": "汽車工業"
+          },
+          {
+            "name": "文化創意業",
+            "value": "文化創意業"
+          },
+          {
+            "name": "觀光事業",
+            "value": "觀光事業"
+          },
+          {
+            "name": "生技醫療業",
+            "value": "生技醫療業"
+          },
+          {
+            "name": "航運業",
+            "value": "航運業"
+          },
+          {
+            "name": "鋼鐵工業",
+            "value": "鋼鐵工業"
+          },
+          {
+            "name": "電機機械",
+            "value": "電機機械"
+          },
+          {
+            "name": "電器電纜",
+            "value": "電器電纜"
+          },
+          {
+            "name": "水泥工業",
+            "value": "水泥工業"
+          },
+          {
+            "name": "塑膠工業",
+            "value": "塑膠工業"
+          },
+          {
+            "name": "橡膠工業",
+            "value": "橡膠工業"
+          },
+          {
+            "name": "化學工業",
+            "value": "化學工業"
+          },
+          {
+            "name": "造紙工業",
+            "value": "造紙工業"
+          },
+          {
+            "name": "玻璃陶瓷",
+            "value": "玻璃陶瓷"
+          },
+          {
+            "name": "其他業",
+            "value": "其他業"
+          },
+          {
+            "name": "N/A",
+            "value": "N/A"
+          }
+        ],
+        "init": {
+          "value": []
+        }
+      },
+      "sort": true
+    },
+    {
+      "label": "一個月走勢圖",
+      "name": "b_info.m1pic",
+      "sort": true
+    },
+    {
+      "label": "三個月走勢圖",
+      "name": "b_info.m3pic",
+      "sort": true
+    },
+    {
+      "label": "一年走勢圖",
+      "name": "b_info.y1pic",
+      "sort": true
+    },
+    {
+      "label": "三年走勢圖",
+      "name": "b_info.y3pic",
+      "sort": true
+    },
+    {
+      "label": "市場",
+      "name": "b_info.market",
+      "filter": {
+        "type": "select",
+        "mode": "multi",
+        "closeDropdownOnSelection": false,
+        "placeholder": "輸入",
+        "options": [
+          {
+            "name": "市",
+            "value": "市"
+          },
+          {
+            "name": "櫃",
+            "value": "櫃"
+          }
+        ],
+        "init": {
+        "value": []
+        }
+      },
+      "sort": true
+    },
+  {
+    "label": "股價日期",
+    "name": "b_info.date",
+    "sort": true
+  },
+  {
+    "label": "成交",
+    "name": "b_info.price",
+    "sort": true
+  },
+  {
+    "label": "漲跌價",
+    "name": "b_info.change",
+    "sort": true
+  },
+  {
+    "label": "漲跌幅",
+    "name": "b_info.pct",
+    "sort": true
+  },
+  {
+    "label": "面值(元)",
+    "name": "b_info.face",
+    "sort": true
+  },
+  {
+    "label": "股本(億)",
+    "name": "b_info.capital",
+    "sort": true
+  },
+  {
+    "label": "發行量(萬張)",
+    "name": "b_info.count",
+    "sort": true
+  },
+  {
+    "label": "市值(億)",
+    "name": "b_info.market_cap",
+    "sort": true
+  },
+  {
+    "label": "成立年數",
+    "name": "b_info.up_year",
+    "sort": true
+  },
+  {
+    "label": "上市年數",
+    "name": "b_info.market_year",
+    "sort": true
+  },
+  {
+    "label": "股票期貨",
+    "name": "b_info.futures",
+    "sort": true
+  },
+  {
+    "label": "選擇權",
+    "name": "b_info.options",
+    "sort": true
+  },
+  {
+    "label": "權證",
+    "name": "b_info.Warrant",
+    "sort": true
+  },
+  {
+    "label": "公司債",
+    "name": "b_info.debt",
+    "sort": true
+  },
+  {
+    "label": "私募股",
+    "name": "b_info.private",
+    "sort": true
+  },
+  {
+    "label": "特別股",
+    "name": "b_info.special",
+    "sort": true
+  },
+  {
+    "label": "董事長",
+    "name": "b_info.chairman",
+    "sort": true
+  },
+  {
+    "label": "總經理",
+    "name": "b_info.manager",
+    "sort": true
+  }
+]

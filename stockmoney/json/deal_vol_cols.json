@@ -1,0 +1,87 @@
+[
+    {
+      "label": "代號",
+      "name": "b_info.code",
+      "filter": {
+        "type": "select",
+        "mode": "multi",
+        "closeDropdownOnSelection": false,
+        "placeholder": "輸入",
+        "options": [],
+        "init": {
+          "value": []
+        }
+      },
+      "sort": true
+    },
+    {
+      "label": "名稱",
+      "name": "b_info.name",
+      "sort": true
+    },
+    {
+      "label": "-11成交量(張)",
+      "name": "d_vol.vol1",
+      "sort": true
+    },
+    {
+      "label": "-10成交量(張)",
+      "name": "d_vol.vol2",
+      "sort": true
+    },
+    {
+      "label": "-9成交量(張)",
+      "name": "d_vol.vol3",
+      "sort": true
+    },
+    {
+      "label": "-8成交量(張)",
+      "name": "d_vol.vol4",
+      "sort": true
+    },
+    {
+      "label": "-7成交量(張)",
+      "name": "d_vol.vol5",
+      "sort": true
+    },
+    {
+      "label": "-6成交量(張)",
+      "name": "d_vol.vol6",
+      "sort": true
+    },
+    {
+      "label": "-5成交量(張)",
+      "name": "d_vol.vol7",
+      "sort": true
+    },
+    {
+      "label": "-4成交量(張)",
+      "name": "d_vol.vol8",
+      "sort": true
+    },
+    {
+      "label": "-3成交量(張)",
+      "name": "d_vol.vol9",
+      "sort": true
+    },
+    {
+      "label": "-2成交量(張)",
+      "name": "d_vol.vol10",
+      "sort": true
+    },
+    {
+      "label": "昨日成交量(張)",
+      "name": "d_vol.vol11",
+      "sort": true
+    },
+    {
+      "label": "今日成交量(張)",
+      "name": "d_vol.vol12",
+      "sort": true
+    },
+    {
+      "label": "今日收盤價",
+      "name": "b_info.price",
+      "sort": true
+    }
+  ]

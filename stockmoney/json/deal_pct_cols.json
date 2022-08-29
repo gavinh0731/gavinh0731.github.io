@@ -1,0 +1,87 @@
+[
+    {
+      "label": "代號",
+      "name": "b_info.code",
+      "filter": {
+        "type": "select",
+        "mode": "multi",
+        "closeDropdownOnSelection": false,
+        "placeholder": "輸入",
+        "options": [],
+        "init": {
+          "value": []
+        }
+      },
+      "sort": true
+    },
+    {
+      "label": "名稱",
+      "name": "b_info.name",
+      "sort": true
+    },
+    {
+      "label": "-11漲跌幅",
+      "name": "d_pct.pct1",
+      "sort": true
+    },
+    {
+      "label": "-10漲跌幅",
+      "name": "d_pct.pct2",
+      "sort": true
+    },
+    {
+      "label": "-9漲跌幅",
+      "name": "d_pct.pct3",
+      "sort": true
+    },
+    {
+      "label": "-8漲跌幅",
+      "name": "d_pct.pct4",
+      "sort": true
+    },
+    {
+      "label": "-7漲跌幅",
+      "name": "d_pct.pct5",
+      "sort": true
+    },
+    {
+      "label": "-6漲跌幅",
+      "name": "d_pct.pct6",
+      "sort": true
+    },
+    {
+      "label": "-5漲跌幅",
+      "name": "d_pct.pct7",
+      "sort": true
+    },
+    {
+      "label": "-4漲跌幅",
+      "name": "d_pct.pct8",
+      "sort": true
+    },
+    {
+      "label": "-3漲跌幅",
+      "name": "d_pct.pct9",
+      "sort": true
+    },
+    {
+      "label": "-2漲跌幅",
+      "name": "d_pct.pct10",
+      "sort": true
+    },
+    {
+      "label": "-1漲跌幅",
+      "name": "d_pct.pct11",
+      "sort": true
+    },
+    {
+      "label": "今日漲跌幅",
+      "name": "d_pct.pct12",
+      "sort": true
+    },
+    {
+      "label": "今日收盤價",
+      "name": "b_info.price",
+      "sort": true
+    }
+  ]

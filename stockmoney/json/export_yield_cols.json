@@ -1,0 +1,53 @@
+[
+    {
+      "label": "代號",
+      "name": "b_info.code",
+      "filter": {
+        "type": "select",
+        "mode": "multi",
+        "closeDropdownOnSelection": false,
+        "placeholder": "輸入",
+        "options": [],
+        "init": {
+          "value": []
+        }
+      },
+      "sort": true
+    },
+    {
+      "label": "名稱",
+      "name": "b_info.name",
+      "sort": true
+    },
+    {
+      "label": "成交",
+      "name": "b_info.price",
+      "sort": true
+    },
+    {
+      "label": "漲跌價",
+      "name": "b_info.change",
+      "sort": true
+    },
+    {
+      "label": "漲跌幅",
+      "name": "b_info.pct",
+      "sort": true
+    },
+    {"label": "除息交易日", "name": "e_yield.stat2", "sort": true},
+    {"label": "統計次數", "name": "e_yield.cashC", "sort": true},
+    {"label": "現金發放次數", "name": "e_yield.cashF", "sort": true},
+    {"label": "平均殖利率", "name": "e_yield.cashG", "sort": true},
+    {"label": "填息成功次數", "name": "e_yield.cashT", "sort": true},
+    {"label": "填息平均天數", "name": "e_yield.cashD", "sort": true},
+    {"label": "-1年殖利率", "name": "e_yield.cash_g1", "sort": true},
+    {"label": "-2年殖利率", "name": "e_yield.cash_g2", "sort": true},
+    {"label": "-3年殖利率", "name": "e_yield.cash_g3", "sort": true},
+    {"label": "-4年殖利率", "name": "e_yield.cash_g4", "sort": true},
+    {"label": "-5年殖利率", "name": "e_yield.cash_g5", "sort": true},
+    {"label": "-1年填息天數", "name": "e_yield.cash_d1", "sort": true},
+    {"label": "-2年填息天數", "name": "e_yield.cash_d2", "sort": true},
+    {"label": "-3年填息天數", "name": "e_yield.cash_d3", "sort": true},
+    {"label": "-4年填息天數", "name": "e_yield.cash_d4", "sort": true},
+    {"label": "-5年填息天數", "name": "e_yield.cash_d5", "sort": true}
+  ]

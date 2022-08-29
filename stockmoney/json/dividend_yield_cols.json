@@ -1,0 +1,107 @@
+[
+    {
+      "label": "代號",
+      "name": "b_info.code",
+      "filter": {
+        "type": "select",
+        "mode": "multi",
+        "closeDropdownOnSelection": false,
+        "placeholder": "輸入",
+        "options": [],
+        "init": {
+          "value": []
+        }
+      },
+      "sort": true
+    },
+    {
+      "label": "名稱",
+      "name": "b_info.name",
+      "sort": true
+    },
+    {
+      "label": "股價日期",
+      "name": "b_info.date",
+      "sort": true
+    },
+    {
+      "label": "成交",
+      "name": "b_info.price",
+      "sort": true
+    },
+    {
+      "label": "漲跌價",
+      "name": "b_info.change",
+      "sort": true
+    },
+    {
+      "label": "漲跌幅",
+      "name": "b_info.pct",
+      "sort": true
+    },
+    {
+      "label": "股利發放年度",
+      "name": "d_yield.year",
+      "sort": true
+    },
+    {
+      "label": "最後成交價",
+      "name": "d_yield.price",
+      "sort": true
+    },
+    {
+      "label": "所屬EPS",
+      "name": "d_yield.eps",
+      "sort": true
+    },
+    {
+      "label": "現金股利",
+      "name": "d_yield.cash",
+      "sort": true
+    },
+    {
+      "label": "股票股利",
+      "name": "d_yield.stock",
+      "sort": true
+    },
+    {
+      "label": "合計股利",
+      "name": "d_yield.total",
+      "sort": true
+    },
+    {
+      "label": "現金殖利率",
+      "name": "d_yield.cash_y",
+      "sort": true
+    },
+    {
+      "label": "股票殖利率",
+      "name": "d_yield.stock_y",
+      "sort": true
+    },
+    {
+      "label": "合計殖利率",
+      "name": "d_yield.total_y",
+      "sort": true
+    },
+    {
+      "label": "盈餘配息率",
+      "name": "d_yield.cash_r",
+      "sort": true
+    },
+    {
+      "label": "盈餘配股率",
+      "name": "d_yield.stock_r",
+      "sort": true
+    },
+    {
+      "label": "盈餘總分配率",
+      "name": "d_yield.total_r",
+      "sort": true
+    },
+    {
+      "label": "現金股利發放日",
+      "name": "d_yield.cash_date",
+      "sort": true
+    }
+  ]
