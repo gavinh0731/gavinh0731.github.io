@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"gavinh0731.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="優化URLHexo 默認文章鏈接生成規則是按照年、月、日、標題來生成的。  一旦文章標題或者發佈時間被修改，URL 就會發生變化，之前文章地址也會變成 404，而且 URL 層級很深，不利於分享和搜索引擎收錄。 如果文章標題中有中文，URL 被轉碼後會很長，中文強制被轉碼成十六進制編碼，又臭又長。  接下來介紹一個插件 hexo-abbrlink，該插件會為每篇生成一個唯一字符串，並不受文章標題和">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[教學]-NexT使用-SEO優化">
+<meta property="og:url" content="https://gavinh0731.github.io/posts/3723397533/index.html">
+<meta property="og:site_name" content="財穀資訊網">
+<meta property="og:description" content="優化URLHexo 默認文章鏈接生成規則是按照年、月、日、標題來生成的。  一旦文章標題或者發佈時間被修改，URL 就會發生變化，之前文章地址也會變成 404，而且 URL 層級很深，不利於分享和搜索引擎收錄。 如果文章標題中有中文，URL 被轉碼後會很長，中文強制被轉碼成十六進制編碼，又臭又長。  接下來介紹一個插件 hexo-abbrlink，該插件會為每篇生成一個唯一字符串，並不受文章標題和">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2020-05-31T22:06:06.000Z">
+<meta property="article:modified_time" content="2022-05-18T17:13:04.935Z">
+<meta property="article:author" content="Gavin">
+<meta property="article:tag" content="教學">
+<meta property="article:tag" content="NexT">
+<meta property="article:tag" content="SEO">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://gavinh0731.github.io/posts/3723397533/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-TW'
+  };
+</script>
+
+  <title>[教學]-NexT使用-SEO優化 | 財穀資訊網</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="財穀資訊網" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">財穀資訊網</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">gavinh0731的理財資訊網</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://gavinh0731.github.io/posts/3723397533/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Gavin">
+      <meta itemprop="description" content="然不能取者,<br>城高池深,兵器備具,<br>財穀多積,豪士一謀者也。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="財穀資訊網">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          [教學]-NexT使用-SEO優化
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-06-01 06:06:06" itemprop="dateCreated datePublished" datetime="2020-06-01T06:06:06+08:00">2020-06-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2022-05-19 01:13:04" itemprop="dateModified" datetime="2022-05-19T01:13:04+08:00">2022-05-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/teach/" itemprop="url" rel="index"><span itemprop="name">教學</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/teach/next/" itemprop="url" rel="index"><span itemprop="name">NexT</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/teach/next/seo/" itemprop="url" rel="index"><span itemprop="name">SEO</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">文章字數：</span>
+              <span>3.2k</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+              <span>6 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="優化URL"><a href="#優化URL" class="headerlink" title="優化URL"></a>優化URL</h1><p>Hexo 默認文章鏈接生成規則是按照年、月、日、標題來生成的。</p>
+<ul>
+<li>一旦<code>文章標題</code>或者<code>發佈時間</code>被修改，URL 就會發生變化，之前文章地址也會變成 404，而且</li>
+<li>URL 層級很深，不利於分享和搜索引擎收錄。</li>
+<li>如果文章標題中有中文，URL 被轉碼後會很長，中文強制被轉碼成十六進制編碼，又臭又長。</li>
+</ul>
+<p>接下來介紹一個插件 <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/rozbo/hexo-abbrlink">hexo-abbrlink</a>，該插件會為每篇生成一個唯一字符串，並不受文章標題和發佈時間的影響。</p>
+<p>優化步驟如下：</p>
+<h2 id="安裝hexo-abbrlink插件"><a href="#安裝hexo-abbrlink插件" class="headerlink" title="安裝hexo-abbrlink插件"></a>安裝hexo-abbrlink插件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>安裝完畢後，將<code>根目錄配置文件</code> 中 <code>_config.yml</code> 的 <code>permalink</code> 改成：</p>
+<blockquote>
+<p>hexo&#x2F;_config.yml<br>  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">permalink:</span> <span class="string">posts/:abbrlink/</span></span><br></pre></td></tr></table></figure><br>  然後在最末端加入一段 abbrlink 設置<br>hexo&#x2F;_config.yml<br>  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># abbrlink config</span></span><br><span class="line"><span class="attr">abbrlink:</span></span><br><span class="line">  <span class="attr">alg:</span> <span class="string">crc32</span>  <span class="comment"># 演算法：crc16(default) and crc32 </span></span><br><span class="line">  <span class="attr">rep:</span> <span class="string">dec</span>    <span class="comment"># 進位制：dec(default) and hex</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h1 id="優化分類-Category"><a href="#優化分類-Category" class="headerlink" title="優化分類(Category)"></a>優化分類(Category)</h1><p>接下來要修正 Category 的名稱(中文轉換成英文)，<br>將<code>根目錄配置文件</code> 中 <code>_config.yml</code> 的 <code>category_map</code> 改成：</p>
+<blockquote>
+<p>hexo&#x2F;_config.yml<br>  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">category_map:</span></span><br><span class="line">  <span class="string">教學:</span> <span class="string">teach</span></span><br><span class="line">  <span class="attr">Hexo:</span> <span class="string">hexo</span></span><br><span class="line">  <span class="attr">NexT:</span> <span class="string">next</span></span><br><span class="line">  <span class="attr">SEO:</span> <span class="string">seo</span></span><br><span class="line">  <span class="string">帖子:</span> <span class="string">posts</span></span><br></pre></td></tr></table></figure><br>  註：中、英文皆不要有空格</p>
+</blockquote>
+<p>執行完 <code>hexo s</code> 之後會在每個貼文前端加上　<code>abbrlink: xxxxxxxxxx</code><br>  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">&#x27;[教學]-NexT使用-SEO優化&#x27;</span></span><br><span class="line"><span class="attr">comments:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">categories:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="bullet">-</span> <span class="string">教學</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">NexT</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">SEO</span></span><br><span class="line"><span class="attr">tags:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">教學</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">NexT</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">SEO</span></span><br><span class="line"><span class="attr">abbrlink:</span> <span class="number">3723397533</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2020-06-21 11:40:25</span></span><br><span class="line"><span class="attr">layout:</span></span><br><span class="line"><span class="attr">permalink:</span></span><br></pre></td></tr></table></figure></p>
+<p>隨機產生的永久連結如下：<br>&#x2F;posts&#x2F;3723397533&#x2F;</p>
+<h1 id="優化標籤"><a href="#優化標籤" class="headerlink" title="優化標籤"></a>優化標籤</h1><p>類似上方的優化分類(Category)</p>
+<h1 id="SEO設置"><a href="#SEO設置" class="headerlink" title="SEO設置"></a>SEO設置</h1><p>下一步提供了有用的選項，可以改善搜索引擎優化（SEO）。</p>
+<p>默認情況下，在<code>站點配置文件</code>中設置URL：<code>http：//yoursite.com</code> 後，會在Hexo中創建一個規範的鏈接標記。<br>可以在<a target="_blank" rel="external nofollow noopener noreferrer" href="https://support.google.com/webmasters/answer/139066">整合重複的網址</a>中找到更多詳細信息。</p>
+<h2 id="禁用百度轉換"><a href="#禁用百度轉換" class="headerlink" title="禁用百度轉換"></a>禁用百度轉換</h2><p>默認情況下，中國的搜索引擎百度將緩存並重寫您的網站，以為移動用戶提供網頁快照。<br>您可以通過在<code>主題配置文件</code>中將值disable_baidu_transformation設置為true來禁用此功能。</p>
+<blockquote>
+<p>next&#x2F;_config.yml<br>  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在移動設備上禁用百度轉換</span></span><br><span class="line"><span class="string">disable_baidu_transformation：true</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="將站點字幕添加到索引頁面"><a href="#將站點字幕添加到索引頁面" class="headerlink" title="將站點字幕添加到索引頁面"></a>將站點字幕添加到索引頁面</h2><p>  首頁標題展示樣式如<code>標題</code> - <code>副標題</code><br>  將<code>index_with_subtitle</code>部分中的enable值設置為<code>true</code>，以將<code>主題配置文件</code>中的字幕信息添加到索引頁面。</p>
+<blockquote>
+<p>next&#x2F;_config.yml<br>  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 是否將站點字幕添加到索引頁面</span></span><br><span class="line"><span class="attr">index_with_subtitle:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="開啟-Exturl"><a href="#開啟-Exturl" class="headerlink" title="開啟 Exturl"></a>開啟 Exturl</h2><p>此配置可以更好地優化 SEO，<a target="_blank" rel="external nofollow noopener noreferrer" href="https://theme-next.js.org/docs/theme-settings/seo.html#ExtURL">官方文件</a></p>
+<blockquote>
+<p>next&#x2F;_config.yml<br>  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用Base64加密和解密自動添加外部URL</span></span><br><span class="line"><span class="attr">exturl:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h1 id="網站地圖-sitemap"><a href="#網站地圖-sitemap" class="headerlink" title="網站地圖(sitemap)"></a>網站地圖(sitemap)</h1><h2 id="安裝-Google-和百度網站地圖生成插件："><a href="#安裝-Google-和百度網站地圖生成插件：" class="headerlink" title="安裝 Google 和百度網站地圖生成插件："></a>安裝 Google 和百度網站地圖生成插件：</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-sitemap --save</span><br><span class="line">npm install hexo-generator-baidu-sitemap --save</span><br><span class="line"><span class="comment"># 檢查安裝</span></span><br><span class="line">npm list --depth=0|grep hexo-generator-sitemap</span><br><span class="line">npm list --depth=0|grep hexo-generator-baidu-sitemap</span><br></pre></td></tr></table></figure>
+
+<h2 id="修改主題配置文件-config-yml，內容如下："><a href="#修改主題配置文件-config-yml，內容如下：" class="headerlink" title="修改主題配置文件_config.yml，內容如下："></a>修改主題配置文件_config.yml，內容如下：</h2><blockquote>
+<p>next&#x2F;_config.yml<br>  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="string">......</span></span><br><span class="line">  <span class="attr">sitemap:</span> <span class="string">/sitemap.xml</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-sitemap</span></span><br><span class="line">  <span class="attr">baidusitemap:</span> <span class="string">/baidusitemap.xml</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-cloud</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>修改 <code>themes/next/languages/zh-CN.yml</code> 文件，新增 baidusitemap: 百度網站地圖，內容如下：</p>
+<blockquote>
+<p>next&#x2F;_config.yml<br>  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="string">......</span></span><br><span class="line">  <span class="attr">sitemap:</span> <span class="string">網站地圖</span></span><br><span class="line">  <span class="attr">baidusitemap:</span> <span class="string">百度網站地圖</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>配置完成之後執行 <code>hexo g</code>，即會在站點的 <code>public</code> 目錄下生成 <code>sitemap.xml</code> 和 <code>baidusitemap.xml</code> 文件，其中 <code>sitemap.xml</code> 用來提交給 <code>Google</code>，而 <code>baidusitemap.xml</code> 用來提交給<code>百度</code>。</p>
+<h2 id="提交網站地圖"><a href="#提交網站地圖" class="headerlink" title="提交網站地圖"></a>提交網站地圖</h2><p>進入<a target="_blank" rel="external nofollow noopener noreferrer" href="https://search.google.com/search-console/about">Google Search Console</a></p>
+<h1 id="robots-txt"><a href="#robots-txt" class="headerlink" title="robots.txt"></a>robots.txt</h1><p>創建 <code>hexo/source/robots.txt</code> 文件，編輯內容如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">User-agent: *</span><br><span class="line">Allow: /</span><br><span class="line">Allow: /archives/</span><br><span class="line">Allow: /categories/</span><br><span class="line">Allow: /tags/ </span><br><span class="line">Disallow: /vendors/</span><br><span class="line">Disallow: /fonts/</span><br><span class="line">Disallow: /vendors/</span><br><span class="line">Disallow: /fancybox/</span><br><span class="line">Sitemap: https://gavinh0731.github.io/sitemap.xml</span><br><span class="line">Sitemap: https://gavinh0731.github.io/baidusitemap.xml</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Allow 代表允許</li>
+<li>Disallow 代表不允許</li>
+<li>Sitemap 就是網站地圖</li>
+</ul>
+<p><code>Allow</code> 字段的值即為允許搜索引擎爬取的內容，可以對應到主題配置文件中的 menu 配置，如果菜單欄還有其他選項都可以按照格式自行添加。</p>
+<h1 id="hexo-autonofollow"><a href="#hexo-autonofollow" class="headerlink" title="hexo-autonofollow"></a>hexo-autonofollow</h1><p>透過<code>Nofollow</code>，網站管理員可以指示搜尋引擎「不要繼續前往此連結上的網頁」或是「不要前往此超連結」。 </p>
+<p>安裝：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-autonofollow --save</span><br></pre></td></tr></table></figure>
+
+<p>設定：接下來在系統的主要 _config.yml 最後加入設定(<code>系統根目錄</code> hexo&#x2F;source，非theme)。</p>
+<blockquote>
+<p>hexo&#x2F;_config.yml</p>
+</blockquote>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">nofollow:</span></span><br><span class="line">	<span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">	<span class="attr">exclude:</span>  <span class="comment"># 不加上 nofollow 的友情連結可以放在這邊。</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">exclude1.com</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">exclude2.com</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="安裝RSS插件"><a href="#安裝RSS插件" class="headerlink" title="安裝RSS插件"></a>安裝RSS插件</h1><p>進入本地hexo目錄，輸入以下命令:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-feed</span><br></pre></td></tr></table></figure>
+<p>在<code>系統根目錄</code>的_config.yml中添加如下代碼:</p>
+<blockquote>
+<p>hexo&#x2F;_config.yml<br>  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#RSS訂閱</span></span><br><span class="line"><span class="attr">feed:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">atom</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">atom.xml</span></span><br><span class="line">  <span class="attr">limit:</span> <span class="number">20</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>在<code>主題配置文件</code>裡面，在 <code>social:</code> 下添加以上代码：</p>
+<blockquote>
+<p>next&#x2F;_config.yml<br>  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">rss：</span> <span class="string">/atom.xml</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="處理RSS異常"><a href="#處理RSS異常" class="headerlink" title="處理RSS異常"></a>處理RSS異常</h2><p>最開始的時候生成 RSS 會拋出一些異常：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">error on line 455 at column 40: PCDATA invalid Char value 8</span><br></pre></td></tr></table></figure>
+
+<p>一般來說，出現這些問題是因為 Markdown 文件中存在一些特殊字符，例如 ^H、^E 等字符，解決辦法：</p>
+<ul>
+<li>在 markdown 源文件中把特殊字符刪除</li>
+</ul>
+<h2 id="在vscode中顯示空格和tab符號"><a href="#在vscode中顯示空格和tab符號" class="headerlink" title="在vscode中顯示空格和tab符號"></a>在vscode中顯示空格和tab符號</h2><p>打開setting,在搜索框中輸入renderControlCharacters,選中勾選框,即可顯示特殊符號.</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/teach/" rel="tag"># 教學</a>
+              <a href="/tags/next/" rel="tag"># NexT</a>
+              <a href="/tags/seo/" rel="tag"># SEO</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/posts/1389384140/" rel="next" title="[教學]Hexo使用-寫作說明">
+      [教學]Hexo使用-寫作說明 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%84%AA%E5%8C%96URL"><span class="nav-number">1.</span> <span class="nav-text">優化URL</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%9Dhexo-abbrlink%E6%8F%92%E4%BB%B6"><span class="nav-number">1.1.</span> <span class="nav-text">安裝hexo-abbrlink插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE"><span class="nav-number">1.2.</span> <span class="nav-text">配置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%84%AA%E5%8C%96%E5%88%86%E9%A1%9E-Category"><span class="nav-number">2.</span> <span class="nav-text">優化分類(Category)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%84%AA%E5%8C%96%E6%A8%99%E7%B1%A4"><span class="nav-number">3.</span> <span class="nav-text">優化標籤</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SEO%E8%A8%AD%E7%BD%AE"><span class="nav-number">4.</span> <span class="nav-text">SEO設置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A6%81%E7%94%A8%E7%99%BE%E5%BA%A6%E8%BD%89%E6%8F%9B"><span class="nav-number">4.1.</span> <span class="nav-text">禁用百度轉換</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%87%E7%AB%99%E9%BB%9E%E5%AD%97%E5%B9%95%E6%B7%BB%E5%8A%A0%E5%88%B0%E7%B4%A2%E5%BC%95%E9%A0%81%E9%9D%A2"><span class="nav-number">4.2.</span> <span class="nav-text">將站點字幕添加到索引頁面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%96%8B%E5%95%9F-Exturl"><span class="nav-number">4.3.</span> <span class="nav-text">開啟 Exturl</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B6%B2%E7%AB%99%E5%9C%B0%E5%9C%96-sitemap"><span class="nav-number">5.</span> <span class="nav-text">網站地圖(sitemap)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%9D-Google-%E5%92%8C%E7%99%BE%E5%BA%A6%E7%B6%B2%E7%AB%99%E5%9C%B0%E5%9C%96%E7%94%9F%E6%88%90%E6%8F%92%E4%BB%B6%EF%BC%9A"><span class="nav-number">5.1.</span> <span class="nav-text">安裝 Google 和百度網站地圖生成插件：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E4%B8%BB%E9%A1%8C%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6-config-yml%EF%BC%8C%E5%85%A7%E5%AE%B9%E5%A6%82%E4%B8%8B%EF%BC%9A"><span class="nav-number">5.2.</span> <span class="nav-text">修改主題配置文件_config.yml，內容如下：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%90%E4%BA%A4%E7%B6%B2%E7%AB%99%E5%9C%B0%E5%9C%96"><span class="nav-number">5.3.</span> <span class="nav-text">提交網站地圖</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#robots-txt"><span class="nav-number">6.</span> <span class="nav-text">robots.txt</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#hexo-autonofollow"><span class="nav-number">7.</span> <span class="nav-text">hexo-autonofollow</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%9DRSS%E6%8F%92%E4%BB%B6"><span class="nav-number">8.</span> <span class="nav-text">安裝RSS插件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%99%95%E7%90%86RSS%E7%95%B0%E5%B8%B8"><span class="nav-number">8.1.</span> <span class="nav-text">處理RSS異常</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8vscode%E4%B8%AD%E9%A1%AF%E7%A4%BA%E7%A9%BA%E6%A0%BC%E5%92%8Ctab%E7%AC%A6%E8%99%9F"><span class="nav-number">8.2.</span> <span class="nav-text">在vscode中顯示空格和tab符號</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Gavin</p>
+  <div class="site-description" itemprop="description">然不能取者,<br>城高池深,兵器備具,<br>財穀多積,豪士一謀者也。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">73</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">75</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Gavin</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="總字數">60k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">1:48</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">NexT.Muse</a> 強力驅動
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"gavinh0731.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="NexT堅持隱藏複雜的細節，並為您提供簡單但靈活的配置，因此您可以輕鬆使用它。 控制台提醒Next支持在控制台中自動檢查更新和警報。 在主題配置文件中將值reminder設置為true，如下所示：  next&#x2F;_config.yml  12# Console reminder if new version released.reminder: false  緩存支持(Cache Supp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[教學]-NexT使用-主題設定">
+<meta property="og:url" content="https://gavinh0731.github.io/posts/665987006/index.html">
+<meta property="og:site_name" content="財穀資訊網">
+<meta property="og:description" content="NexT堅持隱藏複雜的細節，並為您提供簡單但靈活的配置，因此您可以輕鬆使用它。 控制台提醒Next支持在控制台中自動檢查更新和警報。 在主題配置文件中將值reminder設置為true，如下所示：  next&#x2F;_config.yml  12# Console reminder if new version released.reminder: false  緩存支持(Cache Supp">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://gavinh0731.github.io/posts/665987006/reading_progress.png">
+<meta property="og:image" content="https://gavinh0731.github.io/posts/665987006/back2top.png">
+<meta property="article:published_time" content="2020-06-20T03:07:56.000Z">
+<meta property="article:modified_time" content="2022-05-18T17:13:04.935Z">
+<meta property="article:author" content="Gavin">
+<meta property="article:tag" content="教學">
+<meta property="article:tag" content="NexT">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gavinh0731.github.io/posts/665987006/reading_progress.png">
+
+<link rel="canonical" href="https://gavinh0731.github.io/posts/665987006/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-TW'
+  };
+</script>
+
+  <title>[教學]-NexT使用-主題設定 | 財穀資訊網</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="財穀資訊網" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">財穀資訊網</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">gavinh0731的理財資訊網</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://gavinh0731.github.io/posts/665987006/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Gavin">
+      <meta itemprop="description" content="然不能取者,<br>城高池深,兵器備具,<br>財穀多積,豪士一謀者也。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="財穀資訊網">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          [教學]-NexT使用-主題設定
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-06-20 11:07:56" itemprop="dateCreated datePublished" datetime="2020-06-20T11:07:56+08:00">2020-06-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2022-05-19 01:13:04" itemprop="dateModified" datetime="2022-05-19T01:13:04+08:00">2022-05-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/teach/" itemprop="url" rel="index"><span itemprop="name">教學</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/teach/next/" itemprop="url" rel="index"><span itemprop="name">NexT</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">文章字數：</span>
+              <span>6k</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+              <span>11 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>NexT堅持隱藏複雜的細節，並為您提供簡單但靈活的配置，因此您可以輕鬆使用它。</p>
+<h1 id="控制台提醒"><a href="#控制台提醒" class="headerlink" title="控制台提醒"></a>控制台提醒</h1><p>Next支持在控制台中自動檢查更新和警報。 在<code>主題配置文件</code>中將值<code>reminder</code>設置為<code>true</code>，如下所示：</p>
+<blockquote>
+<p>next&#x2F;_config.yml<br>  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Console reminder if new version released.</span></span><br><span class="line"><span class="attr">reminder:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h1 id="緩存支持-Cache-Support"><a href="#緩存支持-Cache-Support" class="headerlink" title="緩存支持(Cache Support)"></a>緩存支持(Cache Support)</h1><p>NexT v6+ 允許緩存內容生成。<br>在<code>主題配置文件</code>的<code>cache</code>部分中，將值<code>enable</code>設置為<code>true</code>，如下所示：</p>
+<blockquote>
+<p>next&#x2F;_config.yml<br>  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Allow to cache content generation. Introduced in NexT v6.0.0.</span></span><br><span class="line"><span class="attr">cache:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<span id="more"></span>
+
+<h1 id="減少支持-Minify-Support"><a href="#減少支持-Minify-Support" class="headerlink" title="減少支持(Minify Support)"></a>減少支持(Minify Support)</h1><blockquote>
+<p>目前，此功能有點簡單，我們將來會進一步改進它。</p>
+</blockquote>
+<p>NexT允許最小化Hexo生成。<br>在<code>主題配置文件</code>中將值minify設置為true，如下所示：</p>
+<blockquote>
+<p>next&#x2F;_config.yml<br>  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Remove unnecessary files after hexo generate.</span></span><br><span class="line"><span class="attr">minify:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h1 id="創作共用-Creative-Commons"><a href="#創作共用-Creative-Commons" class="headerlink" title="創作共用(Creative Commons)"></a>創作共用(Creative Commons)</h1><p>NexT支持在邊欄中和帖子中顯示<a target="_blank" rel="external nofollow noopener noreferrer" href="http://creativecommons.org/">Creative Commons 4.0國際許可</a>，包括<code>by</code>、<code>by-nc</code>，<code>by-nc-nd</code>，<code>by-nc-sa</code>，<code>by-nd</code>，<code>by-sa</code>，<code>zero</code>。 這些許可證允許創作者傳達他們保留哪些權利，以及為了接收者或其他創作者的利益而放棄哪些權利。</p>
+<p>您可以通過編輯<code>主題配置文件</code>中<code>creative_commons</code>部分中的值來配置它，例如：</p>
+<blockquote>
+<p>next&#x2F;_config.yml<br>  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">creative_commons:</span></span><br><span class="line">  <span class="attr">license:</span> <span class="string">by-nc-sa</span></span><br><span class="line">  <span class="attr">sidebar:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">post:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">language:</span> <span class="string">deed.zh</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h1 id="文字對齊-Text-Align"><a href="#文字對齊-Text-Align" class="headerlink" title="文字對齊(Text Align)"></a>文字對齊(Text Align)</h1><p>NexT允許自定義帖子&#x2F;頁面中的文本對齊方式。<br><code>text-align</code>CSS屬性設置塊元素或表格單元格框的水平對齊方式。</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th align="left">效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>start</code></td>
+<td align="left">如果方向是從左到右，則與<code>left</code>相同；如果方向是從右到左，則與<code>right</code>相同。</td>
+</tr>
+<tr>
+<td><code>end</code></td>
+<td align="left">方向從左到右與<code>right</code>相同，方向從右到左與<code>left</code>相同。</td>
+</tr>
+<tr>
+<td><code>left</code></td>
+<td align="left">內聯內容與行框的左邊緣對齊。</td>
+</tr>
+<tr>
+<td><code>right</code></td>
+<td align="left">內聯內容與行框的右邊緣對齊。</td>
+</tr>
+<tr>
+<td><code>center</code></td>
+<td align="left">內聯內容在行框中居中。</td>
+</tr>
+<tr>
+<td><code>justify</code></td>
+<td align="left">證明內聯內容是合理的。 文本應隔開一定距離，以使其左，右邊緣與行框的左，右邊緣對齊（最後一行除外）。</td>
+</tr>
+<tr>
+<td><code>justify-all</code></td>
+<td align="left">與justify相同，但也強制最後一行被對齊。</td>
+</tr>
+<tr>
+<td><code>match-parent</code></td>
+<td align="left">與<code>inherit</code>相似，但開始和結束的值是根據父級的方向計算的，並由適當的左或右值代替。</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>next&#x2F;_config.yml<br>  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Set the text alignment in the posts.</span></span><br><span class="line"><span class="attr">text_align:</span></span><br><span class="line">  <span class="comment"># Available values: start | end | left | right | center | justify | justify-all | match-parent</span></span><br><span class="line">  <span class="attr">desktop:</span> <span class="string">justify</span></span><br><span class="line">  <span class="attr">mobile:</span> <span class="string">justify</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h1 id="移動設備適應"><a href="#移動設備適應" class="headerlink" title="移動設備適應"></a>移動設備適應</h1><h2 id="mobile-layout-economy"><a href="#mobile-layout-economy" class="headerlink" title="mobile_layout_economy"></a>mobile_layout_economy</h2><p>如果要減少寬度較窄的設備上的填充&#x2F;邊距縮進，可以通過在主題配置文件中將值mobile_layout_economy設置為true來啟用它。</p>
+<blockquote>
+<p>next&#x2F;_config.yml<br>  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">mobile_layout_economy:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="android-chrome-color"><a href="#android-chrome-color" class="headerlink" title="android_chrome_color"></a>android_chrome_color</h2><p>默認情況下，NexT使用深黑（＃222）作為Android Chrome標題面板的顏色。<br>您可以通過在<code>主題配置文件</code>的<code>android_chrome_color</code>部分中以十六進制顏色編輯值來配置它。</p>
+<blockquote>
+<p>next&#x2F;_config.yml<br>  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">android_chrome_color:</span> <span class="string">&quot;#222&quot;</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h1 id="自定義徽標支持"><a href="#自定義徽標支持" class="headerlink" title="自定義徽標支持"></a>自定義徽標支持</h1><p>NexT支持網站徽標個性化。<br>您可以通過將圖像的URL添加到<code>主題配置文件</code>中的<code>custom_logo</code>來啟用它。</p>
+<blockquote>
+<p>next&#x2F;_config.yml<br>  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">custom_logo:</span> <span class="string">/uploads/custom-logo.png</span></span><br></pre></td></tr></table></figure><br>Scheme Mist不支持自定義徽標設置。</p>
+</blockquote>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.designevo.com/tw/">Logo製作網站</a></p>
+<h1 id="代碼塊樣式"><a href="#代碼塊樣式" class="headerlink" title="代碼塊樣式"></a>代碼塊樣式</h1><h2 id="主題"><a href="#主題" class="headerlink" title="主題"></a>主題</h2><p>代碼突出顯示主題<br>NexT使用<a target="_blank" rel="external nofollow noopener noreferrer" href="https://highlightjs.org/">Highlight.js</a>和<a target="_blank" rel="external nofollow noopener noreferrer" href="https://prismjs.com/">Prism</a>包來支持代碼突出顯示。<br>默認樣式是<code>tomorrow</code>，有90多種樣式可供選擇。</p>
+<p>更改<code>theme</code>的值以選擇所需的突出顯示樣式，例如：</p>
+<blockquote>
+<p>next&#x2F;_config.yml<br>  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">codeblock:</span></span><br><span class="line">  <span class="comment"># Code Highlight theme</span></span><br><span class="line">  <span class="comment"># See: https://github.com/highlightjs/highlight.js/tree/master/src/styles</span></span><br><span class="line">  <span class="attr">theme:</span></span><br><span class="line">    <span class="attr">light:</span> <span class="string">tomorrow</span></span><br><span class="line">    <span class="attr">dark:</span> <span class="string">tomorrow-night</span></span><br><span class="line">  <span class="comment"># See: https://github.com/PrismJS/prism/tree/master/themes</span></span><br><span class="line">  <span class="attr">prism:</span></span><br><span class="line">    <span class="attr">light:</span> <span class="string">prism</span></span><br><span class="line">    <span class="attr">dark:</span> <span class="string">prism-dark</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>如果啟用了暗模式，則暗代碼突出顯示主題將可用。</p>
+<h2 id="複製按鈕"><a href="#複製按鈕" class="headerlink" title="複製按鈕"></a>複製按鈕</h2><p>NexT支持代碼塊的複制和粘貼功能。</p>
+<h3 id="使能-Enable"><a href="#使能-Enable" class="headerlink" title="使能(Enable)"></a>使能(Enable)</h3><p>您可以通過在主題配置文件中將值<code>copy_button.enable</code>設置為<code>true</code>來啟用它。<br>默認情況下，NexT顯示copy-and-paste功能的複制結果。</p>
+<blockquote>
+<p>next&#x2F;_config.yml<br>  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">codeblock:</span></span><br><span class="line">  <span class="attr">copy_button:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="樣式"><a href="#樣式" class="headerlink" title="樣式"></a>樣式</h3><p>使用樣式選項，您可以更改複製按鈕的樣式。<br>當前有三種樣式：<code>default</code>（只需將其保留為空），<code>flat</code>和<code>mac</code>。</p>
+<blockquote>
+<p>next&#x2F;_config.yml<br>  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">codeblock:</span></span><br><span class="line">  <span class="attr">copy_button:</span></span><br><span class="line">    <span class="attr">style:</span> <span class="string">flat</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h1 id="閱讀進度"><a href="#閱讀進度" class="headerlink" title="閱讀進度"></a>閱讀進度</h1><p>NexT支持頁面滾動閱讀進度指示器。<br>您可以通過在<code>主題配置文件</code>中將<code>reading_progress.enable</code>設置為<code>true</code>來啟用它。</p>
+<blockquote>
+<p>next&#x2F;_config.yml<br>  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Reading progress bar</span></span><br><span class="line"><span class="attr">reading_progress:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span> <span class="comment"># 開啟進度條</span></span><br><span class="line">  <span class="comment"># Available values: top | bottom</span></span><br><span class="line">  <span class="attr">position:</span> <span class="string">bottom</span> <span class="comment"># 設置位置 可以為  top | bottom</span></span><br><span class="line">  <span class="attr">color:</span> <span class="string">&quot;#0684BD&quot;</span> <span class="comment"># 進度條顏色 16進制RGB</span></span><br><span class="line">  <span class="attr">height:</span> <span class="string">3px</span> <span class="comment"># 高度</span></span><br></pre></td></tr></table></figure><br>效果<br>  <img src="/posts/665987006/reading_progress.png" class title="reading_progress"></p>
+</blockquote>
+<h1 id="閱讀進度百分比"><a href="#閱讀進度百分比" class="headerlink" title="閱讀進度百分比"></a>閱讀進度百分比</h1><p>修改<code>主題配置文件</code>，修改<code>back2top</code>：</p>
+<blockquote>
+<p>next&#x2F;_config.yml<br>  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">back2top:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span> <span class="comment"># 開啟 back to top 按鈕</span></span><br><span class="line">  <span class="comment"># Back to top in sidebar.</span></span><br><span class="line">  <span class="attr">sidebar:</span> <span class="literal">true</span> <span class="comment"># true 表示在側邊欄顯示，false則在側下角</span></span><br><span class="line">  <span class="comment"># Scroll percent label in b2t button.</span></span><br><span class="line">  <span class="attr">scrollpercent:</span> <span class="literal">true</span> <span class="comment"># 開啟進度百分比</span></span><br></pre></td></tr></table></figure><br>效果<br>  <img src="/posts/665987006/back2top.png" class title="back2top"></p>
+</blockquote>
+<h1 id="書籤"><a href="#書籤" class="headerlink" title="書籤"></a>書籤</h1><p>書籤是一個允許用戶保存其閱讀進度的插件。 用戶只需單擊頁面左上方的書籤圖標（如🔖）即可保存滾動位置。 當他們下次訪問您的博客時，可以自動恢復每個頁面的最後滾動位置。</p>
+<p>您可以通過在主題配置文件中將<code>bookmark.enable</code>值設置為<code>true</code>來啟用它。</p>
+<blockquote>
+<p>next&#x2F;_config.yml<br>  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">bookmark:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">  <span class="comment"># Customize the color of the bookmark.</span></span><br><span class="line">  <span class="attr">color:</span> <span class="string">&quot;#222&quot;</span></span><br><span class="line">  <span class="comment"># If auto, save the reading progress when closing the page or clicking the bookmark-icon.</span></span><br><span class="line">  <span class="comment"># If manual, only save it by clicking the bookmark-icon.</span></span><br><span class="line">  <span class="attr">save:</span> <span class="string">auto</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h1 id="GitHub橫幅"><a href="#GitHub橫幅" class="headerlink" title="GitHub橫幅"></a>GitHub橫幅</h1><p>NexT在右上角的GitHub橫幅上提供Follow Me。</p>
+<blockquote>
+<p>next&#x2F;_config.yml<br>  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Follow me on GitHub banner in right-top corner.</span></span><br><span class="line"><span class="attr">github_banner:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">permalink:</span> <span class="string">https://github.com/yourname</span></span><br><span class="line">  <span class="attr">title:</span> <span class="string">Follow</span> <span class="string">me</span> <span class="string">on</span> <span class="string">GitHub</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h1 id="字體定制"><a href="#字體定制" class="headerlink" title="字體定制"></a>字體定制</h1><p>NexT為您提供5種特定的字體設置，它們是：</p>
+<ul>
+<li>全局字體(Global Font)：整個網站中使用的字體。</li>
+<li>標題字體(Title Font)：網站標題使用的字體。</li>
+<li>標題字體(Headlines Font)：文章中標題使用的字體（h1，h2，h3，h4，h5，h6）。</li>
+<li>文章字體(Article Font)：文章使用的字體。</li>
+<li>代碼字體(Code Font)：文章中代碼塊使用的字體。</li>
+</ul>
+<p>每種字體將用作此類的第一種字體，如果無法使用，則NexT將回退到內部字體設置。</p>
+<ul>
+<li>非代碼字體：回退到<code>&quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif</code></li>
+<li>代碼字體：回退到<code>consolas, Menlo, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, monospace(等寬)</code></li>
+</ul>
+<p>加上每個部分都有一個外部屬性，該屬性控制是否使用字體庫CDN。<br>使用此功能可以幫助您使用系統中安裝的字體並減少不必要的請求。</p>
+<blockquote>
+<p>為解決某些國家&#x2F;地區<a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.google.com/fonts">Google字體API</a>的不穩定問題，NexT通過設置<code>font.host</code>支持字體庫的自定義URL。<br>  此外，我們注意到，對於某些網站的請求，Google字體將返回403。<br>  這時，有必要使用<code>font.host</code>設置鏡像站點。<br>  相關問題：<a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/theme-next/hexo-theme-next/issues/613">＃613</a>，<a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/theme-next/hexo-theme-next/issues/1333">＃1333</a></p>
+</blockquote>
+<blockquote>
+<p>next&#x2F;_config.yml<br>  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">font:</span></span><br><span class="line">  <span class="comment"># Use custom fonts families or not.</span></span><br><span class="line">  <span class="comment"># Depended options: `external` and `family`.</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Uri of fonts host, e.g. https://fonts.googleapis.com (Default).</span></span><br><span class="line">  <span class="attr">host:</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Font options:</span></span><br><span class="line">  <span class="comment"># `external: true` will load this font family from `host` above.</span></span><br><span class="line">  <span class="comment"># `family: Times New Roman`. Without any quotes.</span></span><br><span class="line">  <span class="comment"># `size: x.x`. Use `em` as unit. Default: 1 (16px)</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Global font settings used for all elements inside &lt;body&gt;.</span></span><br><span class="line">  <span class="attr">global:</span></span><br><span class="line">    <span class="attr">external:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">family:</span> <span class="string">Monda</span></span><br><span class="line">    <span class="attr">size:</span> <span class="number">1.125</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Font settings for site title (.site-title).</span></span><br><span class="line">  <span class="attr">title:</span></span><br><span class="line">    <span class="attr">external:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">family:</span> <span class="string">Lobster</span> <span class="string">Two</span></span><br><span class="line">    <span class="attr">size:</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Font settings for headlines (&lt;h1&gt; to &lt;h6&gt;).</span></span><br><span class="line">  <span class="attr">headings:</span></span><br><span class="line">    <span class="attr">external:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">family:</span> <span class="string">Amita</span></span><br><span class="line">    <span class="attr">size:</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Font settings for posts (.post-body).</span></span><br><span class="line">  <span class="attr">posts:</span></span><br><span class="line">    <span class="attr">external:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">family:</span> <span class="string">Roboto</span> <span class="string">Slab</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Font settings for &lt;code&gt; and code blocks.</span></span><br><span class="line">  <span class="attr">codes:</span></span><br><span class="line">    <span class="attr">external:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">family:</span> <span class="string">PT</span> <span class="string">Mono</span></span><br></pre></td></tr></table></figure><br>如果仍然需要更多自定義，則以下更改將涵蓋“字體自定義”功能。<br>在Hexo根目錄中編輯<code>source/_data/variables.styl</code>並添加兩個變量：<br>hexo&#x2F;source&#x2F;_data&#x2F;variables.styl<br>  <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// Title <span class="attribute">Font</span>, set it <span class="selector-tag">to</span> <span class="attribute">font</span> family you want.</span><br><span class="line">$<span class="attribute">font-family</span>-headings = Georgia, sans</span><br><span class="line"></span><br><span class="line">// Set it <span class="selector-tag">to</span> <span class="attribute">font</span> family you want.</span><br><span class="line">$<span class="attribute">font-family</span>-base = &quot;Microsoft YaHei&quot;, Verdana, sans-serif</span><br><span class="line"></span><br><span class="line">// <span class="selector-tag">Code</span> <span class="attribute">Font</span>.</span><br><span class="line">$<span class="selector-tag">code</span>-<span class="attribute">font-family</span> = &quot;<span class="selector-tag">Input</span> Mono&quot;, &quot;PT Mono&quot;, Consolas, Monaco, Menlo, monospace</span><br><span class="line"></span><br><span class="line">// <span class="attribute">Font</span> size of articles.</span><br><span class="line">$<span class="attribute">font-size</span>-base = <span class="number">16px</span></span><br><span class="line"></span><br><span class="line">// <span class="attribute">Font</span> size of <span class="selector-tag">table</span> and <span class="selector-tag">code</span>.</span><br><span class="line">$<span class="selector-tag">table</span>-<span class="attribute">font-size</span> = <span class="number">13px</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>首先修改<code>主題配置文件</code>檔案，將<code>custom_file_path</code>部分下的 <code>style</code> 那行取消註解。</p>
+<blockquote>
+<p>next&#x2F;_config.yml<br>  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Define custom file paths.</span></span><br><span class="line"><span class="comment"># Create your custom files in site directory `source/_data` and uncomment needed files below.</span></span><br><span class="line"><span class="attr">custom_file_path:</span></span><br><span class="line">  <span class="comment">#head: source/_data/head.swig</span></span><br><span class="line">  <span class="comment">#header: source/_data/header.swig</span></span><br><span class="line">  <span class="attr">sidebar:</span> <span class="string">source/_data/sidebar.swig</span></span><br><span class="line">  <span class="comment">#postMeta: source/_data/post-meta.swig</span></span><br><span class="line">  <span class="comment">#postBodyEnd: source/_data/post-body-end.swig</span></span><br><span class="line">  <span class="comment">#footer: source/_data/footer.swig</span></span><br><span class="line">  <span class="comment">#bodyEnd: source/_data/body-end.swig</span></span><br><span class="line">  <span class="comment">#variable: source/_data/variables.styl</span></span><br><span class="line">  <span class="comment">#mixin: source/_data/mixins.styl</span></span><br><span class="line">  <span class="attr">style:</span> <span class="string">source/_data/styles.styl</span>  <span class="comment">#這行取消註解</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h1 id="fancybox-實現圖片點擊預覽"><a href="#fancybox-實現圖片點擊預覽" class="headerlink" title="fancybox 實現圖片點擊預覽"></a>fancybox 實現圖片點擊預覽</h1><h2 id="下載插件"><a href="#下載插件" class="headerlink" title="下載插件"></a>下載插件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/theme-next/theme-next-fancybox3 themes/next/source/lib/fancybox</span><br></pre></td></tr></table></figure>
+<p>修改主題配置文件_config.xml</p>
+<blockquote>
+<p>next&#x2F;_config.yml<br>  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">fancybox:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/teach/" rel="tag"># 教學</a>
+              <a href="/tags/next/" rel="tag"># NexT</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/1015261791/" rel="prev" title="[教學]-NexT使用-入門">
+      <i class="fa fa-chevron-left"></i> [教學]-NexT使用-入門
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/posts/1612943303/" rel="next" title="[教學]-NexT使用-第三方服務">
+      [教學]-NexT使用-第三方服務 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8E%A7%E5%88%B6%E5%8F%B0%E6%8F%90%E9%86%92"><span class="nav-number">1.</span> <span class="nav-text">控制台提醒</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B7%A9%E5%AD%98%E6%94%AF%E6%8C%81-Cache-Support"><span class="nav-number">2.</span> <span class="nav-text">緩存支持(Cache Support)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B8%9B%E5%B0%91%E6%94%AF%E6%8C%81-Minify-Support"><span class="nav-number">3.</span> <span class="nav-text">減少支持(Minify Support)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%B5%E4%BD%9C%E5%85%B1%E7%94%A8-Creative-Commons"><span class="nav-number">4.</span> <span class="nav-text">創作共用(Creative Commons)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%87%E5%AD%97%E5%B0%8D%E9%BD%8A-Text-Align"><span class="nav-number">5.</span> <span class="nav-text">文字對齊(Text Align)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A7%BB%E5%8B%95%E8%A8%AD%E5%82%99%E9%81%A9%E6%87%89"><span class="nav-number">6.</span> <span class="nav-text">移動設備適應</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#mobile-layout-economy"><span class="nav-number">6.1.</span> <span class="nav-text">mobile_layout_economy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#android-chrome-color"><span class="nav-number">6.2.</span> <span class="nav-text">android_chrome_color</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E7%BE%A9%E5%BE%BD%E6%A8%99%E6%94%AF%E6%8C%81"><span class="nav-number">7.</span> <span class="nav-text">自定義徽標支持</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%A3%E7%A2%BC%E5%A1%8A%E6%A8%A3%E5%BC%8F"><span class="nav-number">8.</span> <span class="nav-text">代碼塊樣式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E9%A1%8C"><span class="nav-number">8.1.</span> <span class="nav-text">主題</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A4%87%E8%A3%BD%E6%8C%89%E9%88%95"><span class="nav-number">8.2.</span> <span class="nav-text">複製按鈕</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E8%83%BD-Enable"><span class="nav-number">8.2.1.</span> <span class="nav-text">使能(Enable)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A3%E5%BC%8F"><span class="nav-number">8.2.2.</span> <span class="nav-text">樣式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%96%B1%E8%AE%80%E9%80%B2%E5%BA%A6"><span class="nav-number">9.</span> <span class="nav-text">閱讀進度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%96%B1%E8%AE%80%E9%80%B2%E5%BA%A6%E7%99%BE%E5%88%86%E6%AF%94"><span class="nav-number">10.</span> <span class="nav-text">閱讀進度百分比</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9B%B8%E7%B1%A4"><span class="nav-number">11.</span> <span class="nav-text">書籤</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GitHub%E6%A9%AB%E5%B9%85"><span class="nav-number">12.</span> <span class="nav-text">GitHub橫幅</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%97%E9%AB%94%E5%AE%9A%E5%88%B6"><span class="nav-number">13.</span> <span class="nav-text">字體定制</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#fancybox-%E5%AF%A6%E7%8F%BE%E5%9C%96%E7%89%87%E9%BB%9E%E6%93%8A%E9%A0%90%E8%A6%BD"><span class="nav-number">14.</span> <span class="nav-text">fancybox 實現圖片點擊預覽</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BC%89%E6%8F%92%E4%BB%B6"><span class="nav-number">14.1.</span> <span class="nav-text">下載插件</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Gavin</p>
+  <div class="site-description" itemprop="description">然不能取者,<br>城高池深,兵器備具,<br>財穀多積,豪士一謀者也。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">73</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">75</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Gavin</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="總字數">60k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">1:48</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">NexT.Muse</a> 強力驅動
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

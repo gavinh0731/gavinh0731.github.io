@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"gavinh0731.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="帖子設置序言文字通常需要在主頁上顯示文章的某些部分，然後提供指向完整文章的鏈接。NexT提供了兩種方法來控製文章在首頁中的顯示方式。換句話說，您可以使用以下方式來顯示文章摘要和閱讀全文按鈕。  閱讀全文  Hexo建議在文章中使用&lt;!-- more --&gt;手動中斷文章。  摘錄說明  如果您已在Front-matter中添加了說明並將其值設置為文章摘要，則默認情況下，NexT會將說明摘">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[教學]-NexT使用-主題設定-帖子">
+<meta property="og:url" content="https://gavinh0731.github.io/posts/3030220437/index.html">
+<meta property="og:site_name" content="財穀資訊網">
+<meta property="og:description" content="帖子設置序言文字通常需要在主頁上顯示文章的某些部分，然後提供指向完整文章的鏈接。NexT提供了兩種方法來控製文章在首頁中的顯示方式。換句話說，您可以使用以下方式來顯示文章摘要和閱讀全文按鈕。  閱讀全文  Hexo建議在文章中使用&lt;!-- more --&gt;手動中斷文章。  摘錄說明  如果您已在Front-matter中添加了說明並將其值設置為文章摘要，則默認情況下，NexT會將說明摘">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2020-06-20T15:01:54.000Z">
+<meta property="article:modified_time" content="2022-05-18T17:13:04.935Z">
+<meta property="article:author" content="Gavin">
+<meta property="article:tag" content="教學">
+<meta property="article:tag" content="帖子">
+<meta property="article:tag" content="NexT">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://gavinh0731.github.io/posts/3030220437/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-TW'
+  };
+</script>
+
+  <title>[教學]-NexT使用-主題設定-帖子 | 財穀資訊網</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="財穀資訊網" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">財穀資訊網</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">gavinh0731的理財資訊網</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://gavinh0731.github.io/posts/3030220437/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Gavin">
+      <meta itemprop="description" content="然不能取者,<br>城高池深,兵器備具,<br>財穀多積,豪士一謀者也。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="財穀資訊網">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          [教學]-NexT使用-主題設定-帖子
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-06-20 23:01:54" itemprop="dateCreated datePublished" datetime="2020-06-20T23:01:54+08:00">2020-06-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2022-05-19 01:13:04" itemprop="dateModified" datetime="2022-05-19T01:13:04+08:00">2022-05-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/teach/" itemprop="url" rel="index"><span itemprop="name">教學</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/teach/next/" itemprop="url" rel="index"><span itemprop="name">NexT</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">文章字數：</span>
+              <span>2.5k</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+              <span>5 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="帖子設置"><a href="#帖子設置" class="headerlink" title="帖子設置"></a>帖子設置</h1><h2 id="序言文字"><a href="#序言文字" class="headerlink" title="序言文字"></a>序言文字</h2><p>通常需要在主頁上顯示文章的某些部分，然後提供指向完整文章的鏈接。<br>NexT提供了兩種方法來控製文章在首頁中的顯示方式。<br>換句話說，您可以使用以下方式來顯示文章摘要和<code>閱讀全文</code>按鈕。</p>
+<ol>
+<li><p>閱讀全文<br>  Hexo建議在文章中使用<code>&lt;!-- more --&gt;</code>手動中斷文章。</p>
+</li>
+<li><p>摘錄說明<br>  如果您已在<code>Front-matter</code>中添加了說明並將其值設置為文章摘要，則默認情況下，NexT會將說明摘錄為首頁中的前導文本。 如果沒有描述，則全部內容將為首頁中的前導文本。<br>  您可以通過在<code>主題配置文件</code>中將<code>excerpt_description</code>的值設置為false來禁用它。</p>
+<blockquote>
+<p>next&#x2F;_config.yml</p>
+  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">excerpt_description:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+<span id="more"></span></li>
+</ol>
+<h2 id="發布元顯示"><a href="#發布元顯示" class="headerlink" title="發布元顯示"></a>發布元顯示</h2><p>NexT支持帖子創建時間,修改時間,分類顯示。</p>
+<blockquote>
+<p>next&#x2F;_config.yml<br>  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">post_meta:</span></span><br><span class="line">  <span class="attr">item_text:</span> <span class="literal">false</span>  <span class="comment"># 設為true 可以一行顯示 文章的所有屬性</span></span><br><span class="line">  <span class="attr">created_at:</span> <span class="literal">true</span>  <span class="comment">#顯示創建時間</span></span><br><span class="line">  <span class="attr">updated_at:</span></span><br><span class="line">    <span class="attr">enabled:</span> <span class="literal">true</span>   <span class="comment">#顯示修改的時間</span></span><br><span class="line">    <span class="attr">another_day:</span> <span class="literal">true</span> <span class="comment">#設true時 如果創建時間和修改時間一樣則顯示一個時間</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="literal">true</span>  <span class="comment">#顯示分類信息</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="hexo中的next增加頁面閱讀統計-字數統計-閱讀時長"><a href="#hexo中的next增加頁面閱讀統計-字數統計-閱讀時長" class="headerlink" title="hexo中的next增加頁面閱讀統計,字數統計,閱讀時長"></a>hexo中的next增加頁面閱讀統計,字數統計,閱讀時長</h2><blockquote>
+<p>下方會顯示 總閱讀人數 閱讀總次數<br>next&#x2F;_config.yml<br>  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">busuanzi_count:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span>  <span class="comment">#設true 開啟</span></span><br><span class="line">  <span class="attr">total_visitors:</span> <span class="literal">true</span>  <span class="comment">#總閱讀人數 uv數</span></span><br><span class="line">  <span class="attr">total_visitors_icon:</span> <span class="string">user</span>  <span class="comment">#閱讀總人數的圖標</span></span><br><span class="line">  <span class="attr">total_views:</span> <span class="literal">true</span>  <span class="comment">#總閱讀次數 pv數</span></span><br><span class="line">  <span class="attr">total_views_icon:</span> <span class="string">eye</span>  <span class="comment">#閱讀總次數的圖標</span></span><br><span class="line">  <span class="attr">post_views:</span> <span class="literal">true</span> <span class="comment">#開啟內容閱讀次數</span></span><br><span class="line">  <span class="attr">post_views_icon:</span> <span class="string">eye</span> <span class="comment">#內容頁閱讀數的圖標</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>新增字數統計,閱讀時長,先安裝插件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-word-counter --save</span><br></pre></td></tr></table></figure>
+
+<p><code>主題配置</code>信息如下:</p>
+<blockquote>
+<p>next&#x2F;_config.yml<br>  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 字數統計及閱讀時長</span></span><br><span class="line"><span class="attr">symbols_count_time:</span></span><br><span class="line">  <span class="attr">separated_meta:</span> <span class="literal">true</span>  <span class="comment"># 是否&quot;換行顯示&quot;字數統計及閱讀時長</span></span><br><span class="line">  <span class="attr">item_text_post:</span> <span class="literal">true</span>  <span class="comment"># 字數統計和閱讀時長是要使用小圖示(true)還是文字表示(false)</span></span><br><span class="line">  <span class="attr">item_text_total:</span> <span class="literal">false</span>  <span class="comment"># 文章底部的字數統計和閱讀時長是要使用小圖示(true)還是文字表示(false)</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p><code>站點配置文件</code>:</p>
+<blockquote>
+<p>hexo&#x2F;_config.yml<br>  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 字數統計及閱讀時長</span></span><br><span class="line"><span class="attr">symbols_count_time:</span></span><br><span class="line">  <span class="attr">symbols:</span> <span class="literal">true</span> <span class="comment"># 文章是否顯示字數統計</span></span><br><span class="line">  <span class="attr">time:</span> <span class="literal">true</span> <span class="comment"># 文章是否顯示閱讀時間</span></span><br><span class="line">  <span class="attr">total_symbols:</span> <span class="literal">true</span> <span class="comment"># 網頁底部是否顯示字數統計</span></span><br><span class="line">  <span class="attr">total_time:</span> <span class="literal">true</span> <span class="comment"># 網頁底部是否顯示閱讀時間</span></span><br><span class="line">  <span class="attr">exclude_codeblock:</span> <span class="literal">false</span> <span class="comment"># 排除程式碼字數統計</span></span><br><span class="line">  <span class="attr">awl:</span> <span class="number">2</span>  <span class="comment">#平均文字長度，中文為 2, 英文為 5, 預設為 4</span></span><br><span class="line">  <span class="attr">wpm:</span> <span class="number">275</span>  <span class="comment">#一分鐘閱讀字數，預設為 275</span></span><br><span class="line">  <span class="attr">suffix:</span> <span class="string">&quot;分鐘&quot;</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="標籤圖標"><a href="#標籤圖標" class="headerlink" title="標籤圖標"></a>標籤圖標</h2><p>默認情況下，帖子底部的標籤在左側的左側帶有符號＃。<br>如果您更喜歡圖標而不是符號，請按如下所示編輯主題配置文件：</p>
+<blockquote>
+<p>next&#x2F;_config.yml<br>  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">tag_icon:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="增加打賞功能"><a href="#增加打賞功能" class="headerlink" title="增加打賞功能"></a>增加打賞功能</h2><p>這個也是next具備了。先把需要的收款碼放到<code>/themes/next/source/images</code>裡面。</p>
+<p>搜索reward_settings修改：</p>
+<blockquote>
+<p>hexo&#x2F;_config.yml<br>  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">reward_settings:</span></span><br><span class="line">  <span class="comment"># If true, reward will be displayed in every article by default.</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">animation:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment">#comment: Donate comment here.</span></span><br><span class="line"></span><br><span class="line"><span class="attr">reward:</span></span><br><span class="line">  <span class="attr">wechatpay:</span> <span class="string">/images/wechatpay.png</span></span><br><span class="line">  <span class="attr">alipay:</span> <span class="string">/images/alipay.png</span></span><br><span class="line">  <span class="comment">#bitcoin: /images/bitcoin.png</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="Follow-me"><a href="#Follow-me" class="headerlink" title="Follow me"></a>Follow me</h2><blockquote>
+<p>hexo&#x2F;_config.yml<br>  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Subscribe through Telegram Channel, Twitter, etc.</span></span><br><span class="line"><span class="comment"># Usage: `Key: permalink || icon` (Font Awesome)</span></span><br><span class="line"><span class="attr">follow_me:</span></span><br><span class="line">  <span class="comment">#Twitter: https://twitter.com/username || fab fa-twitter</span></span><br><span class="line">  <span class="comment">#Telegram: https://t.me/channel_name || fab fa-telegram</span></span><br><span class="line">  <span class="comment">#WeChat: /images/wechat_channel.jpg || fab fa-weixin</span></span><br><span class="line">  <span class="comment">#RSS: /atom.xml || fa fa-rss</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="相關文章推薦"><a href="#相關文章推薦" class="headerlink" title="相關文章推薦"></a>相關文章推薦</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-related-popular-posts --save</span><br></pre></td></tr></table></figure>
+<p>主題配置信息如下:</p>
+<blockquote>
+<p>hexo&#x2F;_config.yml<br>  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">related_posts:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">title:</span> <span class="string">相關文章推薦</span> <span class="comment"># 屬性的命名</span></span><br><span class="line">  <span class="attr">display_in_home:</span> <span class="literal">false</span> <span class="comment">#false代表首頁不顯示</span></span><br><span class="line">  <span class="attr">params:</span></span><br><span class="line">    <span class="attr">maxCount:</span> <span class="number">5</span> <span class="comment">#最多5條</span></span><br><span class="line">    <span class="comment">#PPMixingRate: 0.0 #可以看github上 這個相關度介紹</span></span><br><span class="line">    <span class="comment">#isDate: true #是否顯示 日期</span></span><br><span class="line">    <span class="comment">#isImage: false #是否顯示配圖</span></span><br><span class="line">    <span class="attr">isExcerpt:</span> <span class="literal">false</span> <span class="comment">#是否顯示摘要</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h1 id="帖子導航"><a href="#帖子導航" class="headerlink" title="帖子導航"></a>帖子導航</h1><p>如果存在，則在頁腳中顯示上一個帖子和下一個帖子。</p>
+<blockquote>
+<p>hexo&#x2F;_config.yml<br>  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">post_navigation:</span> <span class="string">left</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h1 id="404頁面"><a href="#404頁面" class="headerlink" title="404頁面"></a>404頁面</h1><p>於<code>themes/next/source</code>放置<code>404.html</code>檔案</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/teach/" rel="tag"># 教學</a>
+              <a href="/tags/posts/" rel="tag"># 帖子</a>
+              <a href="/tags/next/" rel="tag"># NexT</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/1612943303/" rel="prev" title="[教學]-NexT使用-第三方服務">
+      <i class="fa fa-chevron-left"></i> [教學]-NexT使用-第三方服務
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/posts/1243066710/" rel="next" title="Hello World">
+      Hello World <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B8%96%E5%AD%90%E8%A8%AD%E7%BD%AE"><span class="nav-number">1.</span> <span class="nav-text">帖子設置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%8F%E8%A8%80%E6%96%87%E5%AD%97"><span class="nav-number">1.1.</span> <span class="nav-text">序言文字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%99%BC%E5%B8%83%E5%85%83%E9%A1%AF%E7%A4%BA"><span class="nav-number">1.2.</span> <span class="nav-text">發布元顯示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo%E4%B8%AD%E7%9A%84next%E5%A2%9E%E5%8A%A0%E9%A0%81%E9%9D%A2%E9%96%B1%E8%AE%80%E7%B5%B1%E8%A8%88-%E5%AD%97%E6%95%B8%E7%B5%B1%E8%A8%88-%E9%96%B1%E8%AE%80%E6%99%82%E9%95%B7"><span class="nav-number">1.3.</span> <span class="nav-text">hexo中的next增加頁面閱讀統計,字數統計,閱讀時長</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%99%E7%B1%A4%E5%9C%96%E6%A8%99"><span class="nav-number">1.4.</span> <span class="nav-text">標籤圖標</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A2%9E%E5%8A%A0%E6%89%93%E8%B3%9E%E5%8A%9F%E8%83%BD"><span class="nav-number">1.5.</span> <span class="nav-text">增加打賞功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Follow-me"><span class="nav-number">1.6.</span> <span class="nav-text">Follow me</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8%E9%97%9C%E6%96%87%E7%AB%A0%E6%8E%A8%E8%96%A6"><span class="nav-number">1.7.</span> <span class="nav-text">相關文章推薦</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B8%96%E5%AD%90%E5%B0%8E%E8%88%AA"><span class="nav-number">2.</span> <span class="nav-text">帖子導航</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#404%E9%A0%81%E9%9D%A2"><span class="nav-number">3.</span> <span class="nav-text">404頁面</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Gavin</p>
+  <div class="site-description" itemprop="description">然不能取者,<br>城高池深,兵器備具,<br>財穀多積,豪士一謀者也。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">73</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">75</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Gavin</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="總字數">60k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">1:48</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">NexT.Muse</a> 強力驅動
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

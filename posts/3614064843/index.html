@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"gavinh0731.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Next 客製功能及樣板編輯筆記pjax 安裝究竟什麼是 pjax 呢？簡單來說，pjax 實現了 URL 改變但不重新整理整個頁面，也就是只有局部的頁面會更新，不會讓整個頁面重新閃動（重新整理）。那這個功能有什麼特色呢？最重要的就是原本左下角的音樂播放器遇到切換頁面，就會停掉然後重新載入；但使用 pjax 後就能解決這個問題。 要啟用 pjax，首先到 &#x2F;themes&#x2F;next&#x2F;_config.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[教學]Hexo使用-NexT整合設定">
+<meta property="og:url" content="https://gavinh0731.github.io/posts/3614064843/index.html">
+<meta property="og:site_name" content="財穀資訊網">
+<meta property="og:description" content="Next 客製功能及樣板編輯筆記pjax 安裝究竟什麼是 pjax 呢？簡單來說，pjax 實現了 URL 改變但不重新整理整個頁面，也就是只有局部的頁面會更新，不會讓整個頁面重新閃動（重新整理）。那這個功能有什麼特色呢？最重要的就是原本左下角的音樂播放器遇到切換頁面，就會停掉然後重新載入；但使用 pjax 後就能解決這個問題。 要啟用 pjax，首先到 &#x2F;themes&#x2F;next&#x2F;_config.">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2020-06-18T15:08:31.000Z">
+<meta property="article:modified_time" content="2022-05-18T17:13:04.935Z">
+<meta property="article:author" content="Gavin">
+<meta property="article:tag" content="教學">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="NexT">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://gavinh0731.github.io/posts/3614064843/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-TW'
+  };
+</script>
+
+  <title>[教學]Hexo使用-NexT整合設定 | 財穀資訊網</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="財穀資訊網" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">財穀資訊網</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">gavinh0731的理財資訊網</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://gavinh0731.github.io/posts/3614064843/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Gavin">
+      <meta itemprop="description" content="然不能取者,<br>城高池深,兵器備具,<br>財穀多積,豪士一謀者也。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="財穀資訊網">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          [教學]Hexo使用-NexT整合設定
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-06-18 23:08:31" itemprop="dateCreated datePublished" datetime="2020-06-18T23:08:31+08:00">2020-06-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2022-05-19 01:13:04" itemprop="dateModified" datetime="2022-05-19T01:13:04+08:00">2022-05-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/teach/" itemprop="url" rel="index"><span itemprop="name">教學</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/teach/next/" itemprop="url" rel="index"><span itemprop="name">NexT</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/teach/hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">文章字數：</span>
+              <span>2k</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+              <span>4 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Next-客製功能及樣板編輯筆記"><a href="#Next-客製功能及樣板編輯筆記" class="headerlink" title="Next 客製功能及樣板編輯筆記"></a>Next 客製功能及樣板編輯筆記</h1><h2 id="pjax-安裝"><a href="#pjax-安裝" class="headerlink" title="pjax 安裝"></a>pjax 安裝</h2><p>究竟什麼是 pjax 呢？簡單來說，pjax 實現了 URL 改變但不重新整理整個頁面，也就是只有局部的頁面會更新，不會讓整個頁面重新閃動（重新整理）。那這個功能有什麼特色呢？最重要的就是原本左下角的音樂播放器遇到切換頁面，就會停掉然後重新載入；但使用 pjax 後就能解決這個問題。</p>
+<p>要啟用 pjax，首先到 <code>/themes/next/_config.yml</code>，修改 <code>pjax: true</code>：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Easily enable fast Ajax navigation on your website.</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/theme-next/theme-next-pjax</span></span><br><span class="line"><span class="attr">pjax:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>根據 <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/theme-next/theme-next-pjax">官方教學</a>，需要輸入以下指令來載入必要檔案：（cmd 在 Hexo 資料夾根目錄下）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/theme-next/theme-next-pjax themes/next/source/lib/pjax</span><br></pre></td></tr></table></figure>
+<p>看似沒什麼的功能，其實在切換頁面的時候，就不會整個 refresh 了唷！重點是音樂還能不中斷播放！</p>
+<span id="more"></span>
+
+<h2 id="文章字數統計-x2F-閱讀時間安裝"><a href="#文章字數統計-x2F-閱讀時間安裝" class="headerlink" title="文章字數統計&#x2F;閱讀時間安裝"></a>文章字數統計&#x2F;閱讀時間安裝</h2><p><code>/themes/next/_config.yml</code> 的 閱讀字數&#x2F;時間 設定如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Post wordcount display settings</span><br><span class="line"># Dependencies: https://github.com/theme-next/hexo-symbols-count-time</span><br><span class="line">symbols_count_time:</span><br><span class="line">  separated_meta: true # 是否&quot;換行顯示&quot;字數統計及閱讀時長</span><br><span class="line">  item_text_post: false # 字數統計和閱讀時長是要使用小圖示(true)還是文字表示(false)</span><br><span class="line">  item_text_total: false # 文章底部的字數統計和閱讀時長是要使用小圖示(true)還是文字表示(false)</span><br></pre></td></tr></table></figure>
+<p>根據 <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/theme-next/hexo-symbols-count-time">官方教學</a>，需要輸入以下指令安裝：（cmd 在 Hexo 資料夾根目錄下）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-symbols-count-time --save</span><br></pre></td></tr></table></figure>
+<p>接著要在 Hexo 資料夾根目錄的 _config.yml 加入以下內容：（加在檔案最下方即可）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 字數統計及閱讀時長</span><br><span class="line">symbols_count_time:</span><br><span class="line">  symbols: true # 文章是否顯示字數統計</span><br><span class="line">  time: true # 文章是否顯示閱讀時間</span><br><span class="line">  total_symbols: true # 網頁底部是否顯示字數統計</span><br><span class="line">  total_time: true # 網頁底部是否顯示閱讀時間</span><br><span class="line">  exclude_codeblock: false # 排除程式碼字數統計</span><br><span class="line">  awl: 2  #平均文字長度，中文為 2, 英文為 5, 預設為 4</span><br><span class="line">  wpm: 275  #一分鐘閱讀字數，預設為 275</span><br><span class="line">  suffix: &quot;分鐘&quot;</span><br></pre></td></tr></table></figure>
+
+<h2 id="文章搜尋功能安裝"><a href="#文章搜尋功能安裝" class="headerlink" title="文章搜尋功能安裝"></a>文章搜尋功能安裝</h2><p><code>/themes/next/_config.yml</code> 的 文章搜尋功能 設定如下：（將 enable 改成 true 即可）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">local_search:</span><br><span class="line">  enable: true</span><br><span class="line">  # If auto, trigger search by changing input.</span><br><span class="line">  # If manual, trigger search by pressing enter key or search button.</span><br><span class="line">  trigger: auto</span><br><span class="line">  # Show top n results per article, show all results by setting to -1</span><br><span class="line">  top_n_per_article: 1</span><br><span class="line">  # Unescape html strings to the readable one.</span><br><span class="line">  unescape: false</span><br><span class="line">  # Preload the search data when the page loads.</span><br><span class="line">  preload: false</span><br></pre></td></tr></table></figure>
+<p>根據 <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/theme-next/hexo-generator-searchdb">官方教學</a>，需要輸入以下指令安裝：（cmd 在 Hexo 資料夾根目錄下）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
+<p>接著要在 Hexo 資料夾根目錄的 <code>_config.yml</code> 加入以下內容，相關參數設定可以查看 <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/theme-next/hexo-generator-searchdb#Options">官方文件</a>，基本上照預設走即可：（加在檔案最下方即可）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 文章搜尋功能</span><br><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  content: true</span><br><span class="line">  format: html</span><br></pre></td></tr></table></figure>
+
+<h2 id="啟用置頂文章功能"><a href="#啟用置頂文章功能" class="headerlink" title="啟用置頂文章功能"></a>啟用置頂文章功能</h2><p>安裝插件：</p>
+<blockquote>
+<p>更新：無需安裝插件或修改源碼，主題已內置排序算法</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-generator-topindex --save</span><br></pre></td></tr></table></figure>
+<p>編輯需要置頂的文章，加入 <code>top</code>: &lt;數字&gt; 屬性，數字越大，優先級越高，例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: &lt;文章名稱&gt;</span><br><span class="line">date: 2019-07-23 19:44:29</span><br><span class="line">categories: </span><br><span class="line">- &lt;分類名稱&gt;</span><br><span class="line">tags:</span><br><span class="line">top: 1</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/teach/" rel="tag"># 教學</a>
+              <a href="/tags/hexo/" rel="tag"># Hexo</a>
+              <a href="/tags/next/" rel="tag"># NexT</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/1389384140/" rel="prev" title="[教學]Hexo使用-寫作說明">
+      <i class="fa fa-chevron-left"></i> [教學]Hexo使用-寫作說明
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/posts/1015261791/" rel="next" title="[教學]-NexT使用-入門">
+      [教學]-NexT使用-入門 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Next-%E5%AE%A2%E8%A3%BD%E5%8A%9F%E8%83%BD%E5%8F%8A%E6%A8%A3%E6%9D%BF%E7%B7%A8%E8%BC%AF%E7%AD%86%E8%A8%98"><span class="nav-number">1.</span> <span class="nav-text">Next 客製功能及樣板編輯筆記</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#pjax-%E5%AE%89%E8%A3%9D"><span class="nav-number">1.1.</span> <span class="nav-text">pjax 安裝</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E7%AB%A0%E5%AD%97%E6%95%B8%E7%B5%B1%E8%A8%88-x2F-%E9%96%B1%E8%AE%80%E6%99%82%E9%96%93%E5%AE%89%E8%A3%9D"><span class="nav-number">1.2.</span> <span class="nav-text">文章字數統計&#x2F;閱讀時間安裝</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E7%AB%A0%E6%90%9C%E5%B0%8B%E5%8A%9F%E8%83%BD%E5%AE%89%E8%A3%9D"><span class="nav-number">1.3.</span> <span class="nav-text">文章搜尋功能安裝</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%95%9F%E7%94%A8%E7%BD%AE%E9%A0%82%E6%96%87%E7%AB%A0%E5%8A%9F%E8%83%BD"><span class="nav-number">1.4.</span> <span class="nav-text">啟用置頂文章功能</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Gavin</p>
+  <div class="site-description" itemprop="description">然不能取者,<br>城高池深,兵器備具,<br>財穀多積,豪士一謀者也。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">73</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">75</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Gavin</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="總字數">60k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">1:48</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">NexT.Muse</a> 強力驅動
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

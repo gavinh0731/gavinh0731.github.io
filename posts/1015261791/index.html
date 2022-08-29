@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"gavinh0731.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Hexo是一個快速而強大的靜態博客生成框架，它基於Node.js。 通過使用Hexo，您可以使用Markdown輕鬆編寫文章，除了Markdown的語法外，您還可以使用Hexo提供的標籤插件來簡單插入特殊格式的內容。 在此頁面中，我們假設您已經安裝了Hexo並使用它創建了一個站點。  您可以訪問Hexo Docs以了解如何安裝Hexo。 確保環境中的Node.js和Hexo版本高於NexT主題的最">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[教學]-NexT使用-入門">
+<meta property="og:url" content="https://gavinh0731.github.io/posts/1015261791/index.html">
+<meta property="og:site_name" content="財穀資訊網">
+<meta property="og:description" content="Hexo是一個快速而強大的靜態博客生成框架，它基於Node.js。 通過使用Hexo，您可以使用Markdown輕鬆編寫文章，除了Markdown的語法外，您還可以使用Hexo提供的標籤插件來簡單插入特殊格式的內容。 在此頁面中，我們假設您已經安裝了Hexo並使用它創建了一個站點。  您可以訪問Hexo Docs以了解如何安裝Hexo。 確保環境中的Node.js和Hexo版本高於NexT主題的最">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://gavinh0731.github.io/posts/1015261791/NexT.png">
+<meta property="og:image" content="https://gavinh0731.github.io/posts/1015261791/darkmode.png">
+<meta property="article:published_time" content="2020-06-19T12:10:27.000Z">
+<meta property="article:modified_time" content="2022-05-18T17:13:04.935Z">
+<meta property="article:author" content="Gavin">
+<meta property="article:tag" content="教學">
+<meta property="article:tag" content="NexT">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gavinh0731.github.io/posts/1015261791/NexT.png">
+
+<link rel="canonical" href="https://gavinh0731.github.io/posts/1015261791/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-TW'
+  };
+</script>
+
+  <title>[教學]-NexT使用-入門 | 財穀資訊網</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="財穀資訊網" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">財穀資訊網</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">gavinh0731的理財資訊網</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://gavinh0731.github.io/posts/1015261791/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Gavin">
+      <meta itemprop="description" content="然不能取者,<br>城高池深,兵器備具,<br>財穀多積,豪士一謀者也。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="財穀資訊網">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          [教學]-NexT使用-入門
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-06-19 20:10:27" itemprop="dateCreated datePublished" datetime="2020-06-19T20:10:27+08:00">2020-06-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2022-05-19 01:13:04" itemprop="dateModified" datetime="2022-05-19T01:13:04+08:00">2022-05-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/teach/" itemprop="url" rel="index"><span itemprop="name">教學</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/teach/next/" itemprop="url" rel="index"><span itemprop="name">NexT</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">文章字數：</span>
+              <span>5.4k</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+              <span>10 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://hexo.io/">Hexo</a>是一個快速而強大的靜態博客生成框架，它基於<a target="_blank" rel="external nofollow noopener noreferrer" href="https://nodejs.org/">Node.js</a>。 通過使用Hexo，您可以使用Markdown輕鬆編寫文章，除了Markdown的語法外，您還可以使用Hexo提供的<a target="_blank" rel="external nofollow noopener noreferrer" href="https://hexo.io/docs/tag-plugins">標籤插件</a>來簡單插入特殊格式的內容。 在此頁面中，我們假設您已經安裝了Hexo並使用它創建了一個站點。</p>
+<blockquote>
+<p>您可以訪問<a target="_blank" rel="external nofollow noopener noreferrer" href="https://hexo.io/docs/">Hexo Docs</a>以了解如何安裝Hexo。 確保環境中的Node.js和Hexo版本高於NexT主題的<a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/next-theme/hexo-theme-next#readme">最低要求</a>，然後繼續以下步驟。</p>
+</blockquote>
+<h1 id="檔案變數"><a href="#檔案變數" class="headerlink" title="檔案變數"></a>檔案變數</h1><h2 id="config-yml"><a href="#config-yml" class="headerlink" title="_config.yml"></a><code>_config.yml</code></h2><p>Hexo使用了兩個主要的配置文件，它們都稱為<code>_config.yml</code>：</p>
+<ul>
+<li><code>站點配置文件</code>位於<code>站點根目錄</code>下，其中包含Hexo的配置。</li>
+<li><code>主題配置文件</code>位於<code>主題根目錄</code>下，該目錄由NexT提供，並包含主題的配置。</li>
+</ul>
+<h2 id="可用的設置"><a href="#可用的設置" class="headerlink" title="可用的設置"></a>可用的設置</h2><p>所有可用的設置都將在代碼塊內部（帶有單個反引號或<code>&lt;code&gt;</code>標記）。</p>
+<h2 id="默認設置"><a href="#默認設置" class="headerlink" title="默認設置"></a>默認設置</h2><p>並且所有默認設置在代碼塊內都將以粗體顯示（帶有單個反引號或<code>&lt;code&gt;</code>和<code>**</code>或<code>&lt;strong&gt;</code>標記）。</p>
+<h1 id="NexT安裝"><a href="#NexT安裝" class="headerlink" title="NexT安裝"></a>NexT安裝</h1><p>安裝Hexo主題很容易：您可以下載NexT主題，將主題文件夾複製到站點根目錄下的themes目錄中，然後在站點配置文件中指定主題根目錄。 具體步驟如下：</p>
+<h1 id="下載NexT"><a href="#下載NexT" class="headerlink" title="下載NexT"></a>下載NexT</h1><p>如果您了解Git，則可以克隆整個存儲庫並隨時使用git pull命令對其進行更新，而無需手動下載存檔。<br>打開終端，切換到Hexo網站根目錄，並克隆NexT主題的最新主分支：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> hexo</span><br><span class="line">$ git <span class="built_in">clone</span> https://github.com/next-theme/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+
+<h1 id="啟用NexT"><a href="#啟用NexT" class="headerlink" title="啟用NexT"></a>啟用NexT</h1><p>像所有Hexo主題一樣，下載後，打開站點配置文件，找到主題部分，並將其值更改為next（或另一個主題目錄名稱）。</p>
+<blockquote>
+<p>hexo&#x2F;_config.yml<br>  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">next</span></span><br></pre></td></tr></table></figure><br>現在您已經安裝了NexT主題，接下來我們將驗證它是否已正確啟用。 在更改主題和驗證主題之間，我們最好使用<code>hexo clean</code>清理Hexo的緩存。</p>
+</blockquote>
+<h1 id="檢查NexT"><a href="#檢查NexT" class="headerlink" title="檢查NexT"></a>檢查NexT</h1><p>首先啟動Hexo本地服務器，並啟用調試參數（通過添加<code>--debug</code>），整個命令為<code>hexo s --debug</code>。 您可以在運行時看到輸出，如果發現問題，則可以使用輸出來幫助其他人更好地定位錯誤。 打印時：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
+<p>現在，您可以在瀏覽器中打開<code>http：// localhost：4000</code>，並檢查該站點是否正常運行。</p>
+<blockquote>
+<p>如果發現您的站點看起來像這張圖片，則說明您已正確安裝它。 這是默認的NexT方案– Muse。</p>
+<img src="/posts/1015261791/NexT.png" class title="Next">
+</blockquote>
+<p>現在，您已經安裝並啟用了NexT。 在接下來的步驟中，我們將更改一些設置，包括個性化和第三方服務集成。</p>
+<h1 id="添加插件"><a href="#添加插件" class="headerlink" title="添加插件"></a>添加插件</h1><p>有2種變體可以連接NexT插件：</p>
+<ul>
+<li>本地安裝（將從您的站點加載插件腳本）。</li>
+<li>CDN鏈接（將從遠程CDN主機加載插件腳本）。<blockquote>
+<p>如果您的站點已部署到任何免費的託管服務（Github，Gitlab等），則建議使用CDN鏈接。 CDN通常具有更快的速度，並且沒有流量限制。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="本地安裝"><a href="#本地安裝" class="headerlink" title="本地安裝"></a>本地安裝</h2><p>現在，在NexT config中，您可以找到每個模塊的依賴關係，這些依賴關係已移至外部存儲庫，可以通過<a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/next-theme">主要組織鏈接</a>找到該模塊。 例如，您要在站點中使用pjax。 轉到<code>主題配置文件</code>，然後查看：</p>
+<blockquote>
+<p>next&#x2F;_config.yml<br>  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Easily enable fast Ajax navigation on your website.</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/next-theme/pjax</span></span><br><span class="line"><span class="attr">pjax:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>然後把<code>pjax</code>設為<code>true</code>並轉到帶有該模塊安裝說明的“ Dependencies”鏈接</p>
+<h2 id="CDN鏈接"><a href="#CDN鏈接" class="headerlink" title="CDN鏈接"></a>CDN鏈接</h2><p>如果將CDN用於任何插件，則需要替換CDN鏈接。<br>例如，您要使用mediumzoom並配置了CDN鏈接。<br>轉到<code>主題配置文件</code>，然後查看：</p>
+<blockquote>
+<p>next&#x2F;_config.yml<br>  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">vendors:</span></span><br><span class="line">  <span class="comment"># ...</span></span><br><span class="line">  <span class="comment"># Some contents...</span></span><br><span class="line">  <span class="comment"># ...</span></span><br><span class="line">  <span class="attr">mediumzoom:</span> <span class="comment"># Set or update mediumzoom CDN URL.</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>推薦使用jsDelivr CDN來交付我們的第三方插件，因為它隨處可見並且具有中國政府頒發的有效ICP許可證。<br>它不僅從npm包中爬行js文件，而且從GitHub版本中爬行！<br>就像其他CDN一樣，我們可以使用以下鏈接引用js文件。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//cdn.jsdelivr.net/gh/user/repo@version/file</span><br></pre></td></tr></table></figure>
+<p>即使沒有縮小版本，它也可以自動縮小JS和CSS文件。<br>只需使用<code>filename.min.js</code>或<code>filename.min.css</code>替換上面的文件即可。</p>
+<p>我們還提供其他可選的CDN，包括著名的<a target="_blank" rel="external nofollow noopener noreferrer" href="https://cdnjs.com/">CDNJS</a>。</p>
+<h1 id="NexT配置"><a href="#NexT配置" class="headerlink" title="NexT配置"></a>NexT配置</h1><h2 id="選擇方案-Scheme"><a href="#選擇方案-Scheme" class="headerlink" title="選擇方案(Scheme)"></a>選擇方案(Scheme)</h2><p>Scheme是NexT支持的功能，通過使用Scheme，NexT可以得到不同的視圖。<br>這些方案幾乎可以使用所有配置。 到目前為止，NexT支持4種方案，它們是：</p>
+<ul>
+<li>Muse繆斯→默認方案，這是NexT的初始版本。 使用黑白色調，主要看起來乾淨。</li>
+<li>Mist霧→帶有整齊的單列視圖的Muse的更緊密版本。</li>
+<li>Pisces雙魚座→雙柱計劃，像鄰居的女兒一樣新鮮。</li>
+<li>Gemini雙子座→看起來像雙魚座，但具有明顯的帶陰影的圓柱塊，看起來對視圖更敏感。</li>
+</ul>
+<p>您可以通過編輯<code>主題配置文件</code>，搜索方案關鍵字來更改方案。<br>您將看到4行方案設置，並且可以通過刪除它的<code>＃</code>號並將其添加到上一行來啟用其中之一。</p>
+<blockquote>
+<p>next&#x2F;_config.yml<br>  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#scheme: Muse</span></span><br><span class="line"><span class="comment">#scheme: Mist</span></span><br><span class="line"><span class="comment">#scheme: Pisces</span></span><br><span class="line"><span class="attr">scheme:</span> <span class="string">Gemini</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h1 id="黑暗模式"><a href="#黑暗模式" class="headerlink" title="黑暗模式"></a>黑暗模式</h1><p>您可以通過在<code>主題配置文件</code>中將<code>darkmode</code>設置為<code>true</code>來啟用Dark Mode。<br>首選顏色方案CSS媒體功能用於將暗模式帶入上述所有4種方案，請確保您的瀏覽器支持暗模式。</p>
+<blockquote>
+<p>next&#x2F;_config.yml<br>  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">darkmode:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p><code>prefers-color-scheme</code>CSS媒體功能用於將暗模式帶入上述所有4種方案，請確保您的瀏覽器支持暗模式。</p>
+<img src="/posts/1015261791/darkmode.png" class title="darkmode">
+
+<p>如果操作系統偏好的主題是深色，主題NexT會自動顯示黑暗模式。 macOS Mojave，iOS 13和Android 10或更高版本均支持此功能。 相關文檔：<br><a target="_blank" rel="external nofollow noopener noreferrer" href="https://support.apple.com/en-us/HT208976">如何在Mac上使用暗模式</a><br><a target="_blank" rel="external nofollow noopener noreferrer" href="https://support.apple.com/en-us/HT210332">在iPhone，iPad或iPod touch上使用暗模式</a><br><a target="_blank" rel="external nofollow noopener noreferrer" href="https://developer.android.com/guide/topics/ui/look-and-feel/darktheme">黑暗主題| Android開發人員</a></p>
+<h1 id="配置菜單項Menu"><a href="#配置菜單項Menu" class="headerlink" title="配置菜單項Menu"></a>配置菜單項<code>Menu</code></h1><p>菜單設置項的格式為<code>&lt;鍵&gt;：/&lt;link&gt;/ || &lt;圖標&gt;</code>，其中包含3個值：</p>
+<ol>
+<li><code>&lt;鍵值&gt;</code>→是菜單項的名稱（<code>home</code>，<code>archives</code>等）。<br>  如果將以語言找到此菜單的翻譯，則將加載此翻譯； 否則，將使用<code>&lt;鍵值&gt;</code>名稱。<blockquote>
+<p><code>&lt;鍵值&gt;</code>區分大小寫（例如<code>home</code>與<code>Home</code>不相同）。</p>
+</blockquote>
+</li>
+<li><code>&lt;link&gt;</code><br>  ||之前的值 delimeter（<code>/&lt;link&gt;/</code>）→是指向您網站內相對網址的目標鏈接。</li>
+<li><code>&lt;圖標&gt;</code><br>  <code>||</code>之後的值<code>&lt;圖標&gt;</code>→是“FontAwesome”圖標的名稱。<br>  可以在<a target="_blank" rel="external nofollow noopener noreferrer" href="https://fontawesome.com/">Font Awesome網站</a>上找到該圖標的名稱。</li>
+</ol>
+<p>默認情況下，所有菜單項都被註釋掉，以確保您可以在next.yml配置文件中覆蓋它們。<br>要自定義菜單項，請在<code>主題配置文件</code>中編輯以下內容：</p>
+<blockquote>
+<p>next&#x2F;_config.yml<br>  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-home</span></span><br><span class="line">  <span class="comment">#about: /about/ || fa fa-user</span></span><br><span class="line">  <span class="comment">#tags: /tags/ || fa fa-tags</span></span><br><span class="line">  <span class="comment">#categories: /categories/ || fa fa-th</span></span><br><span class="line">  <span class="attr">archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-archive</span></span><br><span class="line">  <span class="comment">#schedule: /schedule/ || fa fa-calendar</span></span><br><span class="line">  <span class="comment">#sitemap: /sitemap.xml || fa fa-sitemap</span></span><br><span class="line">  <span class="comment">#commonweal: /404/ || fa fa-heartbeat</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>除<code>home</code>和<code>archives</code>外，<code>menu</code>下的所有自定義頁面都需要手動創建。 請參閱<a target="_blank" rel="external nofollow noopener noreferrer" href="https://theme-next.js.org/docs/theme-settings/#Custom-Page-Support">«自定義頁面支持»</a></p>
+</blockquote>
+<p>還支持層次結構內的動態子菜單。 在<code>主題配置文件</code>的<code>menu</code>部分中添加子菜單項，如下所示：</p>
+<blockquote>
+<p>next&#x2F;_config.yml<br>  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-home</span></span><br><span class="line">  <span class="attr">archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-archive</span></span><br><span class="line">  <span class="attr">Docs:</span></span><br><span class="line">    <span class="attr">default:</span> <span class="string">/docs/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-book</span></span><br><span class="line">    <span class="attr">Third Party Services:</span></span><br><span class="line">      <span class="attr">default:</span> <span class="string">/third-party-services/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-plug</span></span><br><span class="line">      <span class="attr">Algolia Search:</span> <span class="string">/algolia-search/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-search-plus</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>如果您的網站在子目錄中運行，請從鏈接中刪除前綴<code>/</code>。</p>
+</blockquote>
+<p>默認情況下，NexT顯示不帶徽章(badges)的菜單項圖標(icons)。</p>
+<p>圖標(icons)<br>  您可以通過設置<code>主題配置文件</code>中的<code>menu_settings.icons</code>值來配置它。</p>
+<blockquote>
+<p>next&#x2F;_config.yml<br>  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menu_settings:</span></span><br><span class="line">  <span class="attr">icons:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>徽章(badges)<br>  將值<code>badge</code>設置為<code>true</code>可以在<code>主題配置文件</code>的menu_settings部分的菜單項中顯示<code>帖子</code>&#x2F;<code>類別</code>&#x2F;<code>標籤</code>的計數，如下所示：</p>
+<blockquote>
+<p>next&#x2F;_config.yml<br>  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menu_settings:</span></span><br><span class="line">  <span class="attr">badges:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h1 id="配置圖標-Favicon"><a href="#配置圖標-Favicon" class="headerlink" title="配置圖標(Favicon)"></a>配置圖標(Favicon)</h1><p>默認情況下，Hexo站點在<code>hexo-site/themes/next/source/images/</code>目錄中使用NexT圖標，以用於不同設備。 您可以用自己的收藏夾替換它們。</p>
+<p>例如，您可以將收藏夾圖標放在<code>hexo-site/source/images/</code>目錄中。<br>然後，您需要重命名它們並更改<code>主題配置文件</code>中<code>favicon</code>部分中的設置，否則來自Next的圖標將在Hexo中重寫您的自定義圖標。</p>
+<p>您也可以將自定義圖標放入<code>hexo-site/source/</code>目錄。 這樣，您必須從路徑中刪除<code>/images</code>前綴。</p>
+<p>要生成<code>自定義圖標</code>，您可以訪問<a target="_blank" rel="external nofollow noopener noreferrer" href="https://realfavicongenerator.net/">Favicon Generator</a>。</p>
+<blockquote>
+<p>next&#x2F;_config.yml<br>  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">favicon:</span></span><br><span class="line">  <span class="attr">small:</span> <span class="string">/images/favicon-16x16-next.png</span></span><br><span class="line">  <span class="attr">medium:</span> <span class="string">/images/favicon-32x32-next.png</span></span><br><span class="line">  <span class="attr">apple_touch_icon:</span> <span class="string">/images/apple-touch-icon-next.png</span></span><br><span class="line">  <span class="attr">safari_pinned_tab:</span> <span class="string">/images/logo.svg</span></span><br><span class="line">  <span class="attr">android_manifest:</span> <span class="string">/images/manifest.json</span></span><br><span class="line">  <span class="attr">ms_browserconfig:</span> <span class="string">/images/browserconfig.xml</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="Favicon設置但不起作用（需要重新記錄文檔）"><a href="#Favicon設置但不起作用（需要重新記錄文檔）" class="headerlink" title="Favicon設置但不起作用（需要重新記錄文檔）"></a>Favicon設置但不起作用（需要重新記錄文檔）</h2><p>將您的網站圖標<code>favicon</code>放在網站的源目錄下。<br>如果您發現<code>favicon</code>不起作用，請先清理瀏覽器的緩存，<br>然後直接訪問Favicon的URL，該URL應該為<code>http(s)://your-domain.com/favicon.ico</code>.</p>
+<blockquote>
+<p>如果您的站點位於子目錄中，請將其設置為<code>favicon: favicon.ico</code></p>
+</blockquote>
+<h1 id="配置頭像"><a href="#配置頭像" class="headerlink" title="配置頭像"></a>配置頭像</h1><p>默認情況下，NexT在側邊欄中不顯示頭像。<br>您可以通過在<code>主題配置文件</code>中的<code>avatar</code>設置下編輯值來配置它。</p>
+<h2 id="url"><a href="#url" class="headerlink" title="url:"></a>url:</h2><p>  對於首次測試，您可以取消註釋<code>avatar.url</code>設置附近的<code>/images/avatar.gif</code>值，以查看默認頭像：</p>
+<blockquote>
+<p>next&#x2F;_config.yml<br>  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">avatar:</span></span><br><span class="line">  <span class="attr">url:</span> <span class="string">/images/avatar.gif</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>  然後，您需要指定自己的頭像。 可以通過以下方式之一完成：</p>
+<h3 id="Hexo目錄"><a href="#Hexo目錄" class="headerlink" title="Hexo目錄"></a>Hexo目錄</h3><p>  將您的頭像放置在站點目錄<code>source/uploads/</code>下（如果不存在，則創建目錄）。<br>  然後將選項更改為頭像：<code>/uploads/avatar.png</code>。</p>
+<h3 id="NexT目錄"><a href="#NexT目錄" class="headerlink" title="NexT目錄"></a>NexT目錄</h3><p>  將您的頭像放置在主題目錄<code>source/images/</code>下。<br>  然後將選項更改為頭像：<code>/images/avatar.png</code>。</p>
+<blockquote>
+<p>當前站點使用以下配置從位於<code>next/source/images/apple-touch-icon-next.png</code>中的文件使用<code>主題目錄</code>下的頭像：<br>next&#x2F;_config.yml<br>  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">theme_config:</span></span><br><span class="line">  <span class="attr">avatar:</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">/images/apple-touch-icon-next.png</span></span><br><span class="line">    <span class="attr">rounded:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">rotated:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="來自Internet的絕對URL"><a href="#來自Internet的絕對URL" class="headerlink" title="來自Internet的絕對URL"></a>來自Internet的絕對URL</h3><p>  您還可以指定帶有圖像絕對路徑的任何外部URL：<code>http(s)://example.com/avatar.png</code></p>
+<h1 id="配置作者"><a href="#配置作者" class="headerlink" title="配置作者"></a>配置作者</h1><p>編輯站點配置文件，並將author的值設置為您的暱稱。</p>
+<blockquote>
+<p>hexo&#x2F;_config.yml<br>  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line"><span class="attr">author:</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h1 id="配置說明"><a href="#配置說明" class="headerlink" title="配置說明"></a>配置說明</h1><p>編輯<code>站點配置文件</code>，並將<code>description</code>的值設置為您的描述，它可以是您喜歡的句子。</p>
+<blockquote>
+<p>hexo&#x2F;_config.yml<br>  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line"><span class="attr">description:</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>之後，我們可以<a target="_blank" rel="external nofollow noopener noreferrer" href="https://theme-next.js.org/docs/getting-started/deployment.html">配置部署</a>。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/teach/" rel="tag"># 教學</a>
+              <a href="/tags/next/" rel="tag"># NexT</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/3614064843/" rel="prev" title="[教學]Hexo使用-NexT整合設定">
+      <i class="fa fa-chevron-left"></i> [教學]Hexo使用-NexT整合設定
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/posts/665987006/" rel="next" title="[教學]-NexT使用-主題設定">
+      [教學]-NexT使用-主題設定 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AA%94%E6%A1%88%E8%AE%8A%E6%95%B8"><span class="nav-number">1.</span> <span class="nav-text">檔案變數</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#config-yml"><span class="nav-number">1.1.</span> <span class="nav-text">_config.yml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E7%94%A8%E7%9A%84%E8%A8%AD%E7%BD%AE"><span class="nav-number">1.2.</span> <span class="nav-text">可用的設置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%BB%98%E8%AA%8D%E8%A8%AD%E7%BD%AE"><span class="nav-number">1.3.</span> <span class="nav-text">默認設置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NexT%E5%AE%89%E8%A3%9D"><span class="nav-number">2.</span> <span class="nav-text">NexT安裝</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%8B%E8%BC%89NexT"><span class="nav-number">3.</span> <span class="nav-text">下載NexT</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%95%9F%E7%94%A8NexT"><span class="nav-number">4.</span> <span class="nav-text">啟用NexT</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AA%A2%E6%9F%A5NexT"><span class="nav-number">5.</span> <span class="nav-text">檢查NexT</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E6%8F%92%E4%BB%B6"><span class="nav-number">6.</span> <span class="nav-text">添加插件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E5%AE%89%E8%A3%9D"><span class="nav-number">6.1.</span> <span class="nav-text">本地安裝</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CDN%E9%8F%88%E6%8E%A5"><span class="nav-number">6.2.</span> <span class="nav-text">CDN鏈接</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NexT%E9%85%8D%E7%BD%AE"><span class="nav-number">7.</span> <span class="nav-text">NexT配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%81%B8%E6%93%87%E6%96%B9%E6%A1%88-Scheme"><span class="nav-number">7.1.</span> <span class="nav-text">選擇方案(Scheme)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%BB%91%E6%9A%97%E6%A8%A1%E5%BC%8F"><span class="nav-number">8.</span> <span class="nav-text">黑暗模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E8%8F%9C%E5%96%AE%E9%A0%85Menu"><span class="nav-number">9.</span> <span class="nav-text">配置菜單項Menu</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E5%9C%96%E6%A8%99-Favicon"><span class="nav-number">10.</span> <span class="nav-text">配置圖標(Favicon)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Favicon%E8%A8%AD%E7%BD%AE%E4%BD%86%E4%B8%8D%E8%B5%B7%E4%BD%9C%E7%94%A8%EF%BC%88%E9%9C%80%E8%A6%81%E9%87%8D%E6%96%B0%E8%A8%98%E9%8C%84%E6%96%87%E6%AA%94%EF%BC%89"><span class="nav-number">10.1.</span> <span class="nav-text">Favicon設置但不起作用（需要重新記錄文檔）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E9%A0%AD%E5%83%8F"><span class="nav-number">11.</span> <span class="nav-text">配置頭像</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#url"><span class="nav-number">11.1.</span> <span class="nav-text">url:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo%E7%9B%AE%E9%8C%84"><span class="nav-number">11.1.1.</span> <span class="nav-text">Hexo目錄</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NexT%E7%9B%AE%E9%8C%84"><span class="nav-number">11.1.2.</span> <span class="nav-text">NexT目錄</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%86%E8%87%AAInternet%E7%9A%84%E7%B5%95%E5%B0%8DURL"><span class="nav-number">11.1.3.</span> <span class="nav-text">來自Internet的絕對URL</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E4%BD%9C%E8%80%85"><span class="nav-number">12.</span> <span class="nav-text">配置作者</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E8%AA%AA%E6%98%8E"><span class="nav-number">13.</span> <span class="nav-text">配置說明</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Gavin</p>
+  <div class="site-description" itemprop="description">然不能取者,<br>城高池深,兵器備具,<br>財穀多積,豪士一謀者也。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">73</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">75</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Gavin</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="總字數">60k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">1:48</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">NexT.Muse</a> 強力驅動
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
