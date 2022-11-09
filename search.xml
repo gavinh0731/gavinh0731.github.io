@@ -59,6 +59,49 @@ MACD用來解決什麼問題？<br>用來解決強度與強度的變化，並研
       </tags>
   </entry>
   <entry>
+    <title>[教學]Hexo使用-NexT整合設定</title>
+    <url>/posts/3614064843/</url>
+    <content><![CDATA[<h1 id="Next-客製功能及樣板編輯筆記"><a href="#Next-客製功能及樣板編輯筆記" class="headerlink" title="Next 客製功能及樣板編輯筆記"></a>Next 客製功能及樣板編輯筆記</h1><h2 id="pjax-安裝"><a href="#pjax-安裝" class="headerlink" title="pjax 安裝"></a>pjax 安裝</h2><p>究竟什麼是 pjax 呢？簡單來說，pjax 實現了 URL 改變但不重新整理整個頁面，也就是只有局部的頁面會更新，不會讓整個頁面重新閃動（重新整理）。那這個功能有什麼特色呢？最重要的就是原本左下角的音樂播放器遇到切換頁面，就會停掉然後重新載入；但使用 pjax 後就能解決這個問題。</p>
+<p>要啟用 pjax，首先到 <code>/themes/next/_config.yml</code>，修改 <code>pjax: true</code>：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Easily enable fast Ajax navigation on your website.</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/theme-next/theme-next-pjax</span></span><br><span class="line"><span class="attr">pjax:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>根據 <a href="https://github.com/theme-next/theme-next-pjax">官方教學</a>，需要輸入以下指令來載入必要檔案：（cmd 在 Hexo 資料夾根目錄下）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/theme-next/theme-next-pjax themes/next/source/lib/pjax</span><br></pre></td></tr></table></figure>
+<p>看似沒什麼的功能，其實在切換頁面的時候，就不會整個 refresh 了唷！重點是音樂還能不中斷播放！</p>
+<span id="more"></span>
+
+<h2 id="文章字數統計-x2F-閱讀時間安裝"><a href="#文章字數統計-x2F-閱讀時間安裝" class="headerlink" title="文章字數統計&#x2F;閱讀時間安裝"></a>文章字數統計&#x2F;閱讀時間安裝</h2><p><code>/themes/next/_config.yml</code> 的 閱讀字數&#x2F;時間 設定如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Post wordcount display settings</span><br><span class="line"># Dependencies: https://github.com/theme-next/hexo-symbols-count-time</span><br><span class="line">symbols_count_time:</span><br><span class="line">  separated_meta: true # 是否&quot;換行顯示&quot;字數統計及閱讀時長</span><br><span class="line">  item_text_post: false # 字數統計和閱讀時長是要使用小圖示(true)還是文字表示(false)</span><br><span class="line">  item_text_total: false # 文章底部的字數統計和閱讀時長是要使用小圖示(true)還是文字表示(false)</span><br></pre></td></tr></table></figure>
+<p>根據 <a href="https://github.com/theme-next/hexo-symbols-count-time">官方教學</a>，需要輸入以下指令安裝：（cmd 在 Hexo 資料夾根目錄下）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-symbols-count-time --save</span><br></pre></td></tr></table></figure>
+<p>接著要在 Hexo 資料夾根目錄的 _config.yml 加入以下內容：（加在檔案最下方即可）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 字數統計及閱讀時長</span><br><span class="line">symbols_count_time:</span><br><span class="line">  symbols: true # 文章是否顯示字數統計</span><br><span class="line">  time: true # 文章是否顯示閱讀時間</span><br><span class="line">  total_symbols: true # 網頁底部是否顯示字數統計</span><br><span class="line">  total_time: true # 網頁底部是否顯示閱讀時間</span><br><span class="line">  exclude_codeblock: false # 排除程式碼字數統計</span><br><span class="line">  awl: 2  #平均文字長度，中文為 2, 英文為 5, 預設為 4</span><br><span class="line">  wpm: 275  #一分鐘閱讀字數，預設為 275</span><br><span class="line">  suffix: &quot;分鐘&quot;</span><br></pre></td></tr></table></figure>
+
+<h2 id="文章搜尋功能安裝"><a href="#文章搜尋功能安裝" class="headerlink" title="文章搜尋功能安裝"></a>文章搜尋功能安裝</h2><p><code>/themes/next/_config.yml</code> 的 文章搜尋功能 設定如下：（將 enable 改成 true 即可）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">local_search:</span><br><span class="line">  enable: true</span><br><span class="line">  # If auto, trigger search by changing input.</span><br><span class="line">  # If manual, trigger search by pressing enter key or search button.</span><br><span class="line">  trigger: auto</span><br><span class="line">  # Show top n results per article, show all results by setting to -1</span><br><span class="line">  top_n_per_article: 1</span><br><span class="line">  # Unescape html strings to the readable one.</span><br><span class="line">  unescape: false</span><br><span class="line">  # Preload the search data when the page loads.</span><br><span class="line">  preload: false</span><br></pre></td></tr></table></figure>
+<p>根據 <a href="https://github.com/theme-next/hexo-generator-searchdb">官方教學</a>，需要輸入以下指令安裝：（cmd 在 Hexo 資料夾根目錄下）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
+<p>接著要在 Hexo 資料夾根目錄的 <code>_config.yml</code> 加入以下內容，相關參數設定可以查看 <a href="https://github.com/theme-next/hexo-generator-searchdb#Options">官方文件</a>，基本上照預設走即可：（加在檔案最下方即可）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 文章搜尋功能</span><br><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  content: true</span><br><span class="line">  format: html</span><br></pre></td></tr></table></figure>
+
+<h2 id="啟用置頂文章功能"><a href="#啟用置頂文章功能" class="headerlink" title="啟用置頂文章功能"></a>啟用置頂文章功能</h2><p>安裝插件：</p>
+<blockquote>
+<p>更新：無需安裝插件或修改源碼，主題已內置排序算法</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-generator-topindex --save</span><br></pre></td></tr></table></figure>
+<p>編輯需要置頂的文章，加入 <code>top</code>: &lt;數字&gt; 屬性，數字越大，優先級越高，例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: &lt;文章名稱&gt;</span><br><span class="line">date: 2019-07-23 19:44:29</span><br><span class="line">categories: </span><br><span class="line">- &lt;分類名稱&gt;</span><br><span class="line">tags:</span><br><span class="line">top: 1</span><br><span class="line">---</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>教學</category>
+        <category>NexT</category>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>教學</tag>
+        <tag>Hexo</tag>
+        <tag>NexT</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[教學]Hexo使用-寫作說明</title>
     <url>/posts/1389384140/</url>
     <content><![CDATA[<h1 id="寫作"><a href="#寫作" class="headerlink" title="寫作"></a>寫作</h1><p>我們要在網誌中建立第一篇新文章，您可以直接從現有的範例文章「Hello World」改寫，但我們更建議您學習 new 指令。</p>
@@ -199,49 +242,6 @@ MACD用來解決什麼問題？<br>用來解決強度與強度的變化，並研
       </tags>
   </entry>
   <entry>
-    <title>[教學]Hexo使用-NexT整合設定</title>
-    <url>/posts/3614064843/</url>
-    <content><![CDATA[<h1 id="Next-客製功能及樣板編輯筆記"><a href="#Next-客製功能及樣板編輯筆記" class="headerlink" title="Next 客製功能及樣板編輯筆記"></a>Next 客製功能及樣板編輯筆記</h1><h2 id="pjax-安裝"><a href="#pjax-安裝" class="headerlink" title="pjax 安裝"></a>pjax 安裝</h2><p>究竟什麼是 pjax 呢？簡單來說，pjax 實現了 URL 改變但不重新整理整個頁面，也就是只有局部的頁面會更新，不會讓整個頁面重新閃動（重新整理）。那這個功能有什麼特色呢？最重要的就是原本左下角的音樂播放器遇到切換頁面，就會停掉然後重新載入；但使用 pjax 後就能解決這個問題。</p>
-<p>要啟用 pjax，首先到 <code>/themes/next/_config.yml</code>，修改 <code>pjax: true</code>：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Easily enable fast Ajax navigation on your website.</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/theme-next/theme-next-pjax</span></span><br><span class="line"><span class="attr">pjax:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<p>根據 <a href="https://github.com/theme-next/theme-next-pjax">官方教學</a>，需要輸入以下指令來載入必要檔案：（cmd 在 Hexo 資料夾根目錄下）</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/theme-next/theme-next-pjax themes/next/source/lib/pjax</span><br></pre></td></tr></table></figure>
-<p>看似沒什麼的功能，其實在切換頁面的時候，就不會整個 refresh 了唷！重點是音樂還能不中斷播放！</p>
-<span id="more"></span>
-
-<h2 id="文章字數統計-x2F-閱讀時間安裝"><a href="#文章字數統計-x2F-閱讀時間安裝" class="headerlink" title="文章字數統計&#x2F;閱讀時間安裝"></a>文章字數統計&#x2F;閱讀時間安裝</h2><p><code>/themes/next/_config.yml</code> 的 閱讀字數&#x2F;時間 設定如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Post wordcount display settings</span><br><span class="line"># Dependencies: https://github.com/theme-next/hexo-symbols-count-time</span><br><span class="line">symbols_count_time:</span><br><span class="line">  separated_meta: true # 是否&quot;換行顯示&quot;字數統計及閱讀時長</span><br><span class="line">  item_text_post: false # 字數統計和閱讀時長是要使用小圖示(true)還是文字表示(false)</span><br><span class="line">  item_text_total: false # 文章底部的字數統計和閱讀時長是要使用小圖示(true)還是文字表示(false)</span><br></pre></td></tr></table></figure>
-<p>根據 <a href="https://github.com/theme-next/hexo-symbols-count-time">官方教學</a>，需要輸入以下指令安裝：（cmd 在 Hexo 資料夾根目錄下）</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-symbols-count-time --save</span><br></pre></td></tr></table></figure>
-<p>接著要在 Hexo 資料夾根目錄的 _config.yml 加入以下內容：（加在檔案最下方即可）</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 字數統計及閱讀時長</span><br><span class="line">symbols_count_time:</span><br><span class="line">  symbols: true # 文章是否顯示字數統計</span><br><span class="line">  time: true # 文章是否顯示閱讀時間</span><br><span class="line">  total_symbols: true # 網頁底部是否顯示字數統計</span><br><span class="line">  total_time: true # 網頁底部是否顯示閱讀時間</span><br><span class="line">  exclude_codeblock: false # 排除程式碼字數統計</span><br><span class="line">  awl: 2  #平均文字長度，中文為 2, 英文為 5, 預設為 4</span><br><span class="line">  wpm: 275  #一分鐘閱讀字數，預設為 275</span><br><span class="line">  suffix: &quot;分鐘&quot;</span><br></pre></td></tr></table></figure>
-
-<h2 id="文章搜尋功能安裝"><a href="#文章搜尋功能安裝" class="headerlink" title="文章搜尋功能安裝"></a>文章搜尋功能安裝</h2><p><code>/themes/next/_config.yml</code> 的 文章搜尋功能 設定如下：（將 enable 改成 true 即可）</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">local_search:</span><br><span class="line">  enable: true</span><br><span class="line">  # If auto, trigger search by changing input.</span><br><span class="line">  # If manual, trigger search by pressing enter key or search button.</span><br><span class="line">  trigger: auto</span><br><span class="line">  # Show top n results per article, show all results by setting to -1</span><br><span class="line">  top_n_per_article: 1</span><br><span class="line">  # Unescape html strings to the readable one.</span><br><span class="line">  unescape: false</span><br><span class="line">  # Preload the search data when the page loads.</span><br><span class="line">  preload: false</span><br></pre></td></tr></table></figure>
-<p>根據 <a href="https://github.com/theme-next/hexo-generator-searchdb">官方教學</a>，需要輸入以下指令安裝：（cmd 在 Hexo 資料夾根目錄下）</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
-<p>接著要在 Hexo 資料夾根目錄的 <code>_config.yml</code> 加入以下內容，相關參數設定可以查看 <a href="https://github.com/theme-next/hexo-generator-searchdb#Options">官方文件</a>，基本上照預設走即可：（加在檔案最下方即可）</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 文章搜尋功能</span><br><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  content: true</span><br><span class="line">  format: html</span><br></pre></td></tr></table></figure>
-
-<h2 id="啟用置頂文章功能"><a href="#啟用置頂文章功能" class="headerlink" title="啟用置頂文章功能"></a>啟用置頂文章功能</h2><p>安裝插件：</p>
-<blockquote>
-<p>更新：無需安裝插件或修改源碼，主題已內置排序算法</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-generator-topindex --save</span><br></pre></td></tr></table></figure>
-<p>編輯需要置頂的文章，加入 <code>top</code>: &lt;數字&gt; 屬性，數字越大，優先級越高，例如：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: &lt;文章名稱&gt;</span><br><span class="line">date: 2019-07-23 19:44:29</span><br><span class="line">categories: </span><br><span class="line">- &lt;分類名稱&gt;</span><br><span class="line">tags:</span><br><span class="line">top: 1</span><br><span class="line">---</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>教學</category>
-        <category>NexT</category>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>教學</tag>
-        <tag>Hexo</tag>
-        <tag>NexT</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[教學]-NexT使用-主題設定-帖子</title>
     <url>/posts/3030220437/</url>
     <content><![CDATA[<h1 id="帖子設置"><a href="#帖子設置" class="headerlink" title="帖子設置"></a>帖子設置</h1><h2 id="序言文字"><a href="#序言文字" class="headerlink" title="序言文字"></a>序言文字</h2><p>通常需要在主頁上顯示文章的某些部分，然後提供指向完整文章的鏈接。<br>NexT提供了兩種方法來控製文章在首頁中的顯示方式。<br>換句話說，您可以使用以下方式來顯示文章摘要和<code>閱讀全文</code>按鈕。</p>
@@ -302,8 +302,8 @@ MACD用來解決什麼問題？<br>用來解決強度與強度的變化，並研
       </categories>
       <tags>
         <tag>教學</tag>
-        <tag>帖子</tag>
         <tag>NexT</tag>
+        <tag>帖子</tag>
       </tags>
   </entry>
   <entry>
@@ -461,72 +461,6 @@ MACD用來解決什麼問題？<br>用來解決強度與強度的變化，並研
       </tags>
   </entry>
   <entry>
-    <title>[教學]-NexT使用-第三方服務</title>
-    <url>/posts/1612943303/</url>
-    <content><![CDATA[<p>靜態網站的某些功能受到限制，因此我們需要第三方服務來擴展我們的網站。<br>在任何時候，您都可以使用NexT支持的第三方服務來擴展所需的功能。</p>
-<h1 id="數學方程式"><a href="#數學方程式" class="headerlink" title="數學方程式"></a>數學方程式</h1><ul>
-<li><a href="https://theme-next.js.org/docs/third-party-services/math-equations.html">數學方程式</a></li>
-</ul>
-<h1 id="評論系統"><a href="#評論系統" class="headerlink" title="評論系統"></a>評論系統</h1><ul>
-<li><a href="https://theme-next.js.org/docs/third-party-services/comments.html#Disqus">Disqus</a></li>
-<li><a href="https://theme-next.js.org/docs/third-party-services/comments.html#DisqusJS">DisqusJS</a></li>
-<li><a href="https://theme-next.js.org/docs/third-party-services/comments.html#LiveRe">LiveRe</a></li>
-<li><a href="https://theme-next.js.org/docs/third-party-services/comments.html#Gitalk">Gitalk</a></li>
-<li><a href="https://theme-next.js.org/docs/third-party-services/comments.html#Valine">Valine (China)</a></li>
-<li><a href="https://theme-next.js.org/docs/third-party-services/comments.html#Changyan">Changyan (China)</a></li>
-</ul>
-<span id="more"></span>
-
-<h1 id="如何在頁面上禁用評論"><a href="#如何在頁面上禁用評論" class="headerlink" title="如何在頁面上禁用評論"></a>如何在頁面上禁用評論</h1><p>當您啟用類似Disqus的評論服務時，所有新頁面將自動具有評論服務。<br>如果要在一頁中禁用它，只需將<code>comments</code>鍵添加到Front-matter並將其值設置為<code>false</code>。 如下所示：</p>
-<blockquote>
-<p>your-post.md<br>  <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">All</span> <span class="string">tags</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">&quot;tags&quot;</span></span><br><span class="line"><span class="attr">comments:</span> <span class="literal">false</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<h1 id="統計與分析"><a href="#統計與分析" class="headerlink" title="統計與分析"></a>統計與分析</h1><h2 id="分析工具"><a href="#分析工具" class="headerlink" title="分析工具"></a>分析工具</h2><ul>
-<li>Google Analytics</li>
-<li>Baidu Analytics (China)</li>
-<li>Growingio Analytics</li>
-<li>CNZZ Analytics (China)</li>
-</ul>
-<h2 id="統計"><a href="#統計" class="headerlink" title="統計"></a>統計</h2><ul>
-<li>LeanCloud (China)</li>
-<li>Firebase</li>
-<li>Busuanzi Counting</li>
-</ul>
-<h2 id="貼文小工具"><a href="#貼文小工具" class="headerlink" title="貼文小工具"></a>貼文小工具</h2><ul>
-<li>Widgetpack Rating</li>
-<li>AddThis</li>
-</ul>
-<h2 id="搜索服務"><a href="#搜索服務" class="headerlink" title="搜索服務"></a>搜索服務</h2><ul>
-<li>Algolia Search</li>
-<li>Local Search</li>
-<li>Swiftype</li>
-</ul>
-<h2 id="聊天服務"><a href="#聊天服務" class="headerlink" title="聊天服務"></a>聊天服務</h2><ul>
-<li>Chatra</li>
-<li>Tidio</li>
-</ul>
-<h2 id="外部庫"><a href="#外部庫" class="headerlink" title="外部庫"></a>外部庫</h2><ul>
-<li><a href="/2020/06/18/%E6%95%99%E5%AD%B8-Hexo%E4%BD%BF%E7%94%A8-NexT%E6%95%B4%E5%90%88%E8%A8%AD%E5%AE%9A/#pjax-%E5%AE%89%E8%A3%9D">PJAX</a><br>頁面跳轉的時候人眼需要對整個頁面作重新識別， 刷新部分頁面的時候， 只需要重新識別其中一塊區域</li>
-<li>Fancybox<br>jQuery線上相簿展示器</li>
-<li>MediumZoom</li>
-<li>Lazyload<br>當網站圖片較多時，會造成網站開啟速度變慢，這時候前端工程師就會使用一種優化技術－延遲加載</li>
-<li>Pangu Autospace<br>中文、英文、數字、符號之間插入空格以提升文章質量</li>
-<li>Quicklink</li>
-<li>Motion</li>
-<li>Progress bar</li>
-<li>Backgroud JS</li>
-</ul>
-]]></content>
-      <categories>
-        <category>教學</category>
-        <category>NexT</category>
-      </categories>
-      <tags>
-        <tag>教學</tag>
-        <tag>NexT</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[教學]-NexT使用-入門</title>
     <url>/posts/1015261791/</url>
     <content><![CDATA[<p><a href="https://hexo.io/">Hexo</a>是一個快速而強大的靜態博客生成框架，它基於<a href="https://nodejs.org/">Node.js</a>。 通過使用Hexo，您可以使用Markdown輕鬆編寫文章，除了Markdown的語法外，您還可以使用Hexo提供的<a href="https://hexo.io/docs/tag-plugins">標籤插件</a>來簡單插入特殊格式的內容。 在此頁面中，我們假設您已經安裝了Hexo並使用它創建了一個站點。</p>
@@ -661,6 +595,72 @@ MACD用來解決什麼問題？<br>用來解決強度與強度的變化，並研
 <p>hexo&#x2F;_config.yml<br>  <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line"><span class="attr">description:</span></span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <p>之後，我們可以<a href="https://theme-next.js.org/docs/getting-started/deployment.html">配置部署</a>。</p>
+]]></content>
+      <categories>
+        <category>教學</category>
+        <category>NexT</category>
+      </categories>
+      <tags>
+        <tag>教學</tag>
+        <tag>NexT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[教學]-NexT使用-第三方服務</title>
+    <url>/posts/1612943303/</url>
+    <content><![CDATA[<p>靜態網站的某些功能受到限制，因此我們需要第三方服務來擴展我們的網站。<br>在任何時候，您都可以使用NexT支持的第三方服務來擴展所需的功能。</p>
+<h1 id="數學方程式"><a href="#數學方程式" class="headerlink" title="數學方程式"></a>數學方程式</h1><ul>
+<li><a href="https://theme-next.js.org/docs/third-party-services/math-equations.html">數學方程式</a></li>
+</ul>
+<h1 id="評論系統"><a href="#評論系統" class="headerlink" title="評論系統"></a>評論系統</h1><ul>
+<li><a href="https://theme-next.js.org/docs/third-party-services/comments.html#Disqus">Disqus</a></li>
+<li><a href="https://theme-next.js.org/docs/third-party-services/comments.html#DisqusJS">DisqusJS</a></li>
+<li><a href="https://theme-next.js.org/docs/third-party-services/comments.html#LiveRe">LiveRe</a></li>
+<li><a href="https://theme-next.js.org/docs/third-party-services/comments.html#Gitalk">Gitalk</a></li>
+<li><a href="https://theme-next.js.org/docs/third-party-services/comments.html#Valine">Valine (China)</a></li>
+<li><a href="https://theme-next.js.org/docs/third-party-services/comments.html#Changyan">Changyan (China)</a></li>
+</ul>
+<span id="more"></span>
+
+<h1 id="如何在頁面上禁用評論"><a href="#如何在頁面上禁用評論" class="headerlink" title="如何在頁面上禁用評論"></a>如何在頁面上禁用評論</h1><p>當您啟用類似Disqus的評論服務時，所有新頁面將自動具有評論服務。<br>如果要在一頁中禁用它，只需將<code>comments</code>鍵添加到Front-matter並將其值設置為<code>false</code>。 如下所示：</p>
+<blockquote>
+<p>your-post.md<br>  <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">All</span> <span class="string">tags</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">&quot;tags&quot;</span></span><br><span class="line"><span class="attr">comments:</span> <span class="literal">false</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h1 id="統計與分析"><a href="#統計與分析" class="headerlink" title="統計與分析"></a>統計與分析</h1><h2 id="分析工具"><a href="#分析工具" class="headerlink" title="分析工具"></a>分析工具</h2><ul>
+<li>Google Analytics</li>
+<li>Baidu Analytics (China)</li>
+<li>Growingio Analytics</li>
+<li>CNZZ Analytics (China)</li>
+</ul>
+<h2 id="統計"><a href="#統計" class="headerlink" title="統計"></a>統計</h2><ul>
+<li>LeanCloud (China)</li>
+<li>Firebase</li>
+<li>Busuanzi Counting</li>
+</ul>
+<h2 id="貼文小工具"><a href="#貼文小工具" class="headerlink" title="貼文小工具"></a>貼文小工具</h2><ul>
+<li>Widgetpack Rating</li>
+<li>AddThis</li>
+</ul>
+<h2 id="搜索服務"><a href="#搜索服務" class="headerlink" title="搜索服務"></a>搜索服務</h2><ul>
+<li>Algolia Search</li>
+<li>Local Search</li>
+<li>Swiftype</li>
+</ul>
+<h2 id="聊天服務"><a href="#聊天服務" class="headerlink" title="聊天服務"></a>聊天服務</h2><ul>
+<li>Chatra</li>
+<li>Tidio</li>
+</ul>
+<h2 id="外部庫"><a href="#外部庫" class="headerlink" title="外部庫"></a>外部庫</h2><ul>
+<li><a href="/2020/06/18/%E6%95%99%E5%AD%B8-Hexo%E4%BD%BF%E7%94%A8-NexT%E6%95%B4%E5%90%88%E8%A8%AD%E5%AE%9A/#pjax-%E5%AE%89%E8%A3%9D">PJAX</a><br>頁面跳轉的時候人眼需要對整個頁面作重新識別， 刷新部分頁面的時候， 只需要重新識別其中一塊區域</li>
+<li>Fancybox<br>jQuery線上相簿展示器</li>
+<li>MediumZoom</li>
+<li>Lazyload<br>當網站圖片較多時，會造成網站開啟速度變慢，這時候前端工程師就會使用一種優化技術－延遲加載</li>
+<li>Pangu Autospace<br>中文、英文、數字、符號之間插入空格以提升文章質量</li>
+<li>Quicklink</li>
+<li>Motion</li>
+<li>Progress bar</li>
+<li>Backgroud JS</li>
+</ul>
 ]]></content>
       <categories>
         <category>教學</category>
@@ -1378,6 +1378,47 @@ MACD用來解決什麼問題？<br>用來解決強度與強度的變化，並研
       </tags>
   </entry>
   <entry>
+    <title>理財達人秀-存股敵8個(11) ETF4終極玩法全公開</title>
+    <url>/posts/764499297/</url>
+    <content><![CDATA[<p>【存股敵8個】第11集！｜ETF大玩家闖4關！一年就玩這2檔爽賺30%！4終極玩法全公開</p>
+<h1 id="ETF-大玩家"><a href="#ETF-大玩家" class="headerlink" title="ETF 大玩家"></a>ETF 大玩家</h1><p><code>各種操作 ETF 的方式:</code></p>
+<img src="/posts/764499297/0050vs0056.png" class="" title="0050vs0056">
+<h2 id="ETF-0050"><a href="#ETF-0050" class="headerlink" title="ETF 0050"></a>ETF 0050</h2><ol>
+<li>0050 <code>長抱</code> - 不賣 5年，80%   <img src="/posts/764499297/F0050.png" class="" title="ETF0050"></li>
+<li>0050 <code>做價差</code> - 1年，12%<br>KD &lt; 20 黃金交叉:<code>進場</code>；<br>KD &gt; 80 死亡交叉:<code>出場</code><blockquote>
+<p>KD用來判斷強弱趨勢<br>KD用來判斷轉折點<br>不是所有股票看KD都準：當市值太小時，會被主力控制，所以KD只適用於牛皮股</p>
+  <img src="/posts/764499297/ETF0050KD.png" class="" title="ETF0050KD"></blockquote>
+</li>
+</ol>
+<h2 id="ETF-0056"><a href="#ETF-0056" class="headerlink" title="ETF 0056"></a>ETF 0056</h2><img src="/posts/764499297/ETF0056.png" class="" title="ETF0056">
+<ol>
+<li>0056 <code>長抱</code> - 100% 配息，<code>平均5%</code>，<code>100%填息</code></li>
+<li>0056 <code>做價差</code> - 通常會在 21~26.5 箱型整理，  <img src="/posts/764499297/ETF0056%E9%99%A4%E6%81%AF%E7%88%86%E9%87%8F.png" class="" title="ETF0056除息爆量">
+  除息後通常會下跌 -&gt; 下跌爆量(&gt;年均量*2) 就買</li>
+</ol>
+<h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><img src="/posts/764499297/ETF%E6%8A%B1%E5%A5%BD%E6%8A%B1%E6%BB%BF.png" class="" title="ETF抱好抱滿">
+<img src="/posts/764499297/ETF%E7%8E%A9%E6%B3%95.png" class="" title="ETF玩法">
+
+<span id="more"></span>
+<p><a href="https://www.youtube.com/watch?v=IYJBdNk012g&list=PLsNJO0nl_IhRiAMKKSXMoDaxsqAs7Fije&index=11">理財達人秀-存股敵8個(11))</a></p>
+<div class="video-container"><iframe src="https://www.youtube.com/embed/IYJBdNk012g" frameborder="0" loading="lazy" allowfullscreen></iframe></div>]]></content>
+      <categories>
+        <category>1⃣ 股票</category>
+        <category>2⃣ 筆記</category>
+        <category>基本面分析</category>
+        <category>股票</category>
+        <category>3⃣ 理財達人秀</category>
+        <category>存股敵8個</category>
+      </categories>
+      <tags>
+        <tag>筆記</tag>
+        <tag>股票</tag>
+        <tag>基本面分析</tag>
+        <tag>股魚</tag>
+        <tag>填息</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>理財達人秀-存股敵8個(12)</title>
     <url>/posts/112985762/</url>
     <content><![CDATA[<p>【存股敵8個】第12集！｜4線索提前90天財報Get！股魚變身股市福爾摩斯！破解財報之謎輕鬆賺7%</p>
@@ -1461,47 +1502,6 @@ MACD用來解決什麼問題？<br>用來解決強度與強度的變化，並研
         <tag>基本面分析</tag>
         <tag>股魚</tag>
         <tag>金融股</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>理財達人秀-存股敵8個(11) ETF4終極玩法全公開</title>
-    <url>/posts/764499297/</url>
-    <content><![CDATA[<p>【存股敵8個】第11集！｜ETF大玩家闖4關！一年就玩這2檔爽賺30%！4終極玩法全公開</p>
-<h1 id="ETF-大玩家"><a href="#ETF-大玩家" class="headerlink" title="ETF 大玩家"></a>ETF 大玩家</h1><p><code>各種操作 ETF 的方式:</code></p>
-<img src="/posts/764499297/0050vs0056.png" class="" title="0050vs0056">
-<h2 id="ETF-0050"><a href="#ETF-0050" class="headerlink" title="ETF 0050"></a>ETF 0050</h2><ol>
-<li>0050 <code>長抱</code> - 不賣 5年，80%   <img src="/posts/764499297/F0050.png" class="" title="ETF0050"></li>
-<li>0050 <code>做價差</code> - 1年，12%<br>KD &lt; 20 黃金交叉:<code>進場</code>；<br>KD &gt; 80 死亡交叉:<code>出場</code><blockquote>
-<p>KD用來判斷強弱趨勢<br>KD用來判斷轉折點<br>不是所有股票看KD都準：當市值太小時，會被主力控制，所以KD只適用於牛皮股</p>
-  <img src="/posts/764499297/ETF0050KD.png" class="" title="ETF0050KD"></blockquote>
-</li>
-</ol>
-<h2 id="ETF-0056"><a href="#ETF-0056" class="headerlink" title="ETF 0056"></a>ETF 0056</h2><img src="/posts/764499297/ETF0056.png" class="" title="ETF0056">
-<ol>
-<li>0056 <code>長抱</code> - 100% 配息，<code>平均5%</code>，<code>100%填息</code></li>
-<li>0056 <code>做價差</code> - 通常會在 21~26.5 箱型整理，  <img src="/posts/764499297/ETF0056%E9%99%A4%E6%81%AF%E7%88%86%E9%87%8F.png" class="" title="ETF0056除息爆量">
-  除息後通常會下跌 -&gt; 下跌爆量(&gt;年均量*2) 就買</li>
-</ol>
-<h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><img src="/posts/764499297/ETF%E6%8A%B1%E5%A5%BD%E6%8A%B1%E6%BB%BF.png" class="" title="ETF抱好抱滿">
-<img src="/posts/764499297/ETF%E7%8E%A9%E6%B3%95.png" class="" title="ETF玩法">
-
-<span id="more"></span>
-<p><a href="https://www.youtube.com/watch?v=IYJBdNk012g&list=PLsNJO0nl_IhRiAMKKSXMoDaxsqAs7Fije&index=11">理財達人秀-存股敵8個(11))</a></p>
-<div class="video-container"><iframe src="https://www.youtube.com/embed/IYJBdNk012g" frameborder="0" loading="lazy" allowfullscreen></iframe></div>]]></content>
-      <categories>
-        <category>1⃣ 股票</category>
-        <category>2⃣ 筆記</category>
-        <category>基本面分析</category>
-        <category>股票</category>
-        <category>3⃣ 理財達人秀</category>
-        <category>存股敵8個</category>
-      </categories>
-      <tags>
-        <tag>筆記</tag>
-        <tag>股票</tag>
-        <tag>基本面分析</tag>
-        <tag>股魚</tag>
-        <tag>填息</tag>
       </tags>
   </entry>
   <entry>
@@ -2968,40 +2968,6 @@ MSCI 外資所建立的台灣指數
       </tags>
   </entry>
   <entry>
-    <title>理財達人秀-飆股上校-找飆股SOP、長線翻倍股、KD.MACD用法、K線</title>
-    <url>/posts/281360310/</url>
-    <content><![CDATA[<h1 id="第1集！｜找飆股SOP"><a href="#第1集！｜找飆股SOP" class="headerlink" title="第1集！｜找飆股SOP"></a>第1集！｜找飆股SOP</h1><h2 id="選飆股四大心法"><a href="#選飆股四大心法" class="headerlink" title="選飆股四大心法"></a>選飆股四大心法</h2><img src="/posts/281360310/%E9%81%B8%E9%A3%86%E8%82%A1%E5%9B%9B%E5%A4%A7%E5%BF%83%E6%B3%95.png" class="" title="選飆股四大心法">
-<img src="/posts/281360310/%E9%81%B8%E9%A3%86%E8%82%A1%E5%9B%9B%E5%A4%A7%E5%BF%83%E6%B3%952.png" class="" title="選飆股四大心法2">
-<h2 id="空頭起跌股四心法"><a href="#空頭起跌股四心法" class="headerlink" title="空頭起跌股四心法"></a>空頭起跌股四心法</h2><img src="/posts/281360310/%E7%A9%BA%E9%A0%AD%E8%B5%B7%E8%B7%8C%E8%82%A1%E5%9B%9B%E5%BF%83%E6%B3%95.png" class="" title="空頭起跌股四心法">
-<span id="more"></span>
-
-<h1 id="第2集！｜長線翻倍股"><a href="#第2集！｜長線翻倍股" class="headerlink" title="第2集！｜長線翻倍股"></a>第2集！｜長線翻倍股</h1><h2 id="短中長線獲利目標"><a href="#短中長線獲利目標" class="headerlink" title="短中長線獲利目標"></a>短中長線獲利目標</h2><img src="/posts/281360310/%E7%9F%AD%E4%B8%AD%E9%95%B7%E7%B7%9A%E7%8D%B2%E5%88%A9%E7%9B%AE%E6%A8%99.png" class="" title="短中長線獲利目標">
-<h2 id="長線翻倍股四心法"><a href="#長線翻倍股四心法" class="headerlink" title="長線翻倍股四心法"></a>長線翻倍股四心法</h2><img src="/posts/281360310/%E9%95%B7%E7%B7%9A%E7%BF%BB%E5%80%8D%E8%82%A1%E5%9B%9B%E5%BF%83%E6%B3%95.png" class="" title="長線翻倍股四心法">
-<h2 id="股票是等來的"><a href="#股票是等來的" class="headerlink" title="股票是等來的"></a>股票是等來的</h2><img src="/posts/281360310/%E8%82%A1%E7%A5%A8%E6%98%AF%E7%AD%89%E4%BE%86%E7%9A%84.png" class="" title="股票是等來的">
-<h2 id="短多股六大地雷"><a href="#短多股六大地雷" class="headerlink" title="短多股六大地雷"></a>短多股六大地雷</h2><img src="/posts/281360310/%E7%9F%AD%E5%A4%9A%E8%82%A1%E5%85%AD%E5%A4%A7%E5%9C%B0%E9%9B%B7.png" class="" title="短多股六大地雷">
-
-<h1 id="第3集！｜KD-MACD用法"><a href="#第3集！｜KD-MACD用法" class="headerlink" title="第3集！｜KD.MACD用法"></a>第3集！｜KD.MACD用法</h1><img src="/posts/281360310/%E6%8A%80%E8%A1%93%E5%88%86%E6%9E%90%E6%9C%AA%E5%8D%9C%E5%85%88%E7%9F%A5.png" class="" title="技術分析未卜先知">
-<img src="/posts/281360310/%E6%8A%80%E8%A1%93%E5%88%86%E6%9E%90%E6%9C%AA%E5%8D%9C%E5%85%88%E7%9F%A52.png" class="" title="技術分析未卜先知2">
-<h2 id="技術之神高勝率6訊號"><a href="#技術之神高勝率6訊號" class="headerlink" title="技術之神高勝率6訊號"></a>技術之神高勝率6訊號</h2><img src="/posts/281360310/%E6%8A%80%E8%A1%93%E4%B9%8B%E7%A5%9E%E9%AB%98%E5%8B%9D%E7%8E%876%E8%A8%8A%E8%99%9F.png" class="" title="技術之神高勝率6訊號">
-
-<h1 id="第4集！｜超實用K線教戰"><a href="#第4集！｜超實用K線教戰" class="headerlink" title="第4集！｜超實用K線教戰"></a>第4集！｜超實用K線教戰</h1><img src="/posts/281360310/K%E7%B7%9A%E6%95%99%E6%88%B0.png" class="" title="K線教戰">
-<h2 id="K線告訴我們轉折"><a href="#K線告訴我們轉折" class="headerlink" title="K線告訴我們轉折"></a>K線告訴我們<code>轉折</code></h2><img src="/posts/281360310/K%E7%B7%9A%E5%91%8A%E8%A8%B4%E6%88%91%E5%80%91%E8%BD%89%E6%8A%98.png" class="" title="K線告訴我們轉折">]]></content>
-      <categories>
-        <category>1⃣ 股票</category>
-        <category>2⃣ 筆記</category>
-        <category>股票</category>
-        <category>技術分析</category>
-        <category>3⃣ 理財達人秀</category>
-        <category>飆股在線等</category>
-      </categories>
-      <tags>
-        <tag>筆記</tag>
-        <tag>股票</tag>
-        <tag>技術分析</tag>
-        <tag>朱家泓</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>理財達人秀-老王說實話7~9</title>
     <url>/posts/351569864/</url>
     <content><![CDATA[<h1 id="老王說實話第7集！-別人套牢的時候你大賺…正宗放空心法-4條線譜出空軍交響曲"><a href="#老王說實話第7集！-別人套牢的時候你大賺…正宗放空心法-4條線譜出空軍交響曲" class="headerlink" title="老王說實話第7集！ 別人套牢的時候你大賺…正宗放空心法 4條線譜出空軍交響曲"></a>老王說實話第7集！ 別人套牢的時候你大賺…正宗放空心法 4條線譜出空軍交響曲</h1><img src="/posts/351569864/%E6%94%BE%E7%A9%BA%E5%9B%9B%E6%A2%9D%E7%B7%9A.png" class="" title="放空四條線">
@@ -3054,6 +3020,189 @@ MSCI 外資所建立的台灣指數
         <tag>短線分析</tag>
         <tag>老王</tag>
         <tag>融券</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>理財達人秀-飆股上校-找飆股SOP、長線翻倍股、KD.MACD用法、K線</title>
+    <url>/posts/281360310/</url>
+    <content><![CDATA[<h1 id="第1集！｜找飆股SOP"><a href="#第1集！｜找飆股SOP" class="headerlink" title="第1集！｜找飆股SOP"></a>第1集！｜找飆股SOP</h1><h2 id="選飆股四大心法"><a href="#選飆股四大心法" class="headerlink" title="選飆股四大心法"></a>選飆股四大心法</h2><img src="/posts/281360310/%E9%81%B8%E9%A3%86%E8%82%A1%E5%9B%9B%E5%A4%A7%E5%BF%83%E6%B3%95.png" class="" title="選飆股四大心法">
+<img src="/posts/281360310/%E9%81%B8%E9%A3%86%E8%82%A1%E5%9B%9B%E5%A4%A7%E5%BF%83%E6%B3%952.png" class="" title="選飆股四大心法2">
+<h2 id="空頭起跌股四心法"><a href="#空頭起跌股四心法" class="headerlink" title="空頭起跌股四心法"></a>空頭起跌股四心法</h2><img src="/posts/281360310/%E7%A9%BA%E9%A0%AD%E8%B5%B7%E8%B7%8C%E8%82%A1%E5%9B%9B%E5%BF%83%E6%B3%95.png" class="" title="空頭起跌股四心法">
+<span id="more"></span>
+
+<h1 id="第2集！｜長線翻倍股"><a href="#第2集！｜長線翻倍股" class="headerlink" title="第2集！｜長線翻倍股"></a>第2集！｜長線翻倍股</h1><h2 id="短中長線獲利目標"><a href="#短中長線獲利目標" class="headerlink" title="短中長線獲利目標"></a>短中長線獲利目標</h2><img src="/posts/281360310/%E7%9F%AD%E4%B8%AD%E9%95%B7%E7%B7%9A%E7%8D%B2%E5%88%A9%E7%9B%AE%E6%A8%99.png" class="" title="短中長線獲利目標">
+<h2 id="長線翻倍股四心法"><a href="#長線翻倍股四心法" class="headerlink" title="長線翻倍股四心法"></a>長線翻倍股四心法</h2><img src="/posts/281360310/%E9%95%B7%E7%B7%9A%E7%BF%BB%E5%80%8D%E8%82%A1%E5%9B%9B%E5%BF%83%E6%B3%95.png" class="" title="長線翻倍股四心法">
+<h2 id="股票是等來的"><a href="#股票是等來的" class="headerlink" title="股票是等來的"></a>股票是等來的</h2><img src="/posts/281360310/%E8%82%A1%E7%A5%A8%E6%98%AF%E7%AD%89%E4%BE%86%E7%9A%84.png" class="" title="股票是等來的">
+<h2 id="短多股六大地雷"><a href="#短多股六大地雷" class="headerlink" title="短多股六大地雷"></a>短多股六大地雷</h2><img src="/posts/281360310/%E7%9F%AD%E5%A4%9A%E8%82%A1%E5%85%AD%E5%A4%A7%E5%9C%B0%E9%9B%B7.png" class="" title="短多股六大地雷">
+
+<h1 id="第3集！｜KD-MACD用法"><a href="#第3集！｜KD-MACD用法" class="headerlink" title="第3集！｜KD.MACD用法"></a>第3集！｜KD.MACD用法</h1><img src="/posts/281360310/%E6%8A%80%E8%A1%93%E5%88%86%E6%9E%90%E6%9C%AA%E5%8D%9C%E5%85%88%E7%9F%A5.png" class="" title="技術分析未卜先知">
+<img src="/posts/281360310/%E6%8A%80%E8%A1%93%E5%88%86%E6%9E%90%E6%9C%AA%E5%8D%9C%E5%85%88%E7%9F%A52.png" class="" title="技術分析未卜先知2">
+<h2 id="技術之神高勝率6訊號"><a href="#技術之神高勝率6訊號" class="headerlink" title="技術之神高勝率6訊號"></a>技術之神高勝率6訊號</h2><img src="/posts/281360310/%E6%8A%80%E8%A1%93%E4%B9%8B%E7%A5%9E%E9%AB%98%E5%8B%9D%E7%8E%876%E8%A8%8A%E8%99%9F.png" class="" title="技術之神高勝率6訊號">
+
+<h1 id="第4集！｜超實用K線教戰"><a href="#第4集！｜超實用K線教戰" class="headerlink" title="第4集！｜超實用K線教戰"></a>第4集！｜超實用K線教戰</h1><img src="/posts/281360310/K%E7%B7%9A%E6%95%99%E6%88%B0.png" class="" title="K線教戰">
+<h2 id="K線告訴我們轉折"><a href="#K線告訴我們轉折" class="headerlink" title="K線告訴我們轉折"></a>K線告訴我們<code>轉折</code></h2><img src="/posts/281360310/K%E7%B7%9A%E5%91%8A%E8%A8%B4%E6%88%91%E5%80%91%E8%BD%89%E6%8A%98.png" class="" title="K線告訴我們轉折">]]></content>
+      <categories>
+        <category>1⃣ 股票</category>
+        <category>2⃣ 筆記</category>
+        <category>股票</category>
+        <category>技術分析</category>
+        <category>3⃣ 理財達人秀</category>
+        <category>飆股在線等</category>
+      </categories>
+      <tags>
+        <tag>筆記</tag>
+        <tag>股票</tag>
+        <tag>技術分析</tag>
+        <tag>朱家泓</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>理財達人秀-飆股在線等1~3集-KD指標、MACD指標</title>
+    <url>/posts/1460533008/</url>
+    <content><![CDATA[<h1 id="第1集！｜進場訊號KD黃金交叉"><a href="#第1集！｜進場訊號KD黃金交叉" class="headerlink" title="第1集！｜進場訊號KD黃金交叉"></a>第1集！｜進場訊號KD黃金交叉</h1><p>KD意義：9天內股價的相對高低點（低檔還是高檔）<br>買點1：起漲+KD黃金交叉<br>買點2：等回檔的KD黃金交叉<br>賣點：跌破五日均線</p>
+<img src="/posts/1460533008/KD%E6%8C%87%E6%A8%99%E7%9C%8B%E8%B6%A8%E5%8B%A2%E9%81%8B%E7%94%A8%E5%8E%9F%E5%89%87.png" class="" title="KD指標看趨勢運用原則">
+
+<span id="more"></span>
+
+<h2 id="三大轉折"><a href="#三大轉折" class="headerlink" title="三大轉折"></a>三大轉折</h2><ol>
+<li><p>過熱＆超跌：</p>
+<img src="/posts/1460533008/KD%E9%81%8E%E7%86%B1%E8%B6%85%E8%B7%8C.png" class="" title="KD過熱超跌">
+</li>
+<li><p>黃金交叉：K值突破D值交叉向上<br>死亡交叉：K值跌破D值交叉向下<br>只要是80以下黃金交叉就可以跟著追</p>
+<img src="/posts/1460533008/KD%E9%BB%83%E9%87%91%E4%BA%A4%E5%8F%89.png" class="" title="KD黃金交叉"></li>
+</ol>
+<blockquote>
+<p>多頭股票買點：</p>
+<ol>
+<li>起漲：前幾天是跌的，找第一天漲</li>
+<li>黃金交叉：50附近（80鈍化以下）的多頭黃金交叉點  <img src="/posts/1460533008/KD%E5%A4%9A%E9%A0%AD%E7%A9%BA%E9%A0%AD%E4%BA%A4%E5%8F%89.png" class="" title="KD多頭空頭交叉"></li>
+</ol>
+</blockquote>
+<blockquote>
+<p>多頭股票賣點：<br>守五均、十均</p>
+</blockquote>
+<ol start="3">
+<li>鈍化<img src="/posts/1460533008/KD%E9%88%8D%E5%8C%96.png" class="" title="KD鈍化"></li>
+</ol>
+<h2 id="總整理："><a href="#總整理：" class="headerlink" title="總整理："></a>總整理：</h2><ol>
+<li><p>股價走多頭：<br>KD黃金交叉是參考買點<br>死亡交叉是多單參考賣出點</p>
+</li>
+<li><p>股價走空頭：<br>KD死亡交叉是參考空點<br>黃金交叉是空單參考回補點</p>
+</li>
+<li><p>股價在盤整：<br>黃金交叉與死亡交叉都不能進場</p>
+</li>
+</ol>
+<h2 id="KD指標高勝率應用"><a href="#KD指標高勝率應用" class="headerlink" title="KD指標高勝率應用"></a>KD指標高勝率應用</h2><ol>
+<li>KD指標選股操作要<code>配合技術分析</code><br>結合趨勢多空、價位高低、均線、成交量，成功率才高</li>
+<li>KD指標反應<code>短線轉折</code>，<code>搭配長線的MACD指標</code>更勝一籌</li>
+<li>KD指標進場時可做參考，高檔指標會鈍化，因此停利賣出以個人紀律出場</li>
+<li>考慮操作的時程不同，一樣要看<code>短、中、長期的KD指標</code>趨勢</li>
+</ol>
+<h1 id="第2集！｜起漲信號"><a href="#第2集！｜起漲信號" class="headerlink" title="第2集！｜起漲信號"></a>第2集！｜起漲信號</h1><h2 id="4跡象飆股起漲打暗號"><a href="#4跡象飆股起漲打暗號" class="headerlink" title="4跡象飆股起漲打暗號"></a>4跡象飆股起漲打暗號</h2><p>透過<code>一棒三線</code>找到<code>起漲點</code></p>
+<ol>
+<li>完美底部、長期盤整（2個月以上）</li>
+<li>多頭確認：均線3線或4線、完成多頭排列向上<br>第1步盤整後，才會順勢變成多頭排列</li>
+<li>起漲確認：長紅K棒爆量上漲、KD黃金交叉或多排</li>
+<li>多空確認：頭頭高底底高還有第二波：波浪理論上講正常會有<code>3波上漲</code></li>
+</ol>
+<h3 id="三線-5、10、20-：多頭排列-5在上、10在中、20在下"><a href="#三線-5、10、20-：多頭排列-5在上、10在中、20在下" class="headerlink" title="三線(5、10、20)：多頭排列(5在上、10在中、20在下)"></a>三線(5、10、20)：多頭排列(5在上、10在中、20在下)</h3><h3 id="一棒-紅K棒"><a href="#一棒-紅K棒" class="headerlink" title="一棒(紅K棒)"></a>一棒(紅K棒)</h3><img src="/posts/1460533008/%E4%B8%89%E7%B7%9A%E4%B8%80%E6%A3%92%E8%B5%B7%E6%BC%B2.png" class="" title="三線一棒起漲">
+<img src="/posts/1460533008/%E9%A3%86%E8%82%A1%E8%B5%B7%E6%BC%B24%E8%B7%A1%E8%B1%A1.png" class="" title="飆股起漲4跡象">
+<img src="/posts/1460533008/%E9%95%B7%E7%B4%85%E7%88%86%E5%A4%A7%E9%87%8F.png" class="" title="長紅爆大量">
+<img src="/posts/1460533008/%E9%A0%AD%E8%82%A9%E5%BA%95.png" class="" title="頭肩底">
+
+<h2 id="六字訣確認多頭"><a href="#六字訣確認多頭" class="headerlink" title="六字訣確認多頭"></a>六字訣確認多頭</h2><p><code>頭頭高底底高</code></p>
+<img src="/posts/1460533008/%E9%A0%AD%E9%A0%AD%E9%AB%98%E5%BA%95%E5%BA%95%E9%AB%98.png" class="" title="頭頭高底底高">
+
+<h2 id="均線-K棒兩要件"><a href="#均線-K棒兩要件" class="headerlink" title="均線+K棒兩要件"></a>均線+K棒兩要件</h2><ol>
+<li>均線多頭排列向上：<ul>
+<li>短線操作：最少3線多排、方向向上、股價在20MA之上</li>
+<li>中長線操作：最少4線多排、方向向上、股價在20MA、60MA之上</li>
+</ul>
+</li>
+<li>K線趨勢符合<code>頭頭高底底高</code>、多頭向上，</li>
+</ol>
+<h2 id="買點："><a href="#買點：" class="headerlink" title="買點："></a>買點：</h2><ol>
+<li>底部盤整突破、型態突破、均線糾結的突破</li>
+<li>回後買上漲：已經走一波就買第二波的上漲</li>
+</ol>
+<h1 id="假買點：三個追不得的空方訊號"><a href="#假買點：三個追不得的空方訊號" class="headerlink" title="假買點：三個追不得的空方訊號"></a>假買點：三個追不得的空方訊號</h1><ol>
+<li>漲到第三波高檔不要追（波浪理論上講正常會有<code>3波上漲</code>）</li>
+<li>高檔爆大量</li>
+<li>底部60MA均線沒有多排向上<img src="/posts/1460533008/%E5%81%87%E8%B2%B7%E9%BB%9E.png" class="" title="假買點"></li>
+</ol>
+<h1 id="第3集！｜MACD買飆股SOP"><a href="#第3集！｜MACD買飆股SOP" class="headerlink" title="第3集！｜MACD買飆股SOP"></a>第3集！｜MACD買飆股SOP</h1><img src="/posts/1460533008/MACD%E5%91%BD%E9%81%8B%E9%9D%92%E7%B4%85%E7%87%88.png" class="" title="MACD命運青紅燈">
+
+<h2 id="MACD技術指標之王４元素"><a href="#MACD技術指標之王４元素" class="headerlink" title="MACD技術指標之王４元素"></a>MACD技術指標之王４元素</h2><ol>
+<li><p>紅色快線(DIF值)：EMA12-EMA26，表示<code>兩條均線</code>的<code>聚散關係</code></p>
+<blockquote>
+<p>只要EMA12<code>大於</code>EMA26，則DIFF（快線）會在<code>零軸上方</code>，表示<code>多頭</code><br>只要EMA12<code>小於</code>EMA26，則DIFF（快線）會在<code>零軸下方</code>，表示<code>空頭</code></p>
+</blockquote>
+</li>
+<li><p>藍色慢線(MACD值)：計算９日的DIF平均值</p>
+</li>
+<li><p>柱狀體(OSC):DIF(快線)-MACD(慢線)，柱子高低代表動能，越長動能越大，</p>
+<blockquote>
+<p>綠柱收斂，便要找買點<br>綠柱轉紅柱：黃金交叉動能明顯轉強</p>
+</blockquote>
+</li>
+<li><p>零軸：多頭、空頭的分界線</p>
+<img src="/posts/1460533008/MACD%E6%8A%80%E8%A1%93%E6%8C%87%E6%A8%99%E4%B9%8B%E7%8E%8B.png" class="" title="MACD技術指標之王"></li>
+</ol>
+<h2 id="KD-MACD所向無敵"><a href="#KD-MACD所向無敵" class="headerlink" title="KD+MACD所向無敵"></a>KD+MACD所向無敵</h2><p>KD是看股價的相對強弱(KD只有高低檔沒辦法抱長)，MACD是看兩條均線的強弱動能(MACD有趨勢可以用來抱長)<br>MACD在零軸之上做多，但是當漲多的時候，依據KD判斷是否股價過高(高檔)，是否要高檔鈍化回檔了，<br>高檔時，短線可以考慮出場，找下個進場點，長線可以續抱<br>MACD最大的好處＝<code>抱長線</code></p>
+<img src="/posts/1460533008/KDMACD%E6%89%80%E5%90%91%E7%84%A1%E6%95%B5.png" class="" title="KDMACD所向無敵">
+
+<h2 id="學好MACD心法先牢記"><a href="#學好MACD心法先牢記" class="headerlink" title="學好MACD心法先牢記"></a>學好MACD心法先牢記</h2><table>
+<thead>
+<tr>
+<th>趨勢</th>
+<th>多頭</th>
+<th>空頭</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>快、慢線</td>
+<td>兩線在0軸之上，做多不做空</td>
+<td>兩線在0軸之下，做空不做多</td>
+</tr>
+<tr>
+<td>紅、綠柱</td>
+<td>紅柱縮短-&gt;回檔，綠柱縮短-&gt;上漲</td>
+<td>綠柱縮短-&gt;反彈，紅柱縮短-&gt;下跌</td>
+</tr>
+</tbody></table>
+<img src="/posts/1460533008/%E5%AD%B8%E5%A5%BDMACD%E5%BF%83%E6%B3%95%E5%85%88%E7%89%A2%E8%A8%98.png" class="" title="學好MACD心法先牢記">
+
+<h2 id="MACD兩均線抓起漲點"><a href="#MACD兩均線抓起漲點" class="headerlink" title="MACD兩均線抓起漲點"></a>MACD兩均線抓起漲點</h2><ol>
+<li>日線底部多頭確認：MACD兩線<code>站上0軸</code>型態</li>
+<li>多頭盤整突破：MACD指標黃金交叉向上型態</li>
+<li>多頭回檔後再上漲：MACD指標黃金交叉向上型態</li>
+</ol>
+<img src="/posts/1460533008/MACD%E5%85%A9%E5%9D%87%E7%B7%9A%E6%8A%93%E8%B5%B7%E6%BC%B2%E9%BB%9E.png" class="" title="MACD兩均線抓起漲點">
+
+<h2 id="MACD找賣點"><a href="#MACD找賣點" class="headerlink" title="MACD找賣點"></a>MACD找賣點</h2><ol>
+<li>日線頭部空頭確認：MACD兩線<code>跌破0軸</code>型態</li>
+<li>空頭盤整跌破：MACD指標死亡交叉向下型態</li>
+<li>空頭反彈後再下跌：MACD指標死亡交叉向下型態</li>
+</ol>
+<img src="/posts/1460533008/MACD%E6%89%BE%E8%B3%A3%E9%BB%9E.png" class="" title="MACD找賣點">
+
+<h2 id="進場一定要用短線指標"><a href="#進場一定要用短線指標" class="headerlink" title="進場一定要用短線指標"></a>進場一定要用短線指標</h2><p>KD進場，MACD續抱</p>
+<img src="/posts/1460533008/MACD%E5%B0%8F%E5%8F%AE%E5%9A%80.png" class="" title="MACD小叮嚀">]]></content>
+      <categories>
+        <category>1⃣ 股票</category>
+        <category>2⃣ 筆記</category>
+        <category>股票</category>
+        <category>技術分析</category>
+        <category>3⃣ 理財達人秀</category>
+        <category>飆股在線等</category>
+      </categories>
+      <tags>
+        <tag>筆記</tag>
+        <tag>股票</tag>
+        <tag>技術分析</tag>
+        <tag>朱家泓</tag>
+        <tag>KD指標</tag>
+        <tag>MACD指標</tag>
       </tags>
   </entry>
   <entry>
@@ -3236,155 +3385,6 @@ MSCI 外資所建立的台灣指數
         <tag>朱家泓</tag>
         <tag>均線指標</tag>
         <tag>K棒指標</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>理財達人秀-飆股在線等1~3集-KD指標、MACD指標</title>
-    <url>/posts/1460533008/</url>
-    <content><![CDATA[<h1 id="第1集！｜進場訊號KD黃金交叉"><a href="#第1集！｜進場訊號KD黃金交叉" class="headerlink" title="第1集！｜進場訊號KD黃金交叉"></a>第1集！｜進場訊號KD黃金交叉</h1><p>KD意義：9天內股價的相對高低點（低檔還是高檔）<br>買點1：起漲+KD黃金交叉<br>買點2：等回檔的KD黃金交叉<br>賣點：跌破五日均線</p>
-<img src="/posts/1460533008/KD%E6%8C%87%E6%A8%99%E7%9C%8B%E8%B6%A8%E5%8B%A2%E9%81%8B%E7%94%A8%E5%8E%9F%E5%89%87.png" class="" title="KD指標看趨勢運用原則">
-
-<span id="more"></span>
-
-<h2 id="三大轉折"><a href="#三大轉折" class="headerlink" title="三大轉折"></a>三大轉折</h2><ol>
-<li><p>過熱＆超跌：</p>
-<img src="/posts/1460533008/KD%E9%81%8E%E7%86%B1%E8%B6%85%E8%B7%8C.png" class="" title="KD過熱超跌">
-</li>
-<li><p>黃金交叉：K值突破D值交叉向上<br>死亡交叉：K值跌破D值交叉向下<br>只要是80以下黃金交叉就可以跟著追</p>
-<img src="/posts/1460533008/KD%E9%BB%83%E9%87%91%E4%BA%A4%E5%8F%89.png" class="" title="KD黃金交叉"></li>
-</ol>
-<blockquote>
-<p>多頭股票買點：</p>
-<ol>
-<li>起漲：前幾天是跌的，找第一天漲</li>
-<li>黃金交叉：50附近（80鈍化以下）的多頭黃金交叉點  <img src="/posts/1460533008/KD%E5%A4%9A%E9%A0%AD%E7%A9%BA%E9%A0%AD%E4%BA%A4%E5%8F%89.png" class="" title="KD多頭空頭交叉"></li>
-</ol>
-</blockquote>
-<blockquote>
-<p>多頭股票賣點：<br>守五均、十均</p>
-</blockquote>
-<ol start="3">
-<li>鈍化<img src="/posts/1460533008/KD%E9%88%8D%E5%8C%96.png" class="" title="KD鈍化"></li>
-</ol>
-<h2 id="總整理："><a href="#總整理：" class="headerlink" title="總整理："></a>總整理：</h2><ol>
-<li><p>股價走多頭：<br>KD黃金交叉是參考買點<br>死亡交叉是多單參考賣出點</p>
-</li>
-<li><p>股價走空頭：<br>KD死亡交叉是參考空點<br>黃金交叉是空單參考回補點</p>
-</li>
-<li><p>股價在盤整：<br>黃金交叉與死亡交叉都不能進場</p>
-</li>
-</ol>
-<h2 id="KD指標高勝率應用"><a href="#KD指標高勝率應用" class="headerlink" title="KD指標高勝率應用"></a>KD指標高勝率應用</h2><ol>
-<li>KD指標選股操作要<code>配合技術分析</code><br>結合趨勢多空、價位高低、均線、成交量，成功率才高</li>
-<li>KD指標反應<code>短線轉折</code>，<code>搭配長線的MACD指標</code>更勝一籌</li>
-<li>KD指標進場時可做參考，高檔指標會鈍化，因此停利賣出以個人紀律出場</li>
-<li>考慮操作的時程不同，一樣要看<code>短、中、長期的KD指標</code>趨勢</li>
-</ol>
-<h1 id="第2集！｜起漲信號"><a href="#第2集！｜起漲信號" class="headerlink" title="第2集！｜起漲信號"></a>第2集！｜起漲信號</h1><h2 id="4跡象飆股起漲打暗號"><a href="#4跡象飆股起漲打暗號" class="headerlink" title="4跡象飆股起漲打暗號"></a>4跡象飆股起漲打暗號</h2><p>透過<code>一棒三線</code>找到<code>起漲點</code></p>
-<ol>
-<li>完美底部、長期盤整（2個月以上）</li>
-<li>多頭確認：均線3線或4線、完成多頭排列向上<br>第1步盤整後，才會順勢變成多頭排列</li>
-<li>起漲確認：長紅K棒爆量上漲、KD黃金交叉或多排</li>
-<li>多空確認：頭頭高底底高還有第二波：波浪理論上講正常會有<code>3波上漲</code></li>
-</ol>
-<h3 id="三線-5、10、20-：多頭排列-5在上、10在中、20在下"><a href="#三線-5、10、20-：多頭排列-5在上、10在中、20在下" class="headerlink" title="三線(5、10、20)：多頭排列(5在上、10在中、20在下)"></a>三線(5、10、20)：多頭排列(5在上、10在中、20在下)</h3><h3 id="一棒-紅K棒"><a href="#一棒-紅K棒" class="headerlink" title="一棒(紅K棒)"></a>一棒(紅K棒)</h3><img src="/posts/1460533008/%E4%B8%89%E7%B7%9A%E4%B8%80%E6%A3%92%E8%B5%B7%E6%BC%B2.png" class="" title="三線一棒起漲">
-<img src="/posts/1460533008/%E9%A3%86%E8%82%A1%E8%B5%B7%E6%BC%B24%E8%B7%A1%E8%B1%A1.png" class="" title="飆股起漲4跡象">
-<img src="/posts/1460533008/%E9%95%B7%E7%B4%85%E7%88%86%E5%A4%A7%E9%87%8F.png" class="" title="長紅爆大量">
-<img src="/posts/1460533008/%E9%A0%AD%E8%82%A9%E5%BA%95.png" class="" title="頭肩底">
-
-<h2 id="六字訣確認多頭"><a href="#六字訣確認多頭" class="headerlink" title="六字訣確認多頭"></a>六字訣確認多頭</h2><p><code>頭頭高底底高</code></p>
-<img src="/posts/1460533008/%E9%A0%AD%E9%A0%AD%E9%AB%98%E5%BA%95%E5%BA%95%E9%AB%98.png" class="" title="頭頭高底底高">
-
-<h2 id="均線-K棒兩要件"><a href="#均線-K棒兩要件" class="headerlink" title="均線+K棒兩要件"></a>均線+K棒兩要件</h2><ol>
-<li>均線多頭排列向上：<ul>
-<li>短線操作：最少3線多排、方向向上、股價在20MA之上</li>
-<li>中長線操作：最少4線多排、方向向上、股價在20MA、60MA之上</li>
-</ul>
-</li>
-<li>K線趨勢符合<code>頭頭高底底高</code>、多頭向上，</li>
-</ol>
-<h2 id="買點："><a href="#買點：" class="headerlink" title="買點："></a>買點：</h2><ol>
-<li>底部盤整突破、型態突破、均線糾結的突破</li>
-<li>回後買上漲：已經走一波就買第二波的上漲</li>
-</ol>
-<h1 id="假買點：三個追不得的空方訊號"><a href="#假買點：三個追不得的空方訊號" class="headerlink" title="假買點：三個追不得的空方訊號"></a>假買點：三個追不得的空方訊號</h1><ol>
-<li>漲到第三波高檔不要追（波浪理論上講正常會有<code>3波上漲</code>）</li>
-<li>高檔爆大量</li>
-<li>底部60MA均線沒有多排向上<img src="/posts/1460533008/%E5%81%87%E8%B2%B7%E9%BB%9E.png" class="" title="假買點"></li>
-</ol>
-<h1 id="第3集！｜MACD買飆股SOP"><a href="#第3集！｜MACD買飆股SOP" class="headerlink" title="第3集！｜MACD買飆股SOP"></a>第3集！｜MACD買飆股SOP</h1><img src="/posts/1460533008/MACD%E5%91%BD%E9%81%8B%E9%9D%92%E7%B4%85%E7%87%88.png" class="" title="MACD命運青紅燈">
-
-<h2 id="MACD技術指標之王４元素"><a href="#MACD技術指標之王４元素" class="headerlink" title="MACD技術指標之王４元素"></a>MACD技術指標之王４元素</h2><ol>
-<li><p>紅色快線(DIF值)：EMA12-EMA26，表示<code>兩條均線</code>的<code>聚散關係</code></p>
-<blockquote>
-<p>只要EMA12<code>大於</code>EMA26，則DIFF（快線）會在<code>零軸上方</code>，表示<code>多頭</code><br>只要EMA12<code>小於</code>EMA26，則DIFF（快線）會在<code>零軸下方</code>，表示<code>空頭</code></p>
-</blockquote>
-</li>
-<li><p>藍色慢線(MACD值)：計算９日的DIF平均值</p>
-</li>
-<li><p>柱狀體(OSC):DIF(快線)-MACD(慢線)，柱子高低代表動能，越長動能越大，</p>
-<blockquote>
-<p>綠柱收斂，便要找買點<br>綠柱轉紅柱：黃金交叉動能明顯轉強</p>
-</blockquote>
-</li>
-<li><p>零軸：多頭、空頭的分界線</p>
-<img src="/posts/1460533008/MACD%E6%8A%80%E8%A1%93%E6%8C%87%E6%A8%99%E4%B9%8B%E7%8E%8B.png" class="" title="MACD技術指標之王"></li>
-</ol>
-<h2 id="KD-MACD所向無敵"><a href="#KD-MACD所向無敵" class="headerlink" title="KD+MACD所向無敵"></a>KD+MACD所向無敵</h2><p>KD是看股價的相對強弱(KD只有高低檔沒辦法抱長)，MACD是看兩條均線的強弱動能(MACD有趨勢可以用來抱長)<br>MACD在零軸之上做多，但是當漲多的時候，依據KD判斷是否股價過高(高檔)，是否要高檔鈍化回檔了，<br>高檔時，短線可以考慮出場，找下個進場點，長線可以續抱<br>MACD最大的好處＝<code>抱長線</code></p>
-<img src="/posts/1460533008/KDMACD%E6%89%80%E5%90%91%E7%84%A1%E6%95%B5.png" class="" title="KDMACD所向無敵">
-
-<h2 id="學好MACD心法先牢記"><a href="#學好MACD心法先牢記" class="headerlink" title="學好MACD心法先牢記"></a>學好MACD心法先牢記</h2><table>
-<thead>
-<tr>
-<th>趨勢</th>
-<th>多頭</th>
-<th>空頭</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>快、慢線</td>
-<td>兩線在0軸之上，做多不做空</td>
-<td>兩線在0軸之下，做空不做多</td>
-</tr>
-<tr>
-<td>紅、綠柱</td>
-<td>紅柱縮短-&gt;回檔，綠柱縮短-&gt;上漲</td>
-<td>綠柱縮短-&gt;反彈，紅柱縮短-&gt;下跌</td>
-</tr>
-</tbody></table>
-<img src="/posts/1460533008/%E5%AD%B8%E5%A5%BDMACD%E5%BF%83%E6%B3%95%E5%85%88%E7%89%A2%E8%A8%98.png" class="" title="學好MACD心法先牢記">
-
-<h2 id="MACD兩均線抓起漲點"><a href="#MACD兩均線抓起漲點" class="headerlink" title="MACD兩均線抓起漲點"></a>MACD兩均線抓起漲點</h2><ol>
-<li>日線底部多頭確認：MACD兩線<code>站上0軸</code>型態</li>
-<li>多頭盤整突破：MACD指標黃金交叉向上型態</li>
-<li>多頭回檔後再上漲：MACD指標黃金交叉向上型態</li>
-</ol>
-<img src="/posts/1460533008/MACD%E5%85%A9%E5%9D%87%E7%B7%9A%E6%8A%93%E8%B5%B7%E6%BC%B2%E9%BB%9E.png" class="" title="MACD兩均線抓起漲點">
-
-<h2 id="MACD找賣點"><a href="#MACD找賣點" class="headerlink" title="MACD找賣點"></a>MACD找賣點</h2><ol>
-<li>日線頭部空頭確認：MACD兩線<code>跌破0軸</code>型態</li>
-<li>空頭盤整跌破：MACD指標死亡交叉向下型態</li>
-<li>空頭反彈後再下跌：MACD指標死亡交叉向下型態</li>
-</ol>
-<img src="/posts/1460533008/MACD%E6%89%BE%E8%B3%A3%E9%BB%9E.png" class="" title="MACD找賣點">
-
-<h2 id="進場一定要用短線指標"><a href="#進場一定要用短線指標" class="headerlink" title="進場一定要用短線指標"></a>進場一定要用短線指標</h2><p>KD進場，MACD續抱</p>
-<img src="/posts/1460533008/MACD%E5%B0%8F%E5%8F%AE%E5%9A%80.png" class="" title="MACD小叮嚀">]]></content>
-      <categories>
-        <category>1⃣ 股票</category>
-        <category>2⃣ 筆記</category>
-        <category>股票</category>
-        <category>技術分析</category>
-        <category>3⃣ 理財達人秀</category>
-        <category>飆股在線等</category>
-      </categories>
-      <tags>
-        <tag>筆記</tag>
-        <tag>股票</tag>
-        <tag>技術分析</tag>
-        <tag>朱家泓</tag>
-        <tag>KD指標</tag>
-        <tag>MACD指標</tag>
       </tags>
   </entry>
   <entry>
@@ -3615,56 +3615,6 @@ MSCI 外資所建立的台灣指數
       </tags>
   </entry>
   <entry>
-    <title>股票-布林通道 實戰必勝術</title>
-    <url>/posts/2691061525/</url>
-    <content><![CDATA[<h1 id="布林通道的組成"><a href="#布林通道的組成" class="headerlink" title="布林通道的組成"></a>布林通道的組成</h1><h2 id="上線：壓力線（＋２個標準差）"><a href="#上線：壓力線（＋２個標準差）" class="headerlink" title="上線：壓力線（＋２個標準差）"></a>上線：壓力線（＋２個標準差）</h2><h2 id="中線：２０日移動平均線"><a href="#中線：２０日移動平均線" class="headerlink" title="中線：２０日移動平均線"></a>中線：２０日移動平均線</h2><h2 id="下線：支撐線（－２個標準差）"><a href="#下線：支撐線（－２個標準差）" class="headerlink" title="下線：支撐線（－２個標準差）"></a>下線：支撐線（－２個標準差）</h2><img src="/posts/2691061525/%E5%B8%83%E6%9E%97%E9%80%9A%E9%81%93%E7%9A%84%E7%B5%84%E6%88%90.png" class="" title="布林通道的組成">
-<h2 id="２個標準差：高達95-4-的機率"><a href="#２個標準差：高達95-4-的機率" class="headerlink" title="２個標準差：高達95.4%的機率"></a>２個標準差：高達95.4%的機率</h2><img src="/posts/2691061525/%E6%A8%99%E6%BA%96%E5%B7%AE%E6%A9%9F%E7%8E%87.png" class="" title="標準差機率">
-<h2 id="超出布林通道的機率只有4-6-的機率"><a href="#超出布林通道的機率只有4-6-的機率" class="headerlink" title="超出布林通道的機率只有4.6%的機率"></a>超出布林通道的機率只有4.6%的機率</h2><img src="/posts/2691061525/%E8%B6%85%E5%87%BA%E5%B8%83%E6%9E%97%E9%80%9A%E9%81%93.png" class="" title="超出布林通道">
-<h1 id="如何運用布林通道"><a href="#如何運用布林通道" class="headerlink" title="如何運用布林通道"></a>如何運用布林通道</h1><span id="more"></span>
-
-<h2 id="買進訊號"><a href="#買進訊號" class="headerlink" title="買進訊號"></a>買進訊號</h2><ol>
-<li>價格在<code>中軌與上軌</code>線間波動為<code>多方</code>行情<br>&#x3D;&gt; <code>拉回中線</code>附近為買進訊號</li>
-<li>價格<code>由下向上穿越中線</code>表示<br>&#x3D;&gt; 多方動能轉強為買進訊號<img src="/posts/2691061525/%E7%A9%BF%E8%B6%8A%E6%94%AF%E6%92%90%E7%B7%9A%E8%B2%B7%E9%80%B2.png" class="" title="穿越支撐線買進">
-<img src="/posts/2691061525/%E7%A9%BF%E8%B6%8A%E5%A3%93%E5%8A%9B%E7%B7%9A.png" class="" title="穿越壓力線">
-<img src="/posts/2691061525/%E7%A9%BF%E8%B6%8A%E4%B8%AD%E7%B7%9A%E5%8A%A0%E7%A2%BC.png" class="" title="穿越中線加碼"></li>
-</ol>
-<h2 id="賣出訊號"><a href="#賣出訊號" class="headerlink" title="賣出訊號"></a>賣出訊號</h2><img src="/posts/2691061525/%E7%A9%BF%E8%B6%8A%E4%B8%AD%E7%B7%9A%E9%80%80%E5%87%BA.png" class="" title="穿越中線退出">
-
-<h1 id="布林通道相關指標"><a href="#布林通道相關指標" class="headerlink" title="布林通道相關指標"></a>布林通道相關指標</h1><img src="/posts/2691061525/%E5%B8%83%E6%9E%97%E6%A5%B5%E9%99%90%E6%8C%87%E6%A8%99.png" class="" title="布林極限指標">
-<img src="/posts/2691061525/%E5%B8%83%E6%9E%97%E6%A5%B5%E9%99%90%E6%8C%87%E6%A8%992.png" class="" title="布林極限指標2">
-
-<h1 id="布林通道的形狀"><a href="#布林通道的形狀" class="headerlink" title="布林通道的形狀"></a>布林通道的形狀</h1><img src="/posts/2691061525/%E5%B8%83%E6%9E%97%E5%BD%A2%E7%8B%80.png" class="" title="布林形狀">
-<img src="/posts/2691061525/%E5%B8%83%E6%9E%97%E5%B8%B6%E5%AF%AC.png" class="" title="布林帶寬">
-
-<p>%b指標<br>%b 指標（Percent b，PB），以數字形式呈現收盤價在布林帶中的位置，做為交易決策時的關鍵指標。例如：當%b值為0.5（或以百分比表示50%），代表收盤價處於布林帶的中間位置。</p>
-<p>%b值 &#x3D; (收盤價−布林帶下軌值) ÷ (布林帶上軌值−布林帶下軌值)<br>由於收盤價會在上、下軌道震盪遊走，幅度甚至大於軌道範圍（0~1），因此%b值沒有上下限。當走勢向上突破，收盤價落於上軌上方時，%b值&gt; 1；而走趨向下突破，收盤價落在下軌下方時，%b值&lt; 0。<br>藉由觀察分析「%b指標」可以提供投資時的參考，依據指標的強弱走勢，作出買賣決策。</p>
-<h1 id="大盤紅綠燈"><a href="#大盤紅綠燈" class="headerlink" title="大盤紅綠燈"></a>大盤紅綠燈</h1><h2 id="逢低買進"><a href="#逢低買進" class="headerlink" title="逢低買進"></a>逢低買進</h2><ol>
-<li>大盤日線20MA上揚</li>
-<li>即使碰到下通道，也會立即脫離下通道</li>
-</ol>
-<h2 id="黃燈"><a href="#黃燈" class="headerlink" title="黃燈"></a>黃燈</h2><p>短線過多，衝到上通道，不要進去買</p>
-<h2 id="紅燈（跌破月線）"><a href="#紅燈（跌破月線）" class="headerlink" title="紅燈（跌破月線）"></a>紅燈（跌破月線）</h2><p>大盤走入空頭型態（中長期）</p>
-<h2 id="買在飆股起漲點"><a href="#買在飆股起漲點" class="headerlink" title="買在飆股起漲點"></a>買在飆股起漲點</h2><ol>
-<li>壓縮：股價壓縮至少10個交易日</li>
-<li>帶量：成交量出現過去5日均量的2～10倍</li>
-<li>突破：當日收盤價突破通道頂且收紅K棒</li>
-</ol>
-<h2 id="跌破月線出場"><a href="#跌破月線出場" class="headerlink" title="跌破月線出場"></a>跌破月線出場</h2><p>參考資料：<br><a href="https://histock.tw/blog/histock1688/245">五分鐘搞懂布林通道（工具應用篇）</a><br><a href="https://www.youtube.com/watch?v=Nm40x4c9Ttk">股市阿水的布林通道</a></p>
-]]></content>
-      <categories>
-        <category>1⃣ 股票</category>
-        <category>技術面分析</category>
-        <category>2⃣ 筆記</category>
-        <category>股票</category>
-      </categories>
-      <tags>
-        <tag>筆記</tag>
-        <tag>股票</tag>
-        <tag>技術分析</tag>
-        <tag>布林通道</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>40歲靠存股提早退休 5招心法教你不看盤投資術 ft.股魚(股票-下班經濟學#45)</title>
     <url>/posts/3492910549/</url>
     <content><![CDATA[<p>以下的內容，選股方式：</p>
@@ -3723,6 +3673,56 @@ MSCI 外資所建立的台灣指數
       </tags>
   </entry>
   <entry>
+    <title>股票-布林通道 實戰必勝術</title>
+    <url>/posts/2691061525/</url>
+    <content><![CDATA[<h1 id="布林通道的組成"><a href="#布林通道的組成" class="headerlink" title="布林通道的組成"></a>布林通道的組成</h1><h2 id="上線：壓力線（＋２個標準差）"><a href="#上線：壓力線（＋２個標準差）" class="headerlink" title="上線：壓力線（＋２個標準差）"></a>上線：壓力線（＋２個標準差）</h2><h2 id="中線：２０日移動平均線"><a href="#中線：２０日移動平均線" class="headerlink" title="中線：２０日移動平均線"></a>中線：２０日移動平均線</h2><h2 id="下線：支撐線（－２個標準差）"><a href="#下線：支撐線（－２個標準差）" class="headerlink" title="下線：支撐線（－２個標準差）"></a>下線：支撐線（－２個標準差）</h2><img src="/posts/2691061525/%E5%B8%83%E6%9E%97%E9%80%9A%E9%81%93%E7%9A%84%E7%B5%84%E6%88%90.png" class="" title="布林通道的組成">
+<h2 id="２個標準差：高達95-4-的機率"><a href="#２個標準差：高達95-4-的機率" class="headerlink" title="２個標準差：高達95.4%的機率"></a>２個標準差：高達95.4%的機率</h2><img src="/posts/2691061525/%E6%A8%99%E6%BA%96%E5%B7%AE%E6%A9%9F%E7%8E%87.png" class="" title="標準差機率">
+<h2 id="超出布林通道的機率只有4-6-的機率"><a href="#超出布林通道的機率只有4-6-的機率" class="headerlink" title="超出布林通道的機率只有4.6%的機率"></a>超出布林通道的機率只有4.6%的機率</h2><img src="/posts/2691061525/%E8%B6%85%E5%87%BA%E5%B8%83%E6%9E%97%E9%80%9A%E9%81%93.png" class="" title="超出布林通道">
+<h1 id="如何運用布林通道"><a href="#如何運用布林通道" class="headerlink" title="如何運用布林通道"></a>如何運用布林通道</h1><span id="more"></span>
+
+<h2 id="買進訊號"><a href="#買進訊號" class="headerlink" title="買進訊號"></a>買進訊號</h2><ol>
+<li>價格在<code>中軌與上軌</code>線間波動為<code>多方</code>行情<br>&#x3D;&gt; <code>拉回中線</code>附近為買進訊號</li>
+<li>價格<code>由下向上穿越中線</code>表示<br>&#x3D;&gt; 多方動能轉強為買進訊號<img src="/posts/2691061525/%E7%A9%BF%E8%B6%8A%E6%94%AF%E6%92%90%E7%B7%9A%E8%B2%B7%E9%80%B2.png" class="" title="穿越支撐線買進">
+<img src="/posts/2691061525/%E7%A9%BF%E8%B6%8A%E5%A3%93%E5%8A%9B%E7%B7%9A.png" class="" title="穿越壓力線">
+<img src="/posts/2691061525/%E7%A9%BF%E8%B6%8A%E4%B8%AD%E7%B7%9A%E5%8A%A0%E7%A2%BC.png" class="" title="穿越中線加碼"></li>
+</ol>
+<h2 id="賣出訊號"><a href="#賣出訊號" class="headerlink" title="賣出訊號"></a>賣出訊號</h2><img src="/posts/2691061525/%E7%A9%BF%E8%B6%8A%E4%B8%AD%E7%B7%9A%E9%80%80%E5%87%BA.png" class="" title="穿越中線退出">
+
+<h1 id="布林通道相關指標"><a href="#布林通道相關指標" class="headerlink" title="布林通道相關指標"></a>布林通道相關指標</h1><img src="/posts/2691061525/%E5%B8%83%E6%9E%97%E6%A5%B5%E9%99%90%E6%8C%87%E6%A8%99.png" class="" title="布林極限指標">
+<img src="/posts/2691061525/%E5%B8%83%E6%9E%97%E6%A5%B5%E9%99%90%E6%8C%87%E6%A8%992.png" class="" title="布林極限指標2">
+
+<h1 id="布林通道的形狀"><a href="#布林通道的形狀" class="headerlink" title="布林通道的形狀"></a>布林通道的形狀</h1><img src="/posts/2691061525/%E5%B8%83%E6%9E%97%E5%BD%A2%E7%8B%80.png" class="" title="布林形狀">
+<img src="/posts/2691061525/%E5%B8%83%E6%9E%97%E5%B8%B6%E5%AF%AC.png" class="" title="布林帶寬">
+
+<p>%b指標<br>%b 指標（Percent b，PB），以數字形式呈現收盤價在布林帶中的位置，做為交易決策時的關鍵指標。例如：當%b值為0.5（或以百分比表示50%），代表收盤價處於布林帶的中間位置。</p>
+<p>%b值 &#x3D; (收盤價−布林帶下軌值) ÷ (布林帶上軌值−布林帶下軌值)<br>由於收盤價會在上、下軌道震盪遊走，幅度甚至大於軌道範圍（0~1），因此%b值沒有上下限。當走勢向上突破，收盤價落於上軌上方時，%b值&gt; 1；而走趨向下突破，收盤價落在下軌下方時，%b值&lt; 0。<br>藉由觀察分析「%b指標」可以提供投資時的參考，依據指標的強弱走勢，作出買賣決策。</p>
+<h1 id="大盤紅綠燈"><a href="#大盤紅綠燈" class="headerlink" title="大盤紅綠燈"></a>大盤紅綠燈</h1><h2 id="逢低買進"><a href="#逢低買進" class="headerlink" title="逢低買進"></a>逢低買進</h2><ol>
+<li>大盤日線20MA上揚</li>
+<li>即使碰到下通道，也會立即脫離下通道</li>
+</ol>
+<h2 id="黃燈"><a href="#黃燈" class="headerlink" title="黃燈"></a>黃燈</h2><p>短線過多，衝到上通道，不要進去買</p>
+<h2 id="紅燈（跌破月線）"><a href="#紅燈（跌破月線）" class="headerlink" title="紅燈（跌破月線）"></a>紅燈（跌破月線）</h2><p>大盤走入空頭型態（中長期）</p>
+<h2 id="買在飆股起漲點"><a href="#買在飆股起漲點" class="headerlink" title="買在飆股起漲點"></a>買在飆股起漲點</h2><ol>
+<li>壓縮：股價壓縮至少10個交易日</li>
+<li>帶量：成交量出現過去5日均量的2～10倍</li>
+<li>突破：當日收盤價突破通道頂且收紅K棒</li>
+</ol>
+<h2 id="跌破月線出場"><a href="#跌破月線出場" class="headerlink" title="跌破月線出場"></a>跌破月線出場</h2><p>參考資料：<br><a href="https://histock.tw/blog/histock1688/245">五分鐘搞懂布林通道（工具應用篇）</a><br><a href="https://www.youtube.com/watch?v=Nm40x4c9Ttk">股市阿水的布林通道</a></p>
+]]></content>
+      <categories>
+        <category>1⃣ 股票</category>
+        <category>技術面分析</category>
+        <category>2⃣ 筆記</category>
+        <category>股票</category>
+      </categories>
+      <tags>
+        <tag>筆記</tag>
+        <tag>股票</tag>
+        <tag>技術分析</tag>
+        <tag>布林通道</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>股票-殖利率</title>
     <url>/posts/4199638572/</url>
     <content><![CDATA[<span id="more"></span>
@@ -3764,6 +3764,68 @@ MSCI 外資所建立的台灣指數
       <tags>
         <tag>筆記</tag>
         <tag>股票</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>股票-股票的故事一</title>
+    <url>/posts/2278927718/</url>
+    <content><![CDATA[<blockquote>
+<p>聽完以下的故事之後可以了解：<br>到底，「股票」是什麼呢？<br>為什麼「股票」會漲漲跌跌呢？</p>
+</blockquote>
+<h1 id="故事開始嚕"><a href="#故事開始嚕" class="headerlink" title="故事開始嚕"></a>故事開始嚕</h1><h2 id="股票"><a href="#股票" class="headerlink" title="股票"></a>股票</h2><p>從前從前，有一座森林</p>
+<p>森林裡有一家很棒的餐廳</p>
+<p>這隻松鼠是老闆，他擁有這間餐廳</p>
+<p>每個月餐廳不管是賺錢還是賠錢</p>
+<p>老闆都需要發薪水給員工</p>
+<p>有一天老闆突然覺得這樣<code>風險太高</code>了</p>
+<p>想把餐應賣掉一部分，換一些現金回來</p>
+<p>於是，他把餐廳的<code>「所有權」</code>分成六等份</p>
+<p>擁有了一份，就等於擁有了六分之一家的餐廳</p>
+<blockquote>
+<p>這個<code>「所有權的憑證」</code>，就是<code>「股票」</code>。</p>
+</blockquote>
+<span id="more"></span>
+
+<p>然後，他把其中五份，拿到大街上，公開拍賣</p>
+<p>於是，街上的大家開始衡量</p>
+<p>這家餐廳，值多少錢呢</p>
+<p>每個人認定的價格，都不太一樣</p>
+<p>最後，由出價最高的人，買到這五張股票</p>
+<p>因此，這五個人，就都成了公司的老闆，或者說，<code>「股東」</code></p>
+<p>他們，將會一起分享到餐廳經營後的利潤</p>
+<h2 id="上漲"><a href="#上漲" class="headerlink" title="上漲"></a>上漲</h2><pre><code>這間餐廳，如果錢越賺越多
+
+大家就會覺得這家餐廳很棒，因此值更多錢
+
+這間餐廳的股票，價格就會「上漲」
+</code></pre>
+<h2 id="下跌"><a href="#下跌" class="headerlink" title="下跌"></a>下跌</h2><pre><code>反之，這間餐廳，如果越做越差，開始賠錢
+
+大家就會覺得這間餐廳很遜，是賠錢貨
+
+因此，他的股票價格就會「下跌」
+</code></pre>
+<p>這就是股票最基礎的概念</p>
+<p>我們把餐廳，換成A公司</p>
+<p>持有A公司的股票，代表你擁有一小部分的A公司</p>
+<p>A公司如果做得好，他的股票就會漲</p>
+<p>相反的他如果做得差，他的股票就會跌</p>
+<p>這，就是股票的<code>「基本面」</code></p>
+<blockquote>
+<p>不過，你有沒有想過<br>為什麼有些公司明明做得很差，股票還是會上漲呢<br>這是因為，股票的價格，還牽涉到大家的「預期心理」<br><a href="/posts/3159720911/">這部分，就讓我們下次再來說清楚吧</a></p>
+</blockquote>
+<p>以上內容轉錄於以下<a href="https://www.youtube.com/watch?v=XeeGa5B-HnE">影片</a>，圖文並茂更清楚唷，歡迎有興趣朋友移駕觀看</p>
+<div class="video-container"><iframe src="https://www.youtube.com/embed/XeeGa5B-HnE" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
+]]></content>
+      <categories>
+        <category>2⃣ 筆記</category>
+        <category>股票</category>
+        <category>新手村</category>
+      </categories>
+      <tags>
+        <tag>筆記</tag>
+        <tag>股票</tag>
+        <tag>名詞解釋</tag>
       </tags>
   </entry>
   <entry>
@@ -3854,68 +3916,6 @@ MSCI 外資所建立的台灣指數
         <tag>股票</tag>
         <tag>基本面分析</tag>
         <tag>財報</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>股票-股票的故事一</title>
-    <url>/posts/2278927718/</url>
-    <content><![CDATA[<blockquote>
-<p>聽完以下的故事之後可以了解：<br>到底，「股票」是什麼呢？<br>為什麼「股票」會漲漲跌跌呢？</p>
-</blockquote>
-<h1 id="故事開始嚕"><a href="#故事開始嚕" class="headerlink" title="故事開始嚕"></a>故事開始嚕</h1><h2 id="股票"><a href="#股票" class="headerlink" title="股票"></a>股票</h2><p>從前從前，有一座森林</p>
-<p>森林裡有一家很棒的餐廳</p>
-<p>這隻松鼠是老闆，他擁有這間餐廳</p>
-<p>每個月餐廳不管是賺錢還是賠錢</p>
-<p>老闆都需要發薪水給員工</p>
-<p>有一天老闆突然覺得這樣<code>風險太高</code>了</p>
-<p>想把餐應賣掉一部分，換一些現金回來</p>
-<p>於是，他把餐廳的<code>「所有權」</code>分成六等份</p>
-<p>擁有了一份，就等於擁有了六分之一家的餐廳</p>
-<blockquote>
-<p>這個<code>「所有權的憑證」</code>，就是<code>「股票」</code>。</p>
-</blockquote>
-<span id="more"></span>
-
-<p>然後，他把其中五份，拿到大街上，公開拍賣</p>
-<p>於是，街上的大家開始衡量</p>
-<p>這家餐廳，值多少錢呢</p>
-<p>每個人認定的價格，都不太一樣</p>
-<p>最後，由出價最高的人，買到這五張股票</p>
-<p>因此，這五個人，就都成了公司的老闆，或者說，<code>「股東」</code></p>
-<p>他們，將會一起分享到餐廳經營後的利潤</p>
-<h2 id="上漲"><a href="#上漲" class="headerlink" title="上漲"></a>上漲</h2><pre><code>這間餐廳，如果錢越賺越多
-
-大家就會覺得這家餐廳很棒，因此值更多錢
-
-這間餐廳的股票，價格就會「上漲」
-</code></pre>
-<h2 id="下跌"><a href="#下跌" class="headerlink" title="下跌"></a>下跌</h2><pre><code>反之，這間餐廳，如果越做越差，開始賠錢
-
-大家就會覺得這間餐廳很遜，是賠錢貨
-
-因此，他的股票價格就會「下跌」
-</code></pre>
-<p>這就是股票最基礎的概念</p>
-<p>我們把餐廳，換成A公司</p>
-<p>持有A公司的股票，代表你擁有一小部分的A公司</p>
-<p>A公司如果做得好，他的股票就會漲</p>
-<p>相反的他如果做得差，他的股票就會跌</p>
-<p>這，就是股票的<code>「基本面」</code></p>
-<blockquote>
-<p>不過，你有沒有想過<br>為什麼有些公司明明做得很差，股票還是會上漲呢<br>這是因為，股票的價格，還牽涉到大家的「預期心理」<br><a href="/posts/3159720911/">這部分，就讓我們下次再來說清楚吧</a></p>
-</blockquote>
-<p>以上內容轉錄於以下<a href="https://www.youtube.com/watch?v=XeeGa5B-HnE">影片</a>，圖文並茂更清楚唷，歡迎有興趣朋友移駕觀看</p>
-<div class="video-container"><iframe src="https://www.youtube.com/embed/XeeGa5B-HnE" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
-]]></content>
-      <categories>
-        <category>2⃣ 筆記</category>
-        <category>股票</category>
-        <category>新手村</category>
-      </categories>
-      <tags>
-        <tag>筆記</tag>
-        <tag>股票</tag>
-        <tag>名詞解釋</tag>
       </tags>
   </entry>
   <entry>
