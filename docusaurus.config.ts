@@ -61,6 +61,16 @@ const config: Config = {
     [
       '@docusaurus/plugin-content-docs',
       {
+        id: 'posts',
+        routeBasePath: 'posts',
+        path: 'vault_posts',
+        sidebarPath: './sidebarsPosts.ts',
+        // ... other options
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
         id: 'code',
         routeBasePath: 'rb_stock_technical',
         path: 'vault_stock_technical',
@@ -68,6 +78,8 @@ const config: Config = {
         // ... other options
       },
     ],
+
+    
     [
       '@docusaurus/plugin-content-docs',
       {
@@ -122,12 +134,13 @@ const config: Config = {
           label: '股票相關',
           items: [
             {
-
               to: '/docs/category/學習', label: '新進文章',
             },
             {
-
               to: '/rb_stock_technical/code', label: '技術分析',
+            },
+            {
+              to: '/posts/1491145536', label: '舊有文章',
             },
           ],
         },
