@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkgavinh_0731_github_io=self.webpackChunkgavinh_0731_github_io||[]).push([[6261],{922:e=>{e.exports=JSON.parse('{"metadata":{"permalink":"/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":4,"blogDescription":"Blog","blogTitle":"\u90e8\u843d\u683c\u76f8\u95dc"}}')}}]);

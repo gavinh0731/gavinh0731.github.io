@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://gavinh0731.github.io/生活</id>
+    <title>財穀資訊網 Blog</title>
+    <updated>2024-05-05T12:33:45.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://gavinh0731.github.io/生活"/>
+    <subtitle>財穀資訊網 Blog</subtitle>
+    <icon>https://gavinh0731.github.io/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[生活測試相關]]></title>
+        <id>https://gavinh0731.github.io/生活/life</id>
+        <link href="https://gavinh0731.github.io/生活/life"/>
+        <updated>2024-05-05T12:33:45.000Z</updated>
+        <summary type="html"><![CDATA[來記錄一些有關生活測試]]></summary>
+        <content type="html"><![CDATA[<p>來記錄一些有關生活測試</p>]]></content>
+        <author>
+            <name>Gavin Huang</name>
+            <uri>https://github.com/gavinh0731</uri>
+        </author>
+        <category label="生活" term="生活"/>
+    </entry>
+</feed>
