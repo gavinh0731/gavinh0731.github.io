@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="zh-hant" dir="ltr" class="docs-wrapper plugin-docs plugin-id-code docs-version-current docs-doc-page docs-doc-id-01【K線】/candlestick-chart" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.3.2">
+<title data-rh="true">01.K線說明 | 財穀資訊網</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://gavinh0731.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://gavinh0731.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://gavinh0731.github.io/rb_stock_technical/01【K線】/candlestick-chart"><meta data-rh="true" property="og:locale" content="zh_hant"><meta data-rh="true" name="docusaurus_locale" content="zh-hant"><meta data-rh="true" name="docsearch:language" content="zh-hant"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-code-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-code-current"><meta data-rh="true" property="og:title" content="01.K線說明 | 財穀資訊網"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://gavinh0731.github.io/rb_stock_technical/01【K線】/candlestick-chart"><link data-rh="true" rel="alternate" href="https://gavinh0731.github.io/rb_stock_technical/01【K線】/candlestick-chart" hreflang="zh-hant"><link data-rh="true" rel="alternate" href="https://gavinh0731.github.io/rb_stock_technical/01【K線】/candlestick-chart" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="財穀資訊網 RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="財穀資訊網 Atom Feed">
+
+
+
+
+
+
+<link rel="alternate" type="application/rss+xml" href="/生活/rss.xml" title="財穀資訊網 RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/生活/atom.xml" title="財穀資訊網 Atom Feed"><link rel="stylesheet" href="/assets/css/styles.3088b62e.css">
+<script src="/assets/js/runtime~main.9bb92a35.js" defer="defer"></script>
+<script src="/assets/js/main.2ec8f8b6.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="跳至主要内容"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">跳至主要内容</a></div><nav aria-label="主導航" class="navbar navbar--fixed-top navbarHideable_m1mJ navbar--primary"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/favicon.png" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.svg" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">財穀資訊網</b></a><a class="navbar__item navbar__link" href="/docs/category/學習">新進文章</a><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">股票相關</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/docs/category/學習">新進文章</a></li><li><a class="dropdown__link" href="/rb_stock_technical/code">技術分析</a></li><li><a class="dropdown__link" href="/posts/1491145536">舊有文章</a></li></ul></div><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">blog</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/blog">生活隨記</a></li><li><a class="dropdown__link" href="/生活">生活</a></li></ul></div></div><div class="navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">網站架設</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/rb_docusaurus/intro">Tutorial Intro</a></li><li><a class="dropdown__link" href="/rb_docusaurus/category/tutorial---basics">Tutorial - Basics</a></li><li><a href="https://from8to8.com/docs/Website/basic/installation/" target="_blank" rel="noopener noreferrer" class="dropdown__link">朝八晚八教學</a></li></ul></div><a href="https://github.com/gavinh0731" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="切換淺色/暗黑模式（當前為淺色模式）" aria-label="切換淺色/暗黑模式（當前為淺色模式）" aria-live="polite"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="回到頂部" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd sidebarWithHideableNavbar_wUlq"><a tabindex="-1" class="sidebarLogo_isFc" href="/"><img src="/img/favicon.png" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.svg" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"><b>財穀資訊網</b></a><nav aria-label="文件側邊欄" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/rb_stock_technical/category/00技術分析基礎">00【技術分析基礎】</a><button aria-label="Expand sidebar category &#x27;00【技術分析基礎】&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/rb_stock_technical/01【K線】/candlestick-chart">01【K線】</a></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/rb_stock_technical/01【K線】/candlestick-chart">01.K線說明</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/rb_stock_technical/01【K線】/key-k-stick">02.關鍵K棒</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/rb_stock_technical/01【K線】/price-action">03.裸K交易</a></li></ul></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/rb_stock_technical/code">股票技術分析相關</a></li></ul></nav><button type="button" title="收起側邊欄" aria-label="收起側邊欄" class="button button--secondary button--outline collapseSidebarButton_PEFL"><svg width="20" height="20" aria-hidden="true" class="collapseSidebarButtonIcon_kv0_"><g fill="#7a7a7a"><path d="M9.992 10.023c0 .2-.062.399-.172.547l-4.996 7.492a.982.982 0 01-.828.454H1c-.55 0-1-.453-1-1 0-.2.059-.403.168-.551l4.629-6.942L.168 3.078A.939.939 0 010 2.528c0-.548.45-.997 1-.997h2.996c.352 0 .649.18.828.45L9.82 9.472c.11.148.172.347.172.55zm0 0"></path><path d="M19.98 10.023c0 .2-.058.399-.168.547l-4.996 7.492a.987.987 0 01-.828.454h-3c-.547 0-.996-.453-.996-1 0-.2.059-.403.168-.551l4.625-6.942-4.625-6.945a.939.939 0 01-.168-.55 1 1 0 01.996-.997h3c.348 0 .649.18.828.45l4.996 7.492c.11.148.168.347.168.55zm0 0"></path></g></svg></button></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="頁面路徑"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="主頁面" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">01【K線】</span><meta itemprop="position" content="1"></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">01.K線說明</span><meta itemprop="position" content="2"></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">本頁導覽</button></div><div class="theme-doc-markdown markdown"><header><h1>01.K線說明</h1></header><h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="股票k線怎麼看如何判斷新手入門必學的12種基礎形態">股票K線怎麼看？如何判斷？新手入門必學的12種基礎形態<a href="#股票k線怎麼看如何判斷新手入門必學的12種基礎形態" class="hash-link" aria-label="股票K線怎麼看？如何判斷？新手入門必學的12種基礎形態的直接連結" title="股票K線怎麼看？如何判斷？新手入門必學的12種基礎形態的直接連結">​</a></h2>
+<hr>
+<p>最後更新日期： 2023-04-26</p>
+<p>技術分析是大多數人進入股票市場最先接觸到的一項分析工具，根據過去股價的走勢，推斷未來的趨勢方向，進一步找出進、出場位置，以圖表和線圖的方式表現，就像是股市中的GPS。</p>
+<p>而要學會技術分析，首先，必須先從股票K線圖開始學起，K線圖是將每天、每週、每月的股價漲跌變化的表現，以圖形的方式呈現，透過K線圖可以透露出買賣雙方力道的強弱以及趨勢發展的方向。</p>
+<p>本篇我將和你分享，什麼是K線？K線怎麼看？紅K線與黑K線如何判斷？K線種類有哪些？如何利用K線判斷多空力道強弱？以及常見的12種K線型態。</p>
+<p>目錄</p>
+<ul>
+<li><a href="https://enjoyfreedomlife.com/candlestick-chart/#%E4%BB%80%E9%BA%BC%E6%98%AFK%E7%B7%9A%EF%BC%9F" target="_blank" rel="noopener noreferrer" title="什麼是K線？">什麼是K線？</a></li>
+<li><a href="https://enjoyfreedomlife.com/candlestick-chart/#K%E7%B7%9A%E6%80%8E%E9%BA%BC%E7%9C%8B%EF%BC%9F" target="_blank" rel="noopener noreferrer" title="K線怎麼看？">K線怎麼看？</a></li>
+<li><a href="https://enjoyfreedomlife.com/candlestick-chart/#%E7%B4%85K%E7%B7%9A%E8%88%87%E9%BB%91K%E7%B7%9A%E5%A6%82%E4%BD%95%E5%88%A4%E6%96%B7%EF%BC%9F" target="_blank" rel="noopener noreferrer" title="紅K線與黑K線如何判斷？">紅K線與黑K線如何判斷？</a></li>
+<li><a href="https://enjoyfreedomlife.com/candlestick-chart/#K%E7%B7%9A%E7%A8%AE%E9%A1%9E" target="_blank" rel="noopener noreferrer" title="K線種類">K線種類</a></li>
+<li><a href="https://enjoyfreedomlife.com/candlestick-chart/#K%E7%B7%9A%E5%88%A4%E6%96%B7%E5%A4%9A%E7%A9%BA%E5%8A%9B%E9%81%93%E5%BC%B7%E5%BC%B1" target="_blank" rel="noopener noreferrer" title="K線判斷多空力道強弱">K線判斷多空力道強弱</a></li>
+<li><a href="https://enjoyfreedomlife.com/candlestick-chart/#%E8%82%A1%E5%83%B9%E5%8F%8D%E6%98%A0%E4%B8%80%E5%88%87%E6%B6%88%E6%81%AF" target="_blank" rel="noopener noreferrer" title="股價反映一切消息">股價反映一切消息</a></li>
+<li><a href="https://enjoyfreedomlife.com/candlestick-chart/#%E5%B8%B8%E8%A6%8B%E7%9A%8412%E7%A8%AE%E5%9F%BA%E7%A4%8EK%E7%B7%9A%E5%9E%8B%E6%85%8B" target="_blank" rel="noopener noreferrer" title="常見的12種基礎K線型態">常見的12種基礎K線型態</a></li>
+<li><a href="https://enjoyfreedomlife.com/candlestick-chart/#%E7%B5%90%E8%AB%96" target="_blank" rel="noopener noreferrer" title="結論">結論</a></li>
+</ul>
+<p><strong>K線（Candlestick chart）</strong> 又稱為「<strong>蠟燭線</strong>」、「<strong>陰陽線</strong>」，起源於日本德川幕府時代米市交易，當時是用來計算米價每天的行情與價格波動，包括開市價、收市價、最高價及最低價。</p>
+<p>後來這個計算的概念被引進來股票市場，用來反應價格變化的圖線，透過K線圖，能將每分、每日、每週甚至每月的價格走勢記錄下來。</p>
+<p>每一根K線的產生，都是由真金白銀所堆砌出來的結果，市場上的所有消息，不管是好消息還是壞消息，都會反映在K線圖上。</p>
+<p>K線圖上會顯示出市場的趨勢方向與力道強弱、買家與賣家之間的角力關係、對於消息出現後的反應變化以及投資人的心理狀態，因此利用觀察K線的走勢與型態，高手一眼就能從中找到獲利的機會。</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="k線怎麼看">K線怎麼看？<a href="#k線怎麼看" class="hash-link" aria-label="K線怎麼看？的直接連結" title="K線怎麼看？的直接連結">​</a></h2>
+<p>K線主要是由4個價格所組成：<strong>開盤價</strong>、<strong>收盤價</strong>、<strong>最高價</strong>、<strong>最低價</strong>，台股在9點開市後一直到下午1點半結束，過程中K棒會不斷隨著價格漲跌而有變化，直到收盤時才停止。</p>
+<ul>
+<li><strong>開盤價</strong>：股市開市後第一筆買賣所成交的價格（台股9：00開市）</li>
+<li><strong>收盤價</strong>：股市閉市前第後一筆買賣所成交的價格（台股13：30閉市）</li>
+<li><strong>最高價</strong>：當日股價最高的價格</li>
+<li><strong>最低價</strong>：當日 股價最低的價格</li>
+</ul>
+<p><img decoding="async" loading="lazy" src="https://enjoyfreedomlife.com/wp-content/uploads/2022/01/K%E7%B7%9A%E7%9A%84%E7%B5%84%E6%88%90-1024x576.jpg" alt="K線的組成|600" class="img_ev3q"></p>
+<p>這4個價格的組合就會形成K棒，而K棒本身又可以分成兩個部分：「<strong>實體</strong>（蠟燭本身）」與「<strong>影線</strong>（兩端燭芯）」。</p>
+<ul>
+<li><strong>實體</strong>（蠟燭）：是由「<strong>開盤價</strong>」和「<strong>收盤價</strong>」所構成。</li>
+<li><strong>影線</strong>（燭芯）：分為「<strong>上影線</strong>」和「<strong>下影線</strong>」，是由「<strong>最高價</strong>」和「<strong>最低價</strong>」所構成。</li>
+</ul>
+<p><img decoding="async" loading="lazy" src="https://enjoyfreedomlife.com/wp-content/uploads/2022/01/K%E7%B7%9A%E7%9A%84%E7%B5%84%E6%88%90-2-1024x576.jpg" alt="K線的組成|600" class="img_ev3q"></p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="紅k線與黑k線如何判斷"><strong>紅K線與黑K線如何判斷？</strong><a href="#紅k線與黑k線如何判斷" class="hash-link" aria-label="紅k線與黑k線如何判斷的直接連結" title="紅k線與黑k線如何判斷的直接連結">​</a></h2>
+<p>理解K線是如何組成之後，接下來進一步學習如何用K線來判斷漲跌。</p>
+<p>K線分為兩種顏色，分別為<strong>紅色</strong>（陽線）及<strong>黑色</strong>（陰線；或<strong>綠色</strong>），而決定是哪種顏色呈現的關鍵在於「<strong>開盤價</strong>」與「<strong>收盤價</strong>」之間的關係。</p>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="紅k線陽線"><strong>紅K線（陽線）：</strong><a href="#紅k線陽線" class="hash-link" aria-label="紅k線陽線的直接連結" title="紅k線陽線的直接連結">​</a></h4>
+<p>當「<strong>收盤價</strong>」&gt;「<strong>開盤價</strong>」時，代表股價上漲，以紅K表示。</p>
+<p>舉例來說，今天有一檔股票開盤價為30元，盤中最高上漲至33元，最低下跌至29元，最後收盤價為32元，表示今日股價雖然盤中有下跌，但最終收盤價價比開盤價高呈現上漲，以日K來看就會以紅K表示。</p>
+<p>而因為在盤中股價曾一度到達29及33元，因此就會在K線上出現「<strong>上影線</strong>」及「<strong>下影線</strong>」。</p>
+<p><img decoding="async" loading="lazy" src="https://enjoyfreedomlife.com/wp-content/uploads/2022/01/%E7%B4%85K-1024x576.jpg" alt="紅K|600" class="img_ev3q"></p>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="黑k線陰線"><strong>黑K線（陰線）：</strong><a href="#黑k線陰線" class="hash-link" aria-label="黑k線陰線的直接連結" title="黑k線陰線的直接連結">​</a></h4>
+<p>當「<strong>開盤價</strong>」&gt;「<strong>收盤價</strong>」時，代表股價下跌，以黑K或綠K表示。</p>
+<p>舉例來說，今天有一檔股票開盤價為40元，盤中最高上漲至42元，最低下跌至37元，最後收盤價為38元，表示今日股價呈現下跌，以日K來看就會以黑K表示。</p>
+<p><img decoding="async" loading="lazy" src="https://enjoyfreedomlife.com/wp-content/uploads/2022/01/%E9%BB%91K-1024x576.jpg" alt="黑K|600" class="img_ev3q"></p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="k線種類"><strong>K線種類</strong><a href="#k線種類" class="hash-link" aria-label="k線種類的直接連結" title="k線種類的直接連結">​</a></h2>
+<p>K線會依據不同單位時間區分，各種不同週期的K線圖運用的功能有所不同，一般使用技術分析作為進出場判斷的話，會以分K或日K做尋找進出場點，而周K、月K判斷整體多空趨勢。</p>
+<p>基本上，常見的K線種類有以下幾種：</p>
+<ul>
+<li>1分K：1分鐘的價格變化所形成的K線。</li>
+<li>5分K：5分鐘的價格變化所形成的K線。</li>
+<li>15分K：15分鐘的價格變化所形成的K線。</li>
+<li>30  分K：30分鐘的價格變化所形成的K線。</li>
+<li>60分K：60分鐘的價格變化所形成的K線。</li>
+<li>日K線：一天的價格變化所形成的K線（台股：9：00~13：30）。</li>
+<li>周K線：一週的價格變化所形成的K線（每週第1個交易日開盤價至當周最後一個交易日的收盤價）。</li>
+<li>月K線：一個月的價格變化所形成的K線（每月第1個交易日開盤價至當月最後一個交易日的收盤價）。</li>
+<li>年K線：一年的價格變化所形成的K線（每年第1個交易日開盤價至當年最後一個交易日的收盤價）。</li>
+</ul>
+<p>舉例來說，1根周K是由過去一週內5個交易日的K棒所集合而成的（如果當周只有4個交易日，那麼周K就是由這4根日K所組成）。</p>
+<p>所以只要知道星期一早上9:00的「<strong>開盤價</strong>」和星期五下午1：30的「<strong>收盤價</strong>」，以及這5個交易日出現的「<strong>最高點</strong>」和「<strong>最低點</strong>」，就能夠將5日的K線及合成一根周K線。</p>
+<p><img decoding="async" loading="lazy" src="https://enjoyfreedomlife.com/wp-content/uploads/2022/01/%E5%91%A8K%E7%9A%84%E5%BD%A2%E6%88%90-1024x576.jpg" alt="周K的形成|800" class="img_ev3q"></p>
+<p>同理，1根月K線的出現，也是集結當月每個交易日股價走勢變化而得的結果，當月第一個交易日早上9:00的「<strong>開盤價</strong>」和當月最後一個交易日下午1：30的「<strong>收盤價</strong>」，以及當月出現的「<strong>最高點</strong>」和「<strong>最低點</strong>」，就能形成1根月K線。</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="k線判斷多空力道強弱"><strong>K線判斷多空力道強弱</strong><a href="#k線判斷多空力道強弱" class="hash-link" aria-label="k線判斷多空力道強弱的直接連結" title="k線判斷多空力道強弱的直接連結">​</a></h2>
+<p>透過K線的長相，藉由觀察K線的「<strong>實體</strong>」能夠初步判斷當天的股價多空力道的強弱，如果實體的長度越長，代表當天的力道越強，若能進一步搭配「<strong>成交量</strong>」來一起判斷會更準確。</p>
+<p>當「<strong>開盤價</strong>」與「<strong>收盤價</strong>」距離越遠，兩者的價格差距越大，實體的長度就會越長，若兩者之間差距達5%以上，就可以稱為是長紅K或長黑K。</p>
+<p>如果出現「<strong>開盤價</strong>」等於「<strong>收盤價</strong>」的狀況時，K線會以「<strong>＋</strong>」表示，代表當天買方與賣方的力道分不出高下，呈現平衡狀態。</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="股價反映一切消息"><strong>股價反映一切消息</strong><a href="#股價反映一切消息" class="hash-link" aria-label="股價反映一切消息的直接連結" title="股價反映一切消息的直接連結">​</a></h2>
+<p>所有的好消息、壞消息、利多消息、利空消息，都會呈現在K線圖上，因此從K線上就能初步判斷消息是否屬實。</p>
+<p>舉例來說，週末出現某支股票利多消息，照理說週一股價應該上漲反映這項利多，但事實上週一股價卻呈現下跌，形成「<strong>利多不漲</strong>」。</p>
+<p><strong>這是多數投資人最常陷入的盲點。</strong></p>
+<p>從股價的位階可以來判斷，這項利多消息是否已經提前反應在股價上面了，也就是說，過去一段時間股價上漲投資人卻不知道在漲什麼？</p>
+<p>直到這項消息出現，市場上投資人終於明白股價上漲的原因，但是週一股價卻沒有受到利多消息激勵上漲，反而呈現下跌，因此可以推斷股價早已反應完這項利多，出現「<strong>利多出盡</strong>」的現象。</p>
+<p>此時多數投資人最常犯的錯就是，由於週末看到利多消息，週一急忙趕著進場，怕沒有在第一時間上車使獲利減少，而容易因此被套在相對高點的位置  。</p>
+<p>所以如果下次看到股票的任何消息，都可以透過股價的反應來判斷是否值得進場投資或是該減碼出場，如果能搭配「<strong>成交量</strong>」來一起判斷，判斷的準確率會更高。</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="常見的12種基礎k線型態"><strong>常見的12種基礎K線型態</strong><a href="#常見的12種基礎k線型態" class="hash-link" aria-label="常見的12種基礎k線型態的直接連結" title="常見的12種基礎k線型態的直接連結">​</a></h2>
+<p><img decoding="async" loading="lazy" src="https://enjoyfreedomlife.com/wp-content/uploads/2022/01/%E9%95%B7%E7%B4%85K.jpg" alt="長紅K" class="img_ev3q"></p>
+<ul>
+<li><strong>大陽線（長紅K）</strong></li>
+<li><strong>開盤價=最低價，收盤價=最高價</strong></li>
+<li><strong>買盤力道強勁，強烈看漲</strong></li>
+</ul>
+<p><img decoding="async" loading="lazy" src="https://enjoyfreedomlife.com/wp-content/uploads/2022/01/%E7%B4%85K%E4%B8%8A%E5%BD%B1%E7%B7%9A.jpg" alt="紅K上影線" class="img_ev3q"></p>
+<ul>
+<li><strong>紅K上影線</strong></li>
+<li><strong>開盤價=最低價，留上影線</strong></li>
+<li><strong>股價強力上漲，但遇到賣方壓力使股價拉回，上影線越長，表示賣壓越大。</strong></li>
+</ul>
+<p><img decoding="async" loading="lazy" src="https://enjoyfreedomlife.com/wp-content/uploads/2022/01/%E7%B4%85K%E4%B8%8B%E5%BD%B1%E7%B7%9A.jpg" alt="紅K下影線" class="img_ev3q"></p>
+<ul>
+<li><strong>紅K下影線</strong></li>
+<li><strong>收盤價=最高價，留下影線</strong></li>
+<li><strong>開盤小跌後，買盤力道加大，漲勢強勁。</strong></li>
+</ul>
+<p><img decoding="async" loading="lazy" src="https://enjoyfreedomlife.com/wp-content/uploads/2022/01/%E7%B4%85K%E4%B8%8A%E4%B8%8B%E5%BD%B1%E7%B7%9A.jpg" alt="紅K上下影線" class="img_ev3q"></p>
+<ul>
+<li><strong>紅K上下影線</strong></li>
+<li><strong>股價下跌出現買盤，上漲後出現賣壓，多空交戰  ，多方仍佔有優勢。</strong></li>
+</ul>
+<p><img decoding="async" loading="lazy" src="https://enjoyfreedomlife.com/wp-content/uploads/2022/01/%E9%95%B7%E9%BB%91K.jpg" alt="長黑K" class="img_ev3q"></p>
+<ul>
+<li><strong>大陰線（長黑K）</strong></li>
+<li><strong>開盤價=最高價，收盤價=最低價</strong></li>
+<li><strong>空方力道強勁，強烈看跌</strong></li>
+</ul>
+<p><img decoding="async" loading="lazy" src="https://enjoyfreedomlife.com/wp-content/uploads/2022/01/%E9%95%B7%E9%BB%91K%E4%B8%8A%E5%BD%B1%E7%B7%9A.jpg" alt="長黑K上影線" class="img_ev3q"></p>
+<ul>
+<li><strong>黑K上影線</strong></li>
+<li><strong>收盤價=最低價，留上影線</strong></li>
+<li><strong>上漲買盤力道不足，股價續跌，賣壓力道仍強勁。</strong></li>
+</ul>
+<p><img decoding="async" loading="lazy" src="https://enjoyfreedomlife.com/wp-content/uploads/2022/01/%E9%95%B7%E9%BB%91K%E4%B8%8B%E5%BD%B1%E7%B7%9A.jpg" alt="長黑K下影線" class="img_ev3q"></p>
+<ul>
+<li><strong>黑K下影線</strong></li>
+<li><strong>開盤價=最高價，留下影線</strong></li>
+<li><strong>股價下跌後出現買盤，賣方力道稍微削減。</strong></li>
+</ul>
+<p><img decoding="async" loading="lazy" src="https://enjoyfreedomlife.com/wp-content/uploads/2022/01/%E9%95%B7%E9%BB%91K%E4%B8%8A%E4%B8%8B%E5%BD%B1%E7%B7%9A.jpg" alt="長黑K上下影線" class="img_ev3q"></p>
+<ul>
+<li><strong>黑K上下影線</strong></li>
+<li><strong>股價上漲出現賣壓，下跌後出現買盤，多空交戰，空方仍佔有優勢。</strong></li>
+</ul>
+<p><img decoding="async" loading="lazy" src="https://enjoyfreedomlife.com/wp-content/uploads/2022/01/%E5%8D%81%E5%AD%97%E7%B7%9A.jpg" alt="十字線" class="img_ev3q"></p>
+<ul>
+<li><strong>十字線</strong></li>
+<li><strong>開盤價=收盤價，留上下影線</strong></li>
+<li><strong>股價上漲遇到賣壓，下跌出現買盤，多空交戰勢均力敵，常出現在行情轉折的位置。</strong></li>
+</ul>
+<p><img decoding="async" loading="lazy" src="https://enjoyfreedomlife.com/wp-content/uploads/2022/01/%E4%B8%80%E5%AD%97%E7%B7%9A.jpg" alt="一字線" class="img_ev3q"></p>
+<ul>
+<li><strong>一字線</strong></li>
+<li><strong>開盤價=收盤價=最高價=最低價</strong></li>
+<li><strong>股價當天只有1種價格，多方或空方非常強勢，如果是跳空上漲出現一字線，代表開盤即漲停板；如果是跳空下跌出現一字線，代表開盤即跌停板。</strong></li>
+</ul>
+<p><img decoding="async" loading="lazy" src="https://enjoyfreedomlife.com/wp-content/uploads/2022/01/T%E5%AD%97%E7%B7%9A.jpg" alt="T字線" class="img_ev3q"></p>
+<ul>
+<li><strong>T字線</strong></li>
+<li><strong>開盤價=收盤價=最高價，留下影線</strong></li>
+<li><strong>開盤後出現賣壓，使股價下跌一段後，出現較強的買盤力道，股價開始反彈，一路拉回至開盤價的位置。</strong></li>
+</ul>
+<p><img decoding="async" loading="lazy" src="https://enjoyfreedomlife.com/wp-content/uploads/2022/01/%E5%80%92T%E5%AD%97%E7%B7%9A-1.jpg" alt="倒T字線" class="img_ev3q"></p>
+<ul>
+<li><strong>倒T字線</strong></li>
+<li><strong>開盤價=收盤價=最低價，留上影線</strong></li>
+<li><strong>開盤後股價出現買盤使股價上漲一段後，賣壓湧現且力道較強，使股價回跌至開盤的位置。</strong></li>
+</ul>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="結論"><strong>結論</strong><a href="#結論" class="hash-link" aria-label="結論的直接連結" title="結論的直接連結">​</a></h2>
+<p>技術分析的技術範疇很廣泛且方法種類很多，而最基礎的是必須要擁有K線判斷的能力，從K線的走勢變化及形態能夠透漏出多空買賣力道強度，進一步搭配成交量、其他分析指標及籌碼分析，能夠協助投資人提升判斷的準確率，也可以作為買賣進出場的依據。</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-tags-row"><div class="col"><b>標籤：</b><ul class="tags_jXut padding--none margin-left--sm"><li class="tag_QGVx"><a class="tag_zVej tagRegular_sFm0" href="/rb_stock_technical/tags/股票">股票</a></li></ul></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="文件選項卡"><a class="pagination-nav__link pagination-nav__link--prev" href="/rb_stock_technical/00【技術分析基礎】/technical-6tools"><div class="pagination-nav__sublabel">上一頁</div><div class="pagination-nav__label">02.善用這6種分析工具</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/rb_stock_technical/01【K線】/key-k-stick"><div class="pagination-nav__sublabel">下一頁</div><div class="pagination-nav__label">02.關鍵K棒</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#股票k線怎麼看如何判斷新手入門必學的12種基礎形態" class="table-of-contents__link toc-highlight">股票K線怎麼看？如何判斷？新手入門必學的12種基礎形態</a></li><li><a href="#k線怎麼看" class="table-of-contents__link toc-highlight">K線怎麼看？</a></li><li><a href="#紅k線與黑k線如何判斷" class="table-of-contents__link toc-highlight"><strong>紅K線與黑K線如何判斷？</strong></a></li><li><a href="#k線種類" class="table-of-contents__link toc-highlight"><strong>K線種類</strong></a></li><li><a href="#k線判斷多空力道強弱" class="table-of-contents__link toc-highlight"><strong>K線判斷多空力道強弱</strong></a></li><li><a href="#股價反映一切消息" class="table-of-contents__link toc-highlight"><strong>股價反映一切消息</strong></a></li><li><a href="#常見的12種基礎k線型態" class="table-of-contents__link toc-highlight"><strong>常見的12種基礎K線型態</strong></a></li><li><a href="#結論" class="table-of-contents__link toc-highlight"><strong>結論</strong></a></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2024 My Project, Inc. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>
