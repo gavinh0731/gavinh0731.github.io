@@ -44,5 +44,9 @@
   },
   "engines": {
     "node": ">=18.0"
-  }
+  },
+  "main": "index.js",
+  "repository": "git@github.com:gavinh0731/gavinh0731.github.io.git",
+  "author": "gavinh0731 <gavinh0731@gmail.com>",
+  "license": "MIT"
 }
