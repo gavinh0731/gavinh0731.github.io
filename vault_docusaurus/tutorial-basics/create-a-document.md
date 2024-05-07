@@ -2,6 +2,18 @@
 sidebar_position: 2
 ---
 
+## 程式碼顯示
+
+```javascript title="實際模樣" showLineNumbers {2,4-5}
+---
+title: 編輯文章
+sidebar_position: 10
+sidebar_label: 編輯文章
+description: 網站上線後，開始產出內容，編輯文章。
+tags: [article, docusaurus]
+---
+```
+
 # Create a Document
 
 Documents are **groups of pages** connected through:
