@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkgavinh_0731_github_io=self.webpackChunkgavinh_0731_github_io||[]).push([[3888],{4424:a=>{a.exports=JSON.parse('{"tags":[{"label":"\u80a1\u7968","permalink":"/rb_stock_technical/tags/\u80a1\u7968","count":7},{"label":"\u6280\u8853\u5206\u6790","permalink":"/rb_stock_technical/tags/\u6280\u8853\u5206\u6790","count":1}]}')}}]);
