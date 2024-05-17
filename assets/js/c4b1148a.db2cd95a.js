@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkgavinh_0731_github_io=self.webpackChunkgavinh_0731_github_io||[]).push([[6755],{3314:e=>{e.exports=JSON.parse('{"metadata":{"permalink":"/stockmoney","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);

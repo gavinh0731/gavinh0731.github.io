@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkgavinh_0731_github_io=self.webpackChunkgavinh_0731_github_io||[]).push([[2378],{5257:e=>{e.exports=JSON.parse('{"title":"\u6240\u6709\u6587\u7ae0","items":[{"title":"\u751f\u6d3b\u6e2c\u8a66\u76f8\u95dc","permalink":"/\u751f\u6d3b/life","unlisted":false}]}')}}]);
