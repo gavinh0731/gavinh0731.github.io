@@ -102,9 +102,9 @@ const config: Config = {
         blogSidebarCount: 'ALL',
         postsPerPage: 10, //每頁顯示文章數
         //
-        id: 'life',
-        routeBasePath: '生活',
-        path: 'vault_blogs/生活',
+        id: 'stockmoney',
+        routeBasePath: 'stockmoney',
+        path: 'vault_blogs/stockmoney',
         remarkPlugins: [simplePlantUML],
       },
     ],
@@ -161,12 +161,12 @@ const config: Config = {
           label: 'blog',
           items: [
             {
+              to: '/stockmoney', label: '選股神器說明',
 
-              to: '/blog', label: '生活隨記',
             },
             {
-              to: '/生活', label: '生活',
 
+              to: '/blog', label: '部落格範例',
             },
           ],
         },
